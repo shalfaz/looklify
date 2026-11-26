@@ -103,7 +103,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100 flex items-center justify-center px-4 py-12">
+    <div className="min-h-screen bg-[#FFFDFD] flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Left Side - Lottie Animation */}
@@ -166,7 +166,7 @@ export default function LoginPage() {
                   autoComplete="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`block w-full px-3 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors ${
+                  className={`block w-full px-3 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#9D174D] focus:border-transparent transition-colors ${
                     errors.email ? 'border-red-300' : 'border-gray-300'
                   }`}
                   placeholder="Enter your email"
@@ -189,7 +189,7 @@ export default function LoginPage() {
                     autoComplete="current-password"
                     value={formData.password}
                     onChange={handleChange}
-                    className={`block w-full px-3 py-2.5 pr-10 text-sm border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors ${
+                    className={`block w-full px-3 py-2.5 pr-10 text-sm border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#9D174D] focus:border-transparent transition-colors ${
                       errors.password ? 'border-red-300' : 'border-gray-300'
                     }`}
                     placeholder="Enter your password"
@@ -225,13 +225,13 @@ export default function LoginPage() {
                     type="checkbox"
                     checked={formData.rememberMe}
                     onChange={handleChange}
-                    className="h-3.5 w-3.5 text-purple-600 focus:ring-purple-500 border-gray-300 rounded"
+                    className="h-3.5 w-3.5 text-[#881337] focus:ring-[#9D174D] border-gray-300 rounded"
                   />
                   <label htmlFor="rememberMe" className="ml-2 block text-xs text-gray-700">
                     Remember me
                   </label>
                 </div>
-                <Link href="/forgot-password" className="text-xs text-purple-600 hover:text-purple-500 font-medium">
+                <Link href="/forgot-password" className="text-xs text-[#881337] hover:text-[#9D174D] font-medium">
                   Forgot password?
                 </Link>
               </div>
@@ -240,7 +240,7 @@ export default function LoginPage() {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="group relative w-full flex justify-center py-2.5 px-4 text-sm font-medium rounded-lg text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="group relative w-full flex justify-center py-2.5 px-4 text-sm font-medium rounded-lg text-white bg-[#881337] hover:bg-[#6E0F2C] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#9D174D] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
                 {isLoading ? (
                   <div className="flex items-center">
@@ -261,7 +261,7 @@ export default function LoginPage() {
             <div className="mt-6 text-center">
               <p className="text-xs text-gray-600">
                 Don&apos;t have an account?{' '}
-                <Link href="/signup" className="font-medium text-purple-600 hover:text-purple-500 transition-colors">
+                <Link href="/signup" className="font-medium text-[#881337] hover:text-[#9D174D] transition-colors">
                   Sign up for free
                 </Link>
               </p>

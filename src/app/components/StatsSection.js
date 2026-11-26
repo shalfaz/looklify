@@ -88,25 +88,25 @@ export default function StatsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 text-center">
           <div>
-            <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-purple-600 mb-2">
+            <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#881337] mb-2">
               {hasAnimated ? Math.floor(happyCustomers).toLocaleString() + '+' : '0'}
             </div>
             <div className="text-sm sm:text-base text-gray-600">Happy Customers</div>
           </div>
           <div>
-            <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-purple-600 mb-2">
+            <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#881337] mb-2">
               {hasAnimated ? Math.floor(premiumProducts) + '+' : '0'}
             </div>
             <div className="text-sm sm:text-base text-gray-600">Premium Products</div>
           </div>
           <div>
-            <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-purple-600 mb-2">
+            <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#881337] mb-2">
               {hasAnimated ? Math.floor(brandPartners) + '+' : '0'}
             </div>
             <div className="text-sm sm:text-base text-gray-600">Brand Partners</div>
           </div>
           <div>
-            <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-purple-600 mb-2">24/7</div>
+            <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#881337] mb-2">24/7</div>
             <div className="text-sm sm:text-base text-gray-600">Customer Support</div>
           </div>
         </div>

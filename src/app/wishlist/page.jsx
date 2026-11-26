@@ -59,7 +59,7 @@ export default function WishlistPage() {
           `,
           icon: 'warning',
           confirmButtonText: 'OK',
-          confirmButtonColor: '#7c3aed',
+          confirmButtonColor: '#881337',
           background: '#f8fafc',
           color: '#1f2937'
         });
@@ -81,7 +81,7 @@ export default function WishlistPage() {
         `,
         icon: 'warning',
         confirmButtonText: 'OK',
-        confirmButtonColor: '#7c3aed',
+        confirmButtonColor: '#881337',
         background: '#f8fafc',
         color: '#1f2937'
       });
@@ -101,7 +101,7 @@ export default function WishlistPage() {
       color: '#1f2937',
       customClass: {
         popup: 'swal2-toast',
-        title: 'text-purple-600 font-semibold',
+        title: 'text-[#881337] font-semibold',
         content: 'text-gray-600'
       }
     });
@@ -113,7 +113,7 @@ export default function WishlistPage() {
       text: 'This feature will redirect you to checkout',
       icon: 'info',
       showCancelButton: true,
-      confirmButtonColor: '#7c3aed',
+      confirmButtonColor: '#881337',
       cancelButtonColor: '#6b7280',
       confirmButtonText: 'Proceed to Checkout',
       cancelButtonText: 'Cancel',
@@ -131,22 +131,22 @@ export default function WishlistPage() {
 
   if (authLoading || wishlistLoading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-[#FFFDFD] dark:bg-gray-950 flex items-center justify-center">
         <div className="text-center">
-          <div className="h-12 w-12 border-4 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto" />
-          <p className="mt-4 text-gray-600">Loading wishlist...</p>
+          <div className="h-12 w-12 border-4 border-[#881337] border-t-transparent rounded-full animate-spin mx-auto" />
+          <p className="mt-4 text-[#6B7280]">Loading wishlist...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#FFFDFD] dark:bg-gray-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-6">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">My Wishlist</h1>
-          <p className="text-sm text-gray-600">
+          <h1 className="text-3xl font-bold text-[#1F2937] dark:text-gray-100 mb-2">My Wishlist</h1>
+          <p className="text-sm text-[#6B7280] dark:text-gray-400">
             {wishlistItems.length} {wishlistItems.length === 1 ? 'item' : 'items'} saved
           </p>
         </div>
@@ -154,16 +154,16 @@ export default function WishlistPage() {
         {/* Wishlist Items */}
         {wishlistItems.length === 0 ? (
           <div className="text-center py-16">
-            <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg className="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="w-24 h-24 bg-[#FDF2F8] rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg className="w-12 h-12 text-[#D94E67]/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Your wishlist is empty</h3>
-            <p className="text-gray-600 mb-6">Start adding products you love to your wishlist</p>
+            <h3 className="text-xl font-semibold text-[#1F2937] dark:text-gray-100 mb-2">Your wishlist is empty</h3>
+            <p className="text-[#6B7280] mb-6">Start adding products you love to your wishlist</p>
             <Link
               href="/shop"
-              className="inline-block px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all font-medium"
+              className="inline-block px-6 py-3 bg-[#881337] text-white rounded-lg hover:bg-[#6E0F2C] transition-all font-medium"
             >
               Explore Products
             </Link>
@@ -176,7 +176,7 @@ export default function WishlistPage() {
               const discountPercentage = calculateDiscountPercentage(product);
 
               return (
-                <div key={product._id} className="bg-white rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+                <div key={product._id} className="bg-white dark:bg-gray-900 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 border border-[#F1E8EC] dark:border-gray-800 hover:border-[#FBCFE8] group">
                   <div className="relative">
                     <Link href={`/shop/${product._id}`}>
                       <Image
@@ -190,7 +190,7 @@ export default function WishlistPage() {
                     
                     {/* Discount Badge */}
                     {discountPercentage > 0 && (
-                      <div className="absolute top-3 right-3 bg-red-500 text-white px-3 py-1.5 rounded-md text-sm font-semibold shadow-lg">
+                      <div className="absolute top-3 right-3 bg-[#B08968] text-white px-3 py-1.5 rounded-full text-sm font-semibold shadow-sm">
                         {discountPercentage}% OFF
                       </div>
                     )}
@@ -198,7 +198,7 @@ export default function WishlistPage() {
                     {/* Wishlist Button - Remove */}
                     <button 
                       onClick={() => removeFromWishlist(product._id)}
-                      className="absolute top-3 left-3 w-8 h-8 bg-red-500 backdrop-blur-sm rounded-full flex items-center justify-center shadow-md text-white hover:bg-red-600 transition-colors"
+                      className="absolute top-3 left-3 w-8 h-8 bg-[#D94E67] backdrop-blur-sm rounded-full flex items-center justify-center shadow-md text-white hover:bg-[#881337] transition-colors"
                     >
                       <svg className="w-5 h-5" fill="currentColor" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -207,8 +207,8 @@ export default function WishlistPage() {
                   </div>
 
                   <div className="p-4">
-                    <h3 className="font-medium text-gray-900 mb-3 text-base line-clamp-2 leading-tight">
-                      <Link href={`/shop/${product._id}`} className="hover:text-purple-600 transition-colors">
+                    <h3 className="font-medium text-[#1F2937] dark:text-gray-100 mb-3 text-base line-clamp-2 leading-tight">
+                      <Link href={`/shop/${product._id}`} className="hover:text-[#881337] dark:hover:text-[#FBCFE8] transition-colors">
                         {product.name}
                       </Link>
                     </h3>
@@ -224,11 +224,11 @@ export default function WishlistPage() {
                           
                           return (
                             <>
-                              <span className="text-lg font-bold text-gray-900">
+                              <span className="text-lg font-bold text-[#1F2937] dark:text-gray-100">
                                 ৳{displayPrice}
                               </span>
                               {regularPrice && regularPrice > displayPrice && (
-                                <span className="text-sm text-gray-500 line-through">
+                                <span className="text-sm text-[#6B7280] line-through">
                                   ৳{regularPrice}
                                 </span>
                               )}
@@ -237,10 +237,10 @@ export default function WishlistPage() {
                         })()}
                       </div>
                       <div className="flex items-center space-x-1">
-                        <svg className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-4 h-4 text-[#C59B6D]" fill="currentColor" viewBox="0 0 20 20">
                           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                         </svg>
-                        <span className="text-sm text-gray-600">
+                        <span className="text-sm text-[#6B7280]">
                           {product.rating?.average || 0}
                         </span>
                       </div>
@@ -249,13 +249,13 @@ export default function WishlistPage() {
                     <div className="flex space-x-2">
                       <button
                         onClick={() => handleAddToCart(product)}
-                        className="flex-1 px-3 py-2 text-sm border border-purple-600 text-purple-600 rounded-md hover:bg-purple-50 transition-colors font-medium"
+                        className="flex-1 px-3 py-2 text-sm border border-[#9D174D] text-[#881337] dark:text-[#FBCFE8] dark:border-[#D94E67] bg-white dark:bg-transparent rounded-md hover:bg-[#FDF2F8] dark:hover:bg-[#881337]/20 transition-colors font-medium"
                       >
                         Add to Cart
                       </button>
                       <button
                         onClick={() => handleBuyNow(product._id)}
-                        className="flex-1 px-3 py-2 text-sm bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-md hover:from-purple-700 hover:to-pink-700 transition-all font-medium"
+                        className="flex-1 px-3 py-2 text-sm bg-[#D94E67] text-white rounded-md hover:bg-[#C43D56] transition-all font-medium"
                       >
                         Buy Now
                       </button>

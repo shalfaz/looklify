@@ -46,14 +46,14 @@ export default function ForgotPasswordPage() {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen bg-[#FFFDFD] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full space-y-8">
           <div className="text-center">
             <Link href="/" className="flex items-center justify-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
+              <div className="w-12 h-12 bg-[#881337] rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-xl">L</span>
               </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+              <span className="text-2xl font-bold bg-[#881337] bg-clip-text text-transparent">
                 LOOKLIFY
               </span>
             </Link>
@@ -71,9 +71,9 @@ export default function ForgotPasswordPage() {
             </p>
             <p className="text-sm text-gray-500 mb-6">
               Didn&apos;t receive the email? Check your spam folder or{' '}
-              <button onClick={() => setIsSubmitted(false)} className="text-purple-600 hover:text-purple-500 font-medium">try again</button>
+              <button onClick={() => setIsSubmitted(false)} className="text-[#881337] hover:text-[#9D174D] font-medium">try again</button>
             </p>
-            <Link href="/login" className="inline-flex items-center justify-center w-full py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-all duration-200">
+            <Link href="/login" className="inline-flex items-center justify-center w-full py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-[#881337] hover:bg-[#6E0F2C] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#9D174D] transition-all duration-200">
               Back to Sign In
             </Link>
           </div>
@@ -83,14 +83,14 @@ export default function ForgotPasswordPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#FFFDFD] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div className="text-center">
           <Link href="/" className="flex items-center justify-center space-x-3 mb-6">
-            <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
+            <div className="w-12 h-12 bg-[#881337] rounded-full flex items-center justify-center">
               <span className="text-white font-bold text-xl">L</span>
             </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">LOOKLIFY</span>
+            <span className="text-2xl font-bold bg-[#881337] bg-clip-text text-transparent">LOOKLIFY</span>
           </Link>
           <h2 className="text-3xl font-bold text-gray-900">Forgot your password?</h2>
           <p className="mt-2 text-gray-600">No worries, we&apos;ll send you reset instructions</p>
@@ -113,7 +113,7 @@ export default function ForgotPasswordPage() {
                   autoComplete="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className={`block w-full pl-10 pr-3 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors ${error ? 'border-red-300' : 'border-gray-300'}`}
+                  className={`block w-full pl-10 pr-3 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#9D174D] focus:border-transparent transition-colors ${error ? 'border-red-300' : 'border-gray-300'}`}
                   placeholder="Enter your email address"
                 />
               </div>
@@ -123,7 +123,7 @@ export default function ForgotPasswordPage() {
             <button
               type="submit"
               disabled={isLoading}
-              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
+              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-[#881337] hover:bg-[#6E0F2C] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#9D174D] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
             >
               {isLoading ? (
                 <div className="flex items-center">
@@ -139,7 +139,7 @@ export default function ForgotPasswordPage() {
             </button>
 
             <div className="text-center">
-              <Link href="/login" className="text-sm text-purple-600 hover:text-purple-500 font-medium">← Back to Sign In</Link>
+              <Link href="/login" className="text-sm text-[#881337] hover:text-[#9D174D] font-medium">← Back to Sign In</Link>
             </div>
           </form>
         </div>

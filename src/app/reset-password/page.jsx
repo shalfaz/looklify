@@ -59,14 +59,14 @@ function ResetPasswordForm() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#FFFDFD] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div className="text-center">
           <Link href="/" className="flex items-center justify-center space-x-3 mb-6">
-            <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
+            <div className="w-12 h-12 bg-[#881337] rounded-full flex items-center justify-center">
               <span className="text-white font-bold text-xl">L</span>
             </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <span className="text-2xl font-bold bg-[#881337] bg-clip-text text-transparent">
               LOOKLIFY
             </span>
           </Link>
@@ -82,7 +82,7 @@ function ResetPasswordForm() {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className={`block w-full px-3 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors ${error ? 'border-red-300' : 'border-gray-300'}`}
+                className={`block w-full px-3 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#9D174D] focus:border-transparent transition-colors ${error ? 'border-red-300' : 'border-gray-300'}`}
                 placeholder="Enter new password"
               />
             </div>
@@ -92,7 +92,7 @@ function ResetPasswordForm() {
                 type="password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className={`block w-full px-3 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors ${error ? 'border-red-300' : 'border-gray-300'}`}
+                className={`block w-full px-3 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#9D174D] focus:border-transparent transition-colors ${error ? 'border-red-300' : 'border-gray-300'}`}
                 placeholder="Re-enter new password"
               />
             </div>
@@ -103,7 +103,7 @@ function ResetPasswordForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
+              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-[#881337] hover:bg-[#6E0F2C] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#9D174D] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
             >
               {isSubmitting ? 'Resetting...' : 'Reset password'}
             </button>
@@ -111,7 +111,7 @@ function ResetPasswordForm() {
         </div>
 
         <div className="text-center">
-          <Link href="/login" className="text-sm text-purple-600 hover:text-purple-500 font-medium">
+          <Link href="/login" className="text-sm text-[#881337] hover:text-[#9D174D] font-medium">
             ← Back to Sign In
           </Link>
         </div>
@@ -123,9 +123,9 @@ function ResetPasswordForm() {
 export default function ResetPasswordPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100 flex items-center justify-center">
+      <div className="min-h-screen bg-[#FFFDFD] flex items-center justify-center">
         <div className="text-center">
-          <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="w-12 h-12 bg-[#881337] rounded-full flex items-center justify-center mx-auto mb-4">
             <span className="text-white font-bold text-xl">L</span>
           </div>
           <p className="text-gray-600">Loading...</p>

@@ -46,13 +46,13 @@ function CheckoutSuccessContent() {
           html: `
             <div class="text-center">
               <p class="mb-3">Your payment has been successfully processed.</p>
-              <p class="text-lg font-bold text-purple-600 mt-4">Order ID: ${orderId}</p>
+              <p class="text-lg font-bold text-[#881337] mt-4">Order ID: ${orderId}</p>
               <p class="text-sm text-gray-600 mt-2">Payment ID: ${paymentID}</p>
             </div>
           `,
           icon: 'success',
           confirmButtonText: 'View Orders',
-          confirmButtonColor: '#7c3aed',
+          confirmButtonColor: '#881337',
           allowOutsideClick: false
         }).then((result) => {
           if (result.isConfirmed) {
@@ -68,7 +68,7 @@ function CheckoutSuccessContent() {
           text: result.data?.statusMessage || 'Please contact support if payment was deducted.',
           icon: 'warning',
           confirmButtonText: 'OK',
-          confirmButtonColor: '#7c3aed'
+          confirmButtonColor: '#881337'
         });
       }
     } catch (error) {
@@ -79,7 +79,7 @@ function CheckoutSuccessContent() {
         text: 'Unable to verify payment. Please contact support with your order ID.',
         icon: 'error',
         confirmButtonText: 'OK',
-        confirmButtonColor: '#7c3aed'
+        confirmButtonColor: '#881337'
       });
     } finally {
       setVerifying(false);
@@ -91,7 +91,7 @@ function CheckoutSuccessContent() {
       <div className="max-w-md w-full bg-white rounded-2xl shadow-lg p-8 text-center">
         {verifying ? (
           <>
-            <div className="h-16 w-16 border-4 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto mb-6" />
+            <div className="h-16 w-16 border-4 border-[#9D174D] border-t-transparent rounded-full animate-spin mx-auto mb-6" />
             <h2 className="text-2xl font-bold text-gray-900 mb-2">Verifying Payment...</h2>
             <p className="text-gray-600">Please wait while we verify your payment</p>
           </>
@@ -107,14 +107,14 @@ function CheckoutSuccessContent() {
             <h2 className="text-2xl font-bold text-gray-900 mb-2">Payment Successful!</h2>
             <p className="text-gray-600 mb-6">Your order has been confirmed</p>
             {orderId && (
-              <div className="bg-purple-50 rounded-xl p-4 mb-6">
+              <div className="bg-[#FDF2F8] rounded-xl p-4 mb-6">
                 <p className="text-sm text-gray-600 mb-1">Order ID</p>
-                <p className="text-lg font-bold text-purple-600">{orderId}</p>
+                <p className="text-lg font-bold text-[#881337]">{orderId}</p>
               </div>
             )}
             <Link
               href="/dashboard/orders"
-              className="inline-block w-full px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl hover:from-purple-700 hover:to-pink-700 font-semibold transition-all"
+              className="inline-block w-full px-6 py-3 bg-[#881337] text-white rounded-xl hover:bg-[#6E0F2C] font-semibold transition-all"
             >
               View Orders
             </Link>
@@ -132,7 +132,7 @@ function CheckoutSuccessContent() {
             <p className="text-gray-600 mb-6">Please contact support with your order details</p>
             <Link
               href="/dashboard/orders"
-              className="inline-block w-full px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl hover:from-purple-700 hover:to-pink-700 font-semibold transition-all mb-3"
+              className="inline-block w-full px-6 py-3 bg-[#881337] text-white rounded-xl hover:bg-[#6E0F2C] font-semibold transition-all mb-3"
             >
               View Orders
             </Link>
@@ -154,7 +154,7 @@ export default function CheckoutSuccessPage() {
     <Suspense fallback={
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center py-8 px-4">
         <div className="max-w-md w-full bg-white rounded-2xl shadow-lg p-8 text-center">
-          <div className="h-16 w-16 border-4 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto mb-6" />
+          <div className="h-16 w-16 border-4 border-[#9D174D] border-t-transparent rounded-full animate-spin mx-auto mb-6" />
           <h2 className="text-2xl font-bold text-gray-900 mb-2">Loading...</h2>
         </div>
       </div>

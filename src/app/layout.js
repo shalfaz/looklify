@@ -61,7 +61,7 @@ export const metadata = {
   alternates: {
     canonical: "https://looklify.com",
   },
-  themeColor: "#ffffff",
+  themeColor: "#FFFDFD",
   icons: {
     icon: '/favicon/face-mask.png',
     apple: '/favicon/face-mask.png',
@@ -81,7 +81,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon/Looklify favicon.jpg" type="image/jpeg" />
         <link rel="apple-touch-icon" href="/favicon/face-mask.png" />
         <link rel="canonical" href="https://looklify.com" />
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#FFFDFD" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -116,13 +116,13 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body
-        className="antialiased bg-white text-gray-900 transition-colors duration-300"
+        className="antialiased bg-[#FFFDFD] dark:bg-gray-950 text-[#1F2937] dark:text-gray-100 transition-colors duration-300"
       >
         <AuthSessionProvider>
           <AuthProvider>
             <CartProvider>
               <WishlistProvider>
-                <div className="min-h-screen flex flex-col bg-white transition-colors duration-300 w-full overflow-x-hidden">
+                <div className="min-h-screen flex flex-col bg-[#FFFDFD] dark:bg-gray-950 transition-colors duration-300 w-full overflow-x-hidden">
                   <LayoutWrapper>
                     {children}
                   </LayoutWrapper>

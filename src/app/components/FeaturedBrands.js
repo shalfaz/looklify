@@ -63,19 +63,19 @@ export default function FeaturedBrands() {
 
   if (loading) {
     return (
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-[#F9F5F6] dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-10">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 relative">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1F2937] dark:text-gray-100 mb-3 sm:mb-4 relative">
               <span className="font-bold">Shop From Brands</span>
-              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 sm:w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 sm:w-24 h-1 bg-[#881337] rounded-full"></div>
             </h2>
           </div>
           <div className="relative overflow-hidden">
             <div className="flex gap-4 overflow-hidden">
               {[...Array(7)].map((_, index) => (
-                <div key={index} className="w-32 h-32 sm:w-40 sm:h-40 bg-white rounded-xl border border-gray-200 animate-pulse flex-shrink-0">
-                  <div className="w-full h-full bg-gray-200 rounded-xl"></div>
+                <div key={index} className="w-32 h-32 sm:w-40 sm:h-40 bg-white dark:bg-gray-800 rounded-xl border border-[#F1E8EC] dark:border-gray-700 animate-pulse flex-shrink-0">
+                  <div className="w-full h-full bg-[#F3E8EE] dark:bg-gray-700 rounded-xl"></div>
                 </div>
               ))}
             </div>
@@ -91,13 +91,13 @@ export default function FeaturedBrands() {
   }
 
   return (
-    <section className="py-10 sm:py-16 bg-white">
+    <section className="py-10 sm:py-16 bg-[#F9F5F6] dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-10">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 relative">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1F2937] dark:text-gray-100 mb-3 sm:mb-4 relative">
             <span className="font-bold">Shop From Brands</span>
-            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 sm:w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 sm:w-24 h-1 bg-[#881337] rounded-full"></div>
           </h2>
         </div>
 
@@ -117,29 +117,20 @@ export default function FeaturedBrands() {
             }}
           >
             {featuredBrands.map((brand, index) => {
-              // Different gradient colors for each card
-              const gradientColors = [
-                'from-purple-500 via-pink-500 to-red-500',
-                'from-blue-500 via-purple-500 to-pink-500',
-                'from-pink-500 via-red-500 to-orange-500',
-                'from-purple-500 via-indigo-500 to-blue-500',
-                'from-pink-500 via-purple-500 to-indigo-500',
-                'from-orange-500 via-pink-500 to-purple-500',
-                'from-blue-500 via-cyan-500 to-teal-500',
+              // Subtle refined neutral/blush border tones for each card
+              const borderColors = [
+                'border-[#F1E8EC] hover:border-[#FBCFE8]',
+                'border-[#F1E8EC] hover:border-[#D94E67]/50',
+                'border-[#F1E8EC] hover:border-[#B08968]/60',
               ];
-              const gradientColor = gradientColors[index % gradientColors.length];
+              const borderColor = borderColors[index % borderColors.length];
               
               return (
                 <Link
                   key={brand._id}
                   href={`/shop?brand=${brand.slug || brand._id}`}
-                  className="group relative rounded-xl bg-white overflow-hidden flex items-center justify-center w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 flex-shrink-0"
+                  className={`group relative rounded-xl bg-white dark:bg-gray-800 border ${borderColor} dark:border-gray-700 hover:shadow-md transition-all duration-300 overflow-hidden flex items-center justify-center w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 flex-shrink-0`}
                 >
-                  {/* Gradient border wrapper */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${gradientColor} rounded-xl p-[1px] opacity-60`}>
-                    <div className="w-full h-full bg-white rounded-xl"></div>
-                  </div>
-                  
                   {/* Brand Logo - exact same structure as brands page */}
                   <div className="relative w-full h-full flex items-center justify-center p-3 z-10">
                     {brand.logo?.url ? (
@@ -154,11 +145,11 @@ export default function FeaturedBrands() {
                         />
                       </div>
                     ) : (
-                      <div className="w-full h-full bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg flex flex-col items-center justify-center">
-                        <span className="text-2xl sm:text-3xl font-bold text-gray-400 mb-1">
+                      <div className="w-full h-full bg-[#FDF2F8] dark:bg-gray-700 rounded-lg flex flex-col items-center justify-center">
+                        <span className="text-2xl sm:text-3xl font-bold text-[#9D174D]/60 mb-1">
                           {brand.name?.charAt(0)?.toUpperCase() || '?'}
                         </span>
-                        <span className="text-xs sm:text-sm font-medium text-gray-700 line-clamp-1 px-2">
+                        <span className="text-xs sm:text-sm font-medium text-[#1F2937] dark:text-gray-200 line-clamp-1 px-2">
                           {brand.name}
                         </span>
                       </div>
@@ -174,7 +165,7 @@ export default function FeaturedBrands() {
         <div className="text-center mt-8">
           <Link
             href="/brands"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl hover:from-purple-700 hover:to-pink-700 font-semibold text-base sm:text-lg transition-all transform hover:scale-105 shadow-lg"
+            className="inline-flex items-center gap-2 px-8 py-3 bg-[#881337] text-white rounded-xl hover:bg-[#6E0F2C] font-semibold text-base sm:text-lg transition-all transform hover:scale-105 shadow-md"
           >
             <span>View All Brands</span>
             <svg 

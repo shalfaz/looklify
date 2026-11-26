@@ -146,7 +146,7 @@ export default function OffersPage() {
           `,
           icon: 'warning',
           confirmButtonText: 'OK',
-          confirmButtonColor: '#7c3aed',
+          confirmButtonColor: '#881337',
           background: '#f8fafc',
           color: '#1f2937'
         });
@@ -168,7 +168,7 @@ export default function OffersPage() {
         `,
         icon: 'warning',
         confirmButtonText: 'OK',
-        confirmButtonColor: '#7c3aed',
+        confirmButtonColor: '#881337',
         background: '#f8fafc',
         color: '#1f2937'
       });
@@ -196,43 +196,43 @@ export default function OffersPage() {
 
   if (loading && products.length === 0) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50 flex items-center justify-center">
+      <div className="min-h-screen bg-[#F9F5F6] dark:bg-gray-950 flex items-center justify-center">
         <div className="text-center">
-          <div className="h-12 w-12 border-4 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto" />
-          <p className="mt-4 text-gray-600">Loading offers...</p>
+          <div className="h-12 w-12 border-4 border-[#881337] border-t-transparent rounded-full animate-spin mx-auto" />
+          <p className="mt-4 text-[#6B7280]">Loading offers...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50">
+    <div className="min-h-screen bg-[#F9F5F6] dark:bg-gray-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8 text-center">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 relative">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1F2937] dark:text-gray-100 mb-3 relative">
             Products on Offer
-            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1.5 bg-[#881337] rounded-full"></div>
           </h1>
-          <p className="text-sm sm:text-base text-gray-600 mt-4">
+          <p className="text-sm sm:text-base text-[#6B7280] dark:text-gray-400 mt-4">
             Discover amazing deals and discounts on our best products
           </p>
         </div>
 
         {/* Sort Options */}
-        <div className="flex justify-between items-center mb-6 bg-white rounded-lg p-4 shadow-sm">
-          <p className="text-sm text-gray-600">
-            <span className="font-semibold text-purple-600">{pagination.totalCount}</span> products on offer
+        <div className="flex justify-between items-center mb-6 bg-white dark:bg-gray-900 border border-[#F1E8EC] dark:border-gray-800 rounded-lg p-4 shadow-sm">
+          <p className="text-sm text-[#6B7280] dark:text-gray-400">
+            <span className="font-semibold text-[#881337] dark:text-[#FBCFE8]">{pagination.totalCount}</span> products on offer
           </p>
           <div className="flex items-center space-x-2">
-            <label className="text-sm text-gray-700 font-medium">Sort by:</label>
+            <label className="text-sm text-[#1F2937] dark:text-gray-200 font-medium">Sort by:</label>
             <select
               value={sortBy}
               onChange={(e) => {
                 setSortBy(e.target.value);
                 setPagination(prev => ({ ...prev, currentPage: 1 }));
               }}
-              className="px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              className="px-3 py-2 text-sm border border-[#F1E8EC] dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#9D174D] focus:border-transparent bg-white dark:bg-gray-800 text-[#1F2937] dark:text-gray-100"
             >
               <option value="discount-desc">Highest Discount</option>
               <option value="discount-asc">Lowest Discount</option>
@@ -245,29 +245,29 @@ export default function OffersPage() {
 
         {/* Products Grid */}
         {error ? (
-          <div className="text-center py-12 bg-white rounded-lg shadow-sm">
-            <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-3">
+          <div className="text-center py-12 bg-white dark:bg-gray-900 rounded-lg border border-[#F1E8EC] dark:border-gray-800 shadow-sm">
+            <div className="w-16 h-16 bg-[#FDF2F8] rounded-full flex items-center justify-center mx-auto mb-3">
               ⚠️
             </div>
-            <h3 className="text-lg font-medium text-gray-900 mb-1">Something went wrong</h3>
-            <p className="text-sm text-gray-500 mb-4">{error}</p>
+            <h3 className="text-lg font-medium text-[#1F2937] dark:text-gray-100 mb-1">Something went wrong</h3>
+            <p className="text-sm text-[#6B7280] mb-4">{error}</p>
             <button
               onClick={fetchOfferProducts}
-              className="px-4 py-2 text-sm bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700"
+              className="px-4 py-2 text-sm bg-[#881337] text-white rounded-lg hover:bg-[#6E0F2C]"
             >
               Try Again
             </button>
           </div>
         ) : products.length === 0 ? (
-          <div className="text-center py-12 bg-white rounded-lg shadow-sm">
-            <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-3">
+          <div className="text-center py-12 bg-white dark:bg-gray-900 rounded-lg border border-[#F1E8EC] dark:border-gray-800 shadow-sm">
+            <div className="w-16 h-16 bg-[#FDF2F8] rounded-full flex items-center justify-center mx-auto mb-3">
               🎁
             </div>
-            <h3 className="text-lg font-medium text-gray-900 mb-1">No offers available</h3>
-            <p className="text-sm text-gray-500 mb-4">Check back later for amazing deals!</p>
+            <h3 className="text-lg font-medium text-[#1F2937] dark:text-gray-100 mb-1">No offers available</h3>
+            <p className="text-sm text-[#6B7280] mb-4">Check back later for amazing deals!</p>
             <Link
               href="/shop"
-              className="inline-block px-4 py-2 text-sm bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700"
+              className="inline-block px-4 py-2 text-sm bg-[#881337] text-white rounded-lg hover:bg-[#6E0F2C]"
             >
               Browse All Products
             </Link>
@@ -283,7 +283,7 @@ export default function OffersPage() {
                 const regularPrice = getRegularPrice(product);
 
                 return (
-                  <div key={product._id} className="bg-white rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 border-2 border-purple-200 group">
+                  <div key={product._id} className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 border border-[#F1E8EC] dark:border-gray-800 hover:border-[#FBCFE8] group">
                     <div className="relative">
                       <Link href={`/shop/${product._id}`}>
                         <Image
@@ -295,10 +295,10 @@ export default function OffersPage() {
                         />
                       </Link>
 
-                      {/* Discount Badge - Prominent for offers */}
+                      {/* Discount Badge - Warm Champagne Gold */}
                       {discountPercentage > 0 && (
                         <div className="absolute top-3 right-3 z-10">
-                          <span className="px-3 py-1.5 text-sm font-bold bg-gradient-to-r from-red-600 to-pink-600 text-white rounded-full shadow-lg animate-pulse">
+                          <span className="px-3 py-1.5 text-sm font-bold bg-[#B08968] text-white rounded-full shadow-sm">
                             {discountPercentage}% OFF
                           </span>
                         </div>
@@ -306,7 +306,7 @@ export default function OffersPage() {
                     </div>
 
                     <div className="p-4">
-                      <h3 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base line-clamp-2 leading-tight min-h-[40px] group-hover:text-purple-600 transition-colors">
+                      <h3 className="font-semibold text-[#1F2937] dark:text-gray-100 mb-2 text-sm sm:text-base line-clamp-2 leading-tight min-h-[40px] group-hover:text-[#881337] dark:group-hover:text-[#FBCFE8] transition-colors">
                         <Link href={`/shop/${product._id}`}>
                           {product.name}
                         </Link>
@@ -314,11 +314,11 @@ export default function OffersPage() {
 
                       <div className="flex items-center justify-between mb-3">
                         <div className="flex items-center space-x-2 flex-wrap">
-                          <span className="text-lg sm:text-xl font-bold text-red-600">
+                          <span className="text-lg sm:text-xl font-bold text-[#881337] dark:text-[#FBCFE8]">
                             {formatPrice(displayPrice)}
                           </span>
                           {regularPrice && regularPrice > displayPrice && (
-                            <span className="text-xs sm:text-sm text-gray-500 line-through">
+                            <span className="text-xs sm:text-sm text-[#6B7280] dark:text-gray-400 line-through">
                               {formatPrice(regularPrice)}
                             </span>
                           )}
@@ -335,8 +335,8 @@ export default function OffersPage() {
                           aria-label="wishlist"
                           className={`w-9 h-9 rounded-full border flex items-center justify-center transition-colors flex-shrink-0 ${
                             isInWishlist(product._id)
-                              ? 'text-red-500 border-red-200 bg-red-50'
-                              : 'text-gray-500 border-gray-200 hover:text-red-500 hover:border-red-300'
+                              ? 'text-[#D94E67] border-[#FBCFE8] bg-[#FDF2F8] dark:bg-[#881337]/30 dark:border-[#9D174D]'
+                              : 'text-[#6B7280] border-[#F1E8EC] dark:border-gray-700 hover:text-[#D94E67] hover:border-[#FBCFE8]'
                           }`}
                         >
                           <svg className={`w-5 h-5 ${isInWishlist(product._id) ? 'fill-current' : 'stroke-current'}`} fill={isInWishlist(product._id) ? 'currentColor' : 'none'} stroke="currentColor" viewBox="0 0 24 24">
@@ -350,13 +350,13 @@ export default function OffersPage() {
                         <div className="flex gap-2">
                           <button
                             onClick={() => handleAddToCart(product)}
-                            className="flex-1 py-2.5 rounded-full border-2 border-purple-600 text-purple-600 bg-white font-semibold hover:bg-purple-50 transition-colors text-xs sm:text-sm"
+                            className="flex-1 py-2.5 rounded-full border border-[#9D174D] text-[#881337] dark:text-[#FBCFE8] dark:border-[#D94E67] bg-white dark:bg-transparent font-semibold hover:bg-[#FDF2F8] dark:hover:bg-[#881337]/20 transition-colors text-xs sm:text-sm"
                           >
                             Add to Cart
                           </button>
                           <button
                             onClick={() => handleBuyNow(product)}
-                            className="flex-1 py-2.5 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold hover:from-purple-700 hover:to-pink-700 transition-colors text-xs sm:text-sm"
+                            className="flex-1 py-2.5 rounded-full bg-[#D94E67] text-white font-semibold hover:bg-[#C43D56] transition-colors text-xs sm:text-sm"
                           >
                             Buy Now
                           </button>
@@ -375,7 +375,7 @@ export default function OffersPage() {
                   <button
                     onClick={() => setPagination(prev => ({ ...prev, currentPage: Math.max(1, prev.currentPage - 1) }))}
                     disabled={pagination.currentPage === 1}
-                    className="px-4 py-2 text-sm border border-gray-300 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors"
+                    className="px-4 py-2 text-sm border border-[#F1E8EC] dark:border-gray-700 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#FDF2F8] dark:hover:bg-gray-800 transition-colors"
                   >
                     Previous
                   </button>
@@ -399,8 +399,8 @@ export default function OffersPage() {
                           onClick={() => setPagination(prev => ({ ...prev, currentPage: pageNum }))}
                           className={`px-4 py-2 text-sm rounded-lg transition-colors ${
                             pagination.currentPage === pageNum
-                              ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg'
-                              : 'border border-gray-300 hover:bg-gray-50'
+                              ? 'bg-[#881337] text-white shadow-sm'
+                              : 'border border-[#F1E8EC] dark:border-gray-700 hover:bg-[#FDF2F8] dark:hover:bg-gray-800'
                           }`}
                         >
                           {pageNum}
@@ -412,7 +412,7 @@ export default function OffersPage() {
                   <button
                     onClick={() => setPagination(prev => ({ ...prev, currentPage: Math.min(prev.totalPages, prev.currentPage + 1) }))}
                     disabled={pagination.currentPage === pagination.totalPages}
-                    className="px-4 py-2 text-sm border border-gray-300 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors"
+                    className="px-4 py-2 text-sm border border-[#F1E8EC] dark:border-gray-700 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#FDF2F8] dark:hover:bg-gray-800 transition-colors"
                   >
                     Next
                   </button>

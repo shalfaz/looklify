@@ -147,7 +147,7 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100 flex items-center justify-center px-4 py-12">
+    <div className="min-h-screen bg-[#FFFDFD] flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Left Side - Lottie Animation */}
@@ -211,7 +211,7 @@ export default function SignupPage() {
                     autoComplete="given-name"
                     value={formData.firstName}
                     onChange={handleChange}
-                    className={`block w-full px-3 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors ${
+                    className={`block w-full px-3 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#9D174D] focus:border-transparent transition-colors ${
                       errors.firstName ? 'border-red-300' : 'border-gray-300'
                     }`}
                     placeholder="John"
@@ -232,7 +232,7 @@ export default function SignupPage() {
                     autoComplete="family-name"
                     value={formData.lastName}
                     onChange={handleChange}
-                    className={`block w-full px-3 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors ${
+                    className={`block w-full px-3 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#9D174D] focus:border-transparent transition-colors ${
                       errors.lastName ? 'border-red-300' : 'border-gray-300'
                     }`}
                     placeholder="Doe"
@@ -255,7 +255,7 @@ export default function SignupPage() {
                   autoComplete="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`block w-full px-3 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors ${
+                  className={`block w-full px-3 py-2.5 text-sm border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#9D174D] focus:border-transparent transition-colors ${
                     errors.email ? 'border-red-300' : 'border-gray-300'
                   }`}
                   placeholder="john@example.com"
@@ -278,7 +278,7 @@ export default function SignupPage() {
                     autoComplete="new-password"
                     value={formData.password}
                     onChange={handleChange}
-                    className={`block w-full px-3 py-2.5 pr-10 text-sm border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors ${
+                    className={`block w-full px-3 py-2.5 pr-10 text-sm border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#9D174D] focus:border-transparent transition-colors ${
                       errors.password ? 'border-red-300' : 'border-gray-300'
                     }`}
                     placeholder="Create a strong password"
@@ -318,7 +318,7 @@ export default function SignupPage() {
                     autoComplete="new-password"
                     value={formData.confirmPassword}
                     onChange={handleChange}
-                    className={`block w-full px-3 py-2.5 pr-10 text-sm border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors ${
+                    className={`block w-full px-3 py-2.5 pr-10 text-sm border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#9D174D] focus:border-transparent transition-colors ${
                       errors.confirmPassword ? 'border-red-300' : 'border-gray-300'
                     }`}
                     placeholder="Confirm your password"
@@ -353,15 +353,15 @@ export default function SignupPage() {
                   type="checkbox"
                   checked={formData.agreeToTerms}
                   onChange={handleChange}
-                  className="h-3.5 w-3.5 text-purple-600 focus:ring-purple-500 border-gray-300 rounded mt-0.5"
+                  className="h-3.5 w-3.5 text-[#881337] focus:ring-[#9D174D] border-gray-300 rounded mt-0.5"
                 />
                 <label htmlFor="agreeToTerms" className="ml-2 block text-xs text-gray-700">
                   I agree to the{' '}
-                  <Link href="/terms" className="text-purple-600 hover:text-purple-500">
+                  <Link href="/terms" className="text-[#881337] hover:text-[#9D174D]">
                     Terms of Service
                   </Link>
                   {' '}and{' '}
-                  <Link href="/privacy" className="text-purple-600 hover:text-purple-500">
+                  <Link href="/privacy" className="text-[#881337] hover:text-[#9D174D]">
                     Privacy Policy
                   </Link>
                 </label>
@@ -374,7 +374,7 @@ export default function SignupPage() {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="group relative w-full flex justify-center py-2.5 px-4 text-sm font-medium rounded-lg text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="group relative w-full flex justify-center py-2.5 px-4 text-sm font-medium rounded-lg text-white bg-[#881337] hover:bg-[#6E0F2C] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#9D174D] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
                 {isLoading ? (
                   <div className="flex items-center">
@@ -405,7 +405,7 @@ export default function SignupPage() {
             <div className="mt-6 text-center">
               <p className="text-xs text-gray-600">
                 Already have an account?{' '}
-                <Link href="/login" className="font-medium text-purple-600 hover:text-purple-500 transition-colors">
+                <Link href="/login" className="font-medium text-[#881337] hover:text-[#9D174D] transition-colors">
                   Sign in
                 </Link>
               </p>

@@ -160,7 +160,7 @@ export default function MobileBottomNav() {
   };
 
   return (
-    <nav className="fixed inset-x-0 bottom-0 z-40 border-t border-purple-100 bg-white/95 backdrop-blur-md shadow-[0_-6px_15px_rgba(0,0,0,0.08)] lg:hidden">
+    <nav className="fixed inset-x-0 bottom-0 z-40 border-t border-[#F3E8EE] dark:border-gray-800 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-[0_-6px_15px_rgba(0,0,0,0.06)] lg:hidden">
       <ul className="flex items-center justify-around px-2 py-2">
         {navItems.map((item) => {
           const isActive =
@@ -175,19 +175,19 @@ export default function MobileBottomNav() {
                 <button
                   onClick={item.onClick}
                   className={`group flex flex-col items-center gap-1 rounded-xl px-1 py-1 text-[11px] font-semibold transition-all w-full ${
-                    isActive ? 'text-purple-600' : 'text-gray-600'
+                    isActive ? 'text-[#881337] dark:text-[#FBCFE8]' : 'text-[#6B7280] dark:text-gray-400'
                   }`}
                 >
                   <span
                     className={`relative flex h-10 w-10 items-center justify-center rounded-full border ${
                       isActive
-                        ? 'border-purple-200 bg-purple-50 text-purple-600'
-                        : 'border-transparent bg-gray-50 text-gray-600'
+                        ? 'border-[#FBCFE8] bg-[#FDF2F8] text-[#881337] dark:border-[#9D174D] dark:bg-[#881337]/30 dark:text-[#FBCFE8]'
+                        : 'border-transparent bg-[#F9F5F6] dark:bg-gray-800 text-[#6B7280] dark:text-gray-400'
                     }`}
                   >
                     {item.icon}
                     {badgeValue > 0 && (
-                      <span className="absolute -top-1 -right-1 rounded-full bg-red-500 px-1.5 text-[10px] font-bold leading-none text-white">
+                      <span className="absolute -top-1 -right-1 rounded-full bg-[#D94E67] px-1.5 text-[10px] font-bold leading-none text-white">
                         {badgeValue}
                       </span>
                     )}
@@ -198,19 +198,19 @@ export default function MobileBottomNav() {
                 <Link
                   href={item.href}
                   className={`group flex flex-col items-center gap-1 rounded-xl px-1 py-1 text-[11px] font-semibold transition-all ${
-                    isActive ? 'text-purple-600' : 'text-gray-600'
+                    isActive ? 'text-[#881337] dark:text-[#FBCFE8]' : 'text-[#6B7280] dark:text-gray-400'
                   }`}
                 >
                   <span
                     className={`relative flex h-10 w-10 items-center justify-center rounded-full border ${
                       isActive
-                        ? 'border-purple-200 bg-purple-50 text-purple-600'
-                        : 'border-transparent bg-gray-50 text-gray-600'
+                        ? 'border-[#FBCFE8] bg-[#FDF2F8] text-[#881337] dark:border-[#9D174D] dark:bg-[#881337]/30 dark:text-[#FBCFE8]'
+                        : 'border-transparent bg-[#F9F5F6] dark:bg-gray-800 text-[#6B7280] dark:text-gray-400'
                     }`}
                   >
                     {item.icon}
                     {badgeValue > 0 && (
-                      <span className="absolute -top-1 -right-1 rounded-full bg-red-500 px-1.5 text-[10px] font-bold leading-none text-white">
+                      <span className="absolute -top-1 -right-1 rounded-full bg-[#D94E67] px-1.5 text-[10px] font-bold leading-none text-white">
                         {badgeValue}
                       </span>
                     )}

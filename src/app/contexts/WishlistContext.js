@@ -46,7 +46,7 @@ export function WishlistProvider({ children }) {
         text: 'Please login to add items to your wishlist',
         icon: 'info',
         showCancelButton: true,
-        confirmButtonColor: '#7c3aed',
+        confirmButtonColor: '#881337',
         cancelButtonColor: '#6b7280',
         confirmButtonText: 'Go to Login',
         cancelButtonText: 'Cancel',
@@ -109,7 +109,7 @@ export function WishlistProvider({ children }) {
             color: '#1f2937',
             customClass: {
               popup: 'swal2-toast',
-              title: 'text-purple-600 font-semibold',
+              title: 'text-[#881337] font-semibold',
               content: 'text-gray-600'
             }
           });

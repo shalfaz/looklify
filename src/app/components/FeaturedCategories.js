@@ -82,17 +82,17 @@ export default function FeaturedCategories() {
 
   if (loading) {
     return (
-      <section className="pt-4 sm:pt-6 pb-16 bg-gray-50">
+      <section className="pt-4 sm:pt-6 pb-16 bg-[#FFFDFD] dark:bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">Featured Categories</h2>
+            <h2 className="text-3xl font-bold text-[#1F2937] dark:text-gray-100 mb-2">Featured Categories</h2>
           </div>
           <div className="relative overflow-hidden">
             <div className="flex gap-3 sm:gap-4 overflow-hidden">
               {[...Array(8)].map((_, index) => (
-                <div key={index} className="min-w-[104px] sm:min-w-[120px] bg-white rounded-xl p-4 text-center animate-pulse">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-200 rounded-full mx-auto mb-2"></div>
-                  <div className="h-3 bg-gray-200 rounded w-16 mx-auto"></div>
+                <div key={index} className="min-w-[104px] sm:min-w-[120px] bg-[#FDF2F8] dark:bg-gray-800 rounded-xl p-4 text-center animate-pulse border border-[#FBCFE8] dark:border-gray-700">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#F3E8EE] dark:bg-gray-700 rounded-full mx-auto mb-2"></div>
+                  <div className="h-3 bg-[#F3E8EE] dark:bg-gray-700 rounded w-16 mx-auto"></div>
                 </div>
               ))}
             </div>
@@ -103,12 +103,12 @@ export default function FeaturedCategories() {
   }
 
   return (
-    <section className="pt-6 sm:pt-8 pb-12 sm:pb-16 bg-gradient-to-br from-gray-50 to-purple-50">
+    <section className="pt-6 sm:pt-8 pb-12 sm:pb-16 bg-[#FFFDFD] dark:bg-gray-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         <div className="text-center mb-3 sm:mb-4">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 relative">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1F2937] dark:text-gray-100 mb-3 sm:mb-4 relative">
             Featured Categories
-            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 sm:w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 sm:w-24 h-1 bg-[#881337] rounded-full"></div>
           </h2>
         </div>
 
@@ -131,9 +131,9 @@ export default function FeaturedCategories() {
               <Link
                 key={category._id || category.name}
                 href={`/shop?category=${category.slug}`}
-                className="group bg-white rounded-xl p-3 sm:p-4 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-[#7c52c5]/70 hover:border-[#7c52c5] relative overflow-hidden min-w-[104px] sm:min-w-[120px] flex-shrink-0"
+                className="group bg-[#FDF2F8] dark:bg-gray-800 rounded-xl p-3 sm:p-4 text-center hover:shadow-md transition-all duration-300 hover:-translate-y-1 border border-[#FBCFE8] hover:border-[#D94E67] dark:border-gray-700 relative overflow-hidden min-w-[104px] sm:min-w-[120px] flex-shrink-0"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-[#FCE7F3]/50 dark:bg-[#881337]/15 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300 relative">
                     {category.image?.url ? (
@@ -145,16 +145,16 @@ export default function FeaturedCategories() {
                         sizes="(max-width: 768px) 40px, 48px"
                       />
                     ) : (
-                      <div className="w-full h-full bg-gradient-to-br from-purple-100 to-pink-100 rounded-full flex items-center justify-center text-xl sm:text-2xl">
+                      <div className="w-full h-full bg-[#FCE7F3] dark:bg-gray-700 rounded-full flex items-center justify-center text-xl sm:text-2xl">
                         {category.icon || '✨'}
                       </div>
                     )}
                   </div>
-                  <h3 className="font-semibold text-gray-900 group-hover:text-purple-600 transition-colors text-xs sm:text-sm truncate">
+                  <h3 className="font-semibold text-[#1F2937] dark:text-gray-100 group-hover:text-[#881337] dark:group-hover:text-[#FBCFE8] transition-colors text-xs sm:text-sm truncate">
                     {category.name}
                   </h3>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                <div className="absolute inset-0 bg-[#881337]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
               </Link>
             ))}
           </div>

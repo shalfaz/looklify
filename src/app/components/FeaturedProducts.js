@@ -38,7 +38,7 @@ function ProductImage({ src, alt, className, onError }) {
 
   if (hasError || !imgSrc || imgSrc === '/slider/1.webp') {
     return (
-      <div className={`w-full h-full bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center text-6xl ${className}`}>
+      <div className={`w-full h-full bg-[#FDF2F8] flex items-center justify-center text-6xl ${className}`}>
         📦
       </div>
     );
@@ -200,20 +200,20 @@ export default function FeaturedProducts() {
 
   if (loading) {
     return (
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-[#FFFDFD] dark:bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Featured Products</h2>
+            <h2 className="text-3xl font-bold text-[#1F2937] dark:text-gray-100 mb-4">Featured Products</h2>
           </div>
           
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
             {[...Array(8)].map((_, index) => (
-              <div key={index} className="bg-white rounded-xl border border-gray-200 overflow-hidden animate-pulse">
-                <div className="w-full h-48 bg-gray-200"></div>
+              <div key={index} className="bg-white dark:bg-gray-900 rounded-xl border border-[#F1E8EC] dark:border-gray-800 overflow-hidden animate-pulse">
+                <div className="w-full h-48 bg-[#F9F5F6] dark:bg-gray-800"></div>
                 <div className="p-4">
-                  <div className="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
-                  <div className="h-3 bg-gray-200 rounded w-1/2 mb-3"></div>
-                  <div className="h-6 bg-gray-200 rounded w-1/3"></div>
+                  <div className="h-4 bg-[#F3E8EE] dark:bg-gray-800 rounded w-3/4 mb-2"></div>
+                  <div className="h-3 bg-[#F3E8EE] dark:bg-gray-800 rounded w-1/2 mb-3"></div>
+                  <div className="h-6 bg-[#F3E8EE] dark:bg-gray-800 rounded w-1/3"></div>
                 </div>
               </div>
             ))}
@@ -229,16 +229,16 @@ export default function FeaturedProducts() {
 
   return (
     <section 
-      className="py-12 sm:py-16 bg-white"
+      className="py-12 sm:py-16 bg-[#FFFDFD] dark:bg-gray-950"
       onContextMenu={(e) => e.preventDefault()}
       onDragStart={(e) => e.preventDefault()}
       style={{ userSelect: 'none', WebkitUserSelect: 'none' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 relative">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1F2937] dark:text-gray-100 mb-3 sm:mb-4 relative">
             Featured Products
-            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 sm:w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 sm:w-24 h-1 bg-[#881337] rounded-full"></div>
           </h2>
         </div>
         
@@ -253,7 +253,7 @@ export default function FeaturedProducts() {
             return (
               <div
                 key={product._id}
-                className="group bg-white rounded-xl border border-[#7c52c5] overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="group bg-white dark:bg-gray-900 rounded-xl border border-[#F1E8EC] dark:border-gray-800 hover:border-[#FBCFE8] dark:hover:border-[#9D174D]/50 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
               >
                 {/* Product Image Container with white background */}
                 <div 
@@ -280,10 +280,10 @@ export default function FeaturedProducts() {
                       }}
                     />
                   </Link>
-                  {/* Discount Badge - red oval top-right */}
+                  {/* Discount Badge - warm champagne gold top-right */}
                   {discount > 0 && (
                     <div className="absolute top-2 right-2 z-10">
-                      <span className="px-2.5 py-1.5 text-xs sm:text-sm font-bold bg-red-600 text-white rounded-full shadow-lg">
+                      <span className="px-2.5 py-1.5 text-xs sm:text-sm font-bold bg-[#B08968] text-white rounded-full shadow-sm">
                         {discount}% OFF
                       </span>
                     </div>
@@ -293,8 +293,8 @@ export default function FeaturedProducts() {
                 {/* Product Info */}
                 <div className="p-2 sm:p-3 lg:p-3">
                   {/* Product Name */}
-                  <h3 className="font-semibold text-gray-900 mb-1.5 sm:mb-2 line-clamp-2 group-hover:text-purple-600 transition-colors text-xs sm:text-sm lg:text-sm min-h-[32px] sm:min-h-[36px]">
-                    <Link href={`/shop/${product._id}`} className="hover:text-purple-600 transition-colors">
+                  <h3 className="font-semibold text-[#1F2937] dark:text-gray-100 mb-1.5 sm:mb-2 line-clamp-2 group-hover:text-[#881337] dark:group-hover:text-[#FBCFE8] transition-colors text-xs sm:text-sm lg:text-sm min-h-[32px] sm:min-h-[36px]">
+                    <Link href={`/shop/${product._id}`} className="hover:text-[#881337] dark:hover:text-[#FBCFE8] transition-colors">
                       {product.name}
                     </Link>
                   </h3>
@@ -302,11 +302,11 @@ export default function FeaturedProducts() {
                   {/* Price and Wishlist */}
                   <div className="flex items-center justify-between mb-1.5 sm:mb-2">
                     <div className="flex items-center gap-1 sm:gap-2 flex-wrap">
-                      <span className="text-xs sm:text-sm lg:text-sm xl:text-base font-bold text-gray-900">
+                      <span className="text-xs sm:text-sm lg:text-sm xl:text-base font-bold text-[#1F2937] dark:text-gray-100">
                         BDT {displayPrice}
                       </span>
                       {regularPrice && regularPrice > displayPrice && (
-                        <span className="text-[10px] sm:text-xs text-gray-500 line-through">
+                        <span className="text-[10px] sm:text-xs text-[#6B7280] dark:text-gray-400 line-through">
                           BDT {regularPrice}
                         </span>
                       )}
@@ -324,8 +324,8 @@ export default function FeaturedProducts() {
                       aria-label="wishlist"
                       className={`w-7 h-7 sm:w-8 sm:h-8 lg:w-8 lg:h-8 rounded-full border flex items-center justify-center transition-colors flex-shrink-0 ${
                         isInWishlist(product._id)
-                          ? 'text-red-500 border-red-200 bg-red-50'
-                          : 'text-gray-500 border-gray-200 hover:text-red-500 hover:border-red-300'
+                          ? 'text-[#D94E67] border-[#FBCFE8] bg-[#FDF2F8] dark:bg-[#881337]/30 dark:border-[#9D174D]'
+                          : 'text-[#6B7280] border-[#F1E8EC] dark:border-gray-700 hover:text-[#D94E67] hover:border-[#FBCFE8]'
                       }`}
                     >
                       <svg className={`w-4 h-4 sm:w-5 sm:h-5 lg:w-4 lg:h-4 ${isInWishlist(product._id) ? 'fill-current' : 'stroke-current'}`} fill={isInWishlist(product._id) ? 'currentColor' : 'none'} stroke="currentColor" viewBox="0 0 24 24">
@@ -357,8 +357,8 @@ export default function FeaturedProducts() {
                                 `,
                                 icon: 'warning',
                                 confirmButtonText: 'OK',
-                                confirmButtonColor: '#7c3aed',
-                                background: '#f8fafc',
+                                confirmButtonColor: '#881337',
+                                background: '#FFFDFD',
                                 color: '#1f2937'
                               });
                               return;
@@ -379,8 +379,8 @@ export default function FeaturedProducts() {
                               `,
                               icon: 'warning',
                               confirmButtonText: 'OK',
-                              confirmButtonColor: '#7c3aed',
-                              background: '#f8fafc',
+                              confirmButtonColor: '#881337',
+                              background: '#FFFDFD',
                               color: '#1f2937'
                             });
                             return;
@@ -395,11 +395,11 @@ export default function FeaturedProducts() {
                             showConfirmButton: false,
                             toast: true,
                             position: 'top-end',
-                            background: '#f8fafc',
+                            background: '#FFFDFD',
                             color: '#1f2937'
                           });
                         }}
-                        className="flex-1 py-2 sm:py-2.5 lg:py-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold hover:from-purple-700 hover:to-pink-700 transition-colors text-xs sm:text-sm lg:text-xs"
+                        className="flex-1 py-2 sm:py-2.5 lg:py-2 rounded-full border border-[#9D174D] bg-white dark:bg-transparent text-[#881337] dark:text-[#FBCFE8] dark:border-[#D94E67] font-semibold hover:bg-[#FDF2F8] dark:hover:bg-[#881337]/20 transition-colors text-xs sm:text-sm lg:text-xs"
                       >
                         Add to Cart
                       </button>
@@ -423,8 +423,8 @@ export default function FeaturedProducts() {
                                 `,
                                 icon: 'warning',
                                 confirmButtonText: 'OK',
-                                confirmButtonColor: '#7c3aed',
-                                background: '#f8fafc',
+                                confirmButtonColor: '#881337',
+                                background: '#FFFDFD',
                                 color: '#1f2937'
                               });
                               return;
@@ -445,8 +445,8 @@ export default function FeaturedProducts() {
                               `,
                               icon: 'warning',
                               confirmButtonText: 'OK',
-                              confirmButtonColor: '#7c3aed',
-                              background: '#f8fafc',
+                              confirmButtonColor: '#881337',
+                              background: '#FFFDFD',
                               color: '#1f2937'
                             });
                             return;
@@ -454,7 +454,7 @@ export default function FeaturedProducts() {
                           
                           router.push('/checkout');
                         }}
-                        className="flex-1 py-2 sm:py-2.5 lg:py-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold hover:from-purple-700 hover:to-pink-700 transition-colors text-xs sm:text-sm lg:text-xs"
+                        className="flex-1 py-2 sm:py-2.5 lg:py-2 rounded-full bg-[#D94E67] text-white font-semibold hover:bg-[#C43D56] transition-colors text-xs sm:text-sm lg:text-xs"
                       >
                         Buy Now
                       </button>
@@ -470,7 +470,7 @@ export default function FeaturedProducts() {
         <div className="text-center mt-8 sm:mt-12">
           <Link
             href="/shop?featured=true"
-            className="inline-flex items-center px-6 sm:px-8 py-2.5 sm:py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl hover:from-purple-700 hover:to-pink-700 font-semibold text-sm sm:text-base lg:text-lg transition-all transform hover:scale-105 shadow-lg"
+            className="inline-flex items-center px-6 sm:px-8 py-2.5 sm:py-3 bg-[#881337] text-white rounded-xl hover:bg-[#6E0F2C] font-semibold text-sm sm:text-base lg:text-lg transition-all transform hover:scale-105 shadow-md"
           >
             <span>View All Featured Products</span>
             <svg className="ml-2 w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

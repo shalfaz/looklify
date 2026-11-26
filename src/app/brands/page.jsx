@@ -77,15 +77,15 @@ export default function BrandsPage() {
   }
 
   return (
-    <section className="py-12 sm:py-16 bg-white">
+    <section className="py-12 sm:py-16 bg-[#FFFDFD] dark:bg-gray-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 relative">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1F2937] dark:text-gray-100 mb-3 sm:mb-4 relative">
             Shop From Brands
-            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 sm:w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full" />
+            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 sm:w-24 h-1 bg-[#881337] rounded-full" />
           </h1>
-          <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-[#6B7280] dark:text-gray-400 max-w-2xl mx-auto">
             Browse all our featured brands and explore products from your favorites.
           </p>
         </div>
@@ -96,9 +96,9 @@ export default function BrandsPage() {
             <Link
               key={brand._id}
               href={`/shop?brand=${brand.slug || brand._id}`}
-              className="group relative rounded-xl border border-[#7c52c5]/60 hover:border-[#7c52c5] bg-white overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex items-center justify-center h-28 sm:h-32"
+              className="group relative rounded-xl border border-[#F1E8EC] hover:border-[#FBCFE8] dark:border-gray-800 bg-white dark:bg-gray-900 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center h-28 sm:h-32"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-pink-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-[#FDF2F8]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
               <div className="relative w-full h-full flex items-center justify-center p-3">
                 {brand.logo?.url ? (

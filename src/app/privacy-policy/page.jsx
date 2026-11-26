@@ -123,7 +123,7 @@ export default function PrivacyPolicyPage() {
             However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to use 
             commercially acceptable means to protect your information, we cannot guarantee absolute security.
           </p>
-          <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 mt-4">
+          <div className="bg-[#FDF2F8] border border-[#FBCFE8] rounded-lg p-4 mt-4">
             <p className="text-sm text-gray-700">
               <strong>Note:</strong> You are responsible for maintaining the confidentiality of your account credentials. 
               Please do not share your password with anyone and notify us immediately if you suspect unauthorized access to your account.
@@ -285,16 +285,16 @@ export default function PrivacyPolicyPage() {
           <p className="text-gray-600 leading-relaxed">
             If you have any questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us:
           </p>
-          <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 space-y-2">
+          <div className="bg-[#FDF2F8] border border-[#FBCFE8] rounded-lg p-4 space-y-2">
             <p className="text-gray-700">
               <strong>Email:</strong>{' '}
-              <a href="mailto:looklify.official@gmail.com" className="text-purple-600 hover:text-purple-700">
+              <a href="mailto:looklify.official@gmail.com" className="text-[#881337] hover:text-[#881337]">
                 looklify.official@gmail.com
               </a>
             </p>
             <p className="text-gray-700">
               <strong>Phone:</strong>{' '}
-              <a href="tel:01866414126" className="text-purple-600 hover:text-purple-700">
+              <a href="tel:01866414126" className="text-[#881337] hover:text-[#881337]">
                 01866414126
               </a>
             </p>
@@ -304,7 +304,7 @@ export default function PrivacyPolicyPage() {
           </div>
           <p className="text-gray-600 leading-relaxed">
             You can also visit our{' '}
-            <Link href="/contact" className="text-purple-600 hover:text-purple-700 underline">
+            <Link href="/contact" className="text-[#881337] hover:text-[#881337] underline">
               Contact Us
             </Link>{' '}
             page for more ways to reach us.
@@ -317,10 +317,10 @@ export default function PrivacyPolicyPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50 border-b border-purple-100">
+      <div className="bg-[#FDF2F8] border-b border-[#F1E8EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl sm:text-5xl font-bold mb-4 bg-[#881337] bg-clip-text text-transparent">
               Privacy Policy
             </h1>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
@@ -363,7 +363,7 @@ export default function PrivacyPolicyPage() {
                 className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
               >
                 <h2 className="text-xl font-bold text-gray-900 flex items-center gap-3">
-                  <span className="w-8 h-8 bg-gradient-to-br from-purple-100 to-pink-100 rounded-lg flex items-center justify-center text-purple-600 font-semibold text-sm">
+                  <span className="w-8 h-8 bg-[#FDF2F8] rounded-lg flex items-center justify-center text-[#881337] font-semibold text-sm">
                     {index + 1}
                   </span>
                   {section.title}
@@ -389,7 +389,7 @@ export default function PrivacyPolicyPage() {
         </div>
 
         {/* Consent Section */}
-        <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl border border-purple-200 p-8 mb-12">
+        <div className="bg-[#FDF2F8] rounded-xl border border-[#FBCFE8] p-8 mb-12">
           <div className="text-center">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               Your Consent
@@ -401,13 +401,13 @@ export default function PrivacyPolicyPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-medium rounded-lg transition-all shadow-md hover:shadow-lg"
+                className="px-6 py-3 bg-[#881337] hover:bg-[#6E0F2C] text-white font-medium rounded-lg transition-all shadow-md hover:shadow-lg"
               >
                 Contact Us
               </Link>
               <Link
                 href="/terms-conditions"
-                className="px-6 py-3 bg-white border-2 border-purple-600 text-purple-600 font-medium rounded-lg hover:bg-purple-50 transition-all"
+                className="px-6 py-3 bg-white border-2 border-[#881337] text-[#881337] font-medium rounded-lg hover:bg-[#FDF2F8] transition-all"
               >
                 Terms & Conditions
               </Link>

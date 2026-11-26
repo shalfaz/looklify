@@ -103,26 +103,26 @@ export default function FeaturedBlogs() {
 
   if (loading) {
     return (
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#FFFDFD] dark:bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           <div className="flex items-center justify-between mb-10">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#1F2937] dark:text-gray-100 mb-2">
                 <span className="font-bold">Looklify</span>{' '}
-                <span className="font-bold text-purple-600">Blog Articles</span>
+                <span className="font-bold text-[#881337] dark:text-[#FBCFE8]">Blog Articles</span>
               </h2>
-              <div className="h-1 w-32 bg-purple-600 mt-2 rounded-full"></div>
+              <div className="h-1 w-32 bg-[#881337] mt-2 rounded-full"></div>
             </div>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 lg:gap-6">
             {[...Array(4)].map((_, index) => (
-              <div key={index} className="bg-white rounded-xl border border-[#7c52c5] animate-pulse overflow-hidden">
-                <div className="w-full h-32 sm:h-40 lg:h-48 bg-gray-200"></div>
+              <div key={index} className="bg-white dark:bg-gray-900 rounded-xl border border-[#F1E8EC] dark:border-gray-800 animate-pulse overflow-hidden">
+                <div className="w-full h-32 sm:h-40 lg:h-48 bg-[#F9F5F6] dark:bg-gray-800"></div>
                 <div className="p-2 sm:p-3 lg:p-4 space-y-2 sm:space-y-3">
-                  <div className="h-3 sm:h-4 bg-gray-200 rounded w-3/4"></div>
-                  <div className="h-4 sm:h-6 bg-gray-200 rounded w-full"></div>
-                  <div className="h-3 sm:h-4 bg-gray-200 rounded w-full"></div>
-                  <div className="h-3 sm:h-4 bg-gray-200 rounded w-2/3"></div>
+                  <div className="h-3 sm:h-4 bg-[#F3E8EE] dark:bg-gray-800 rounded w-3/4"></div>
+                  <div className="h-4 sm:h-6 bg-[#F3E8EE] dark:bg-gray-800 rounded w-full"></div>
+                  <div className="h-3 sm:h-4 bg-[#F3E8EE] dark:bg-gray-800 rounded w-full"></div>
+                  <div className="h-3 sm:h-4 bg-[#F3E8EE] dark:bg-gray-800 rounded w-2/3"></div>
                 </div>
               </div>
             ))}
@@ -148,7 +148,7 @@ export default function FeaturedBlogs() {
 
   return (
     <section 
-      className="py-12 sm:py-16 bg-gray-50"
+      className="py-12 sm:py-16 bg-[#FFFDFD] dark:bg-gray-950"
       onContextMenu={(e) => e.preventDefault()}
       onDragStart={(e) => e.preventDefault()}
       style={{ userSelect: 'none', WebkitUserSelect: 'none' }}
@@ -156,9 +156,9 @@ export default function FeaturedBlogs() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         {/* Header - centered like FeaturedProducts */}
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 relative">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1F2937] dark:text-gray-100 mb-3 sm:mb-4 relative">
             <span className="font-bold">Looklify Blog Articles</span>{' '}
-            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 sm:w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 sm:w-24 h-1 bg-[#881337] rounded-full"></div>
           </h2>
         </div>
 
@@ -168,7 +168,7 @@ export default function FeaturedBlogs() {
             <Link
               key={blog._id}
               href={`/blog/${blog.slug}`}
-              className="group bg-white rounded-xl border border-[#7c52c5] hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col"
+              className="group bg-white dark:bg-gray-900 rounded-xl border border-[#F1E8EC] dark:border-gray-800 hover:border-[#FBCFE8] dark:hover:border-[#9D174D]/50 hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col"
             >
               {/* Featured Image */}
               <div 
@@ -196,8 +196,8 @@ export default function FeaturedBlogs() {
                     }}
                   />
                 ) : (
-                  <div className="w-full h-full bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
-                    <svg className="w-16 h-16 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-full h-full bg-[#FDF2F8] dark:bg-gray-800 flex items-center justify-center">
+                    <svg className="w-16 h-16 text-[#D94E67]/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
                     </svg>
                   </div>
@@ -214,18 +214,18 @@ export default function FeaturedBlogs() {
               {/* Content */}
               <div className="p-2 sm:p-3 lg:p-4 flex-1 flex flex-col">
                 {/* Date */}
-                <div className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400 mb-1 sm:mb-2">
+                <div className="text-[10px] sm:text-xs text-[#6B7280] dark:text-gray-400 mb-1 sm:mb-2">
                   {formatDate(blog.publishDate)}
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xs sm:text-sm lg:text-base font-semibold text-gray-900 mb-1.5 sm:mb-2 line-clamp-2 group-hover:text-purple-600 transition-colors min-h-[32px] sm:min-h-[40px]">
+                <h3 className="text-xs sm:text-sm lg:text-base font-semibold text-[#1F2937] dark:text-gray-100 mb-1.5 sm:mb-2 line-clamp-2 group-hover:text-[#881337] dark:group-hover:text-[#FBCFE8] transition-colors min-h-[32px] sm:min-h-[40px]">
                   {blog.title}
                 </h3>
 
                 {/* Excerpt */}
                 {blog.excerpt && (
-                  <p className="text-[10px] sm:text-xs lg:text-sm text-gray-600 dark:text-gray-400 line-clamp-2 sm:line-clamp-3 mb-2 sm:mb-3 flex-1">
+                  <p className="text-[10px] sm:text-xs lg:text-sm text-[#6B7280] dark:text-gray-400 line-clamp-2 sm:line-clamp-3 mb-2 sm:mb-3 flex-1">
                     {blog.excerpt}
                   </p>
                 )}
@@ -234,7 +234,7 @@ export default function FeaturedBlogs() {
                 {blog.tags && blog.tags.length > 0 && (
                   <div className="flex flex-wrap gap-1 sm:gap-2 mt-auto">
                     {blog.tags.slice(0, 2).map((tag, idx) => (
-                      <span key={idx} className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 bg-purple-100 text-purple-700 rounded-full">
+                      <span key={idx} className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 bg-[#FDF2F8] dark:bg-[#881337]/30 text-[#9D174D] dark:text-[#FBCFE8] rounded-full">
                         #{tag}
                       </span>
                     ))}
@@ -242,7 +242,7 @@ export default function FeaturedBlogs() {
                 )}
 
                 {/* Read More Arrow */}
-                <div className="flex items-center gap-1 sm:gap-2 mt-2 sm:mt-3 text-purple-600 opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="flex items-center gap-1 sm:gap-2 mt-2 sm:mt-3 text-[#881337] dark:text-[#FBCFE8] opacity-0 group-hover:opacity-100 transition-opacity">
                   <span className="text-[10px] sm:text-xs lg:text-sm font-medium">Read More</span>
                   <svg className="w-3 h-3 sm:w-4 sm:h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -257,7 +257,7 @@ export default function FeaturedBlogs() {
         <div className="text-center mt-8 sm:mt-12">
           <Link
             href="/blog"
-            className="inline-flex items-center px-6 sm:px-8 py-2.5 sm:py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl hover:from-purple-700 hover:to-pink-700 font-semibold text-sm sm:text-base lg:text-lg transition-all transform hover:scale-105 shadow-lg"
+            className="inline-flex items-center px-6 sm:px-8 py-2.5 sm:py-3 bg-[#881337] text-white rounded-xl hover:bg-[#6E0F2C] font-semibold text-sm sm:text-base lg:text-lg transition-all transform hover:scale-105 shadow-md"
           >
             <span>View All Blog Articles</span>
             <svg className="ml-2 w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

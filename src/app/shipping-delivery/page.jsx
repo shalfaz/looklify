@@ -56,17 +56,17 @@ export default function ShippingDeliveryPage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {shippingMethods.map((method, index) => (
-              <div key={index} className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl border border-purple-200 p-6">
+              <div key={index} className="bg-[#FDF2F8] rounded-xl border border-[#FBCFE8] p-6">
                 <h4 className="text-lg font-bold text-gray-900 mb-2">{method.name}</h4>
                 <div className="space-y-2 text-sm text-gray-600 mb-3">
                   <p className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 text-[#881337]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <strong>Duration:</strong> {method.duration}
                   </p>
                   <p className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 text-[#881337]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <strong>Cost:</strong> {method.cost}
@@ -87,23 +87,23 @@ export default function ShippingDeliveryPage() {
             Delivery times vary depending on your location and the shipping method selected. 
             Estimated delivery times are provided at checkout and in your order confirmation email.
           </p>
-          <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
+          <div className="bg-[#FDF2F8] border border-[#FBCFE8] rounded-lg p-4">
             <h4 className="font-semibold text-gray-900 mb-3">Estimated Delivery Times:</h4>
             <ul className="space-y-2 text-gray-600">
               <li className="flex items-start gap-2">
-                <svg className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-[#881337] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 <span><strong>Dhaka:</strong> 1-3 business days</span>
               </li>
               <li className="flex items-start gap-2">
-                <svg className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-[#881337] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 <span><strong>Other Major Cities:</strong> 3-5 business days</span>
               </li>
               <li className="flex items-start gap-2">
-                <svg className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-[#881337] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 <span><strong>Remote Areas:</strong> 5-7 business days</span>
@@ -126,13 +126,13 @@ export default function ShippingDeliveryPage() {
             Shipping costs are calculated based on the weight of your order, shipping method selected, 
             and delivery location. Shipping costs are displayed at checkout before you complete your purchase.
           </p>
-          <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl border border-purple-200 p-6">
+          <div className="bg-[#FDF2F8] rounded-xl border border-[#FBCFE8] p-6">
             <h4 className="font-semibold text-gray-900 mb-4">Free Shipping</h4>
             <p className="text-gray-600 leading-relaxed mb-3">
               We offer free standard shipping on orders over ৳2,000 within Bangladesh. 
               Free shipping applies to standard shipping only and excludes express and same-day delivery options.
             </p>
-            <div className="bg-white rounded-lg p-4 border border-purple-200">
+            <div className="bg-white rounded-lg p-4 border border-[#FBCFE8]">
               <p className="text-sm text-gray-700">
                 <strong>Free Shipping Eligibility:</strong> Orders of ৳2,000 or more qualify for free standard shipping.
               </p>
@@ -188,23 +188,23 @@ export default function ShippingDeliveryPage() {
             Once your order ships, you'll receive an email with a tracking number. You can use this tracking number 
             to track your order's progress through our website or the shipping carrier's website.
           </p>
-          <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
+          <div className="bg-[#FDF2F8] border border-[#FBCFE8] rounded-lg p-4">
             <h4 className="font-semibold text-gray-900 mb-3">How to Track Your Order:</h4>
             <ul className="space-y-2 text-gray-600">
               <li className="flex items-start gap-2">
-                <svg className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-[#881337] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <span>Check your email for the tracking number and link</span>
               </li>
               <li className="flex items-start gap-2">
-                <svg className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-[#881337] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <span>Log in to your account and view your order history</span>
               </li>
               <li className="flex items-start gap-2">
-                <svg className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-[#881337] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <span>Use the tracking number on the shipping carrier's website</span>
@@ -290,7 +290,7 @@ export default function ShippingDeliveryPage() {
           </p>
           <p className="text-gray-600 leading-relaxed">
             For international shipping inquiries, please contact us at{' '}
-            <a href="mailto:looklify.official@gmail.com" className="text-purple-600 hover:text-purple-700">
+            <a href="mailto:looklify.official@gmail.com" className="text-[#881337] hover:text-[#881337]">
               looklify.official@gmail.com
             </a>
             .
@@ -303,10 +303,10 @@ export default function ShippingDeliveryPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50 border-b border-purple-100">
+      <div className="bg-[#FDF2F8] border-b border-[#F1E8EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl sm:text-5xl font-bold mb-4 bg-[#881337] bg-clip-text text-transparent">
               Shipping & Delivery
             </h1>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
@@ -320,10 +320,10 @@ export default function ShippingDeliveryPage() {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Quick Overview */}
-        <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl border border-purple-200 p-8 mb-12">
+        <div className="bg-[#FDF2F8] rounded-xl border border-[#FBCFE8] p-8 mb-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="text-center">
-              <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-[#881337] rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
@@ -332,7 +332,7 @@ export default function ShippingDeliveryPage() {
               <p className="text-sm text-gray-600">Orders processed within 1-2 business days</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-[#D94E67] rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -341,7 +341,7 @@ export default function ShippingDeliveryPage() {
               <p className="text-sm text-gray-600">Multiple shipping options available</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-[#881337] rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -364,7 +364,7 @@ export default function ShippingDeliveryPage() {
                 className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
               >
                 <h2 className="text-xl font-bold text-gray-900 flex items-center gap-3">
-                  <span className="w-8 h-8 bg-gradient-to-br from-purple-100 to-pink-100 rounded-lg flex items-center justify-center text-purple-600 font-semibold text-sm">
+                  <span className="w-8 h-8 bg-[#FDF2F8] rounded-lg flex items-center justify-center text-[#881337] font-semibold text-sm">
                     {index + 1}
                   </span>
                   {section.title}
@@ -390,19 +390,19 @@ export default function ShippingDeliveryPage() {
         </div>
 
         {/* Contact Section */}
-        <div className="bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl p-8 lg:p-12 text-white">
+        <div className="bg-[#881337] rounded-xl p-8 lg:p-12 text-white">
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-4">
               Questions About Shipping?
             </h2>
-            <p className="text-lg text-purple-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-[#FCE7F3] mb-8 max-w-2xl mx-auto">
               Our customer service team is here to help you with any questions about shipping, delivery, 
               or tracking your order. Contact us and we'll assist you promptly.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="mailto:looklify.official@gmail.com"
-                className="px-6 py-3 bg-white text-purple-600 font-medium rounded-lg hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl"
+                className="px-6 py-3 bg-white text-[#881337] font-medium rounded-lg hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl"
               >
                 Email Us
               </a>

@@ -65,7 +65,7 @@ export default function EPSPayment({ amount, orderId, customerInfo, onSuccess, o
         text: error.message || 'Failed to process EPS payment',
         icon: 'error',
         confirmButtonText: 'OK',
-        confirmButtonColor: '#7c3aed'
+        confirmButtonColor: '#881337'
       });
 
       if (onError) {

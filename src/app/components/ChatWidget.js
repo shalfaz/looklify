@@ -49,7 +49,7 @@ export default function ChatWidget() {
       <button
         id="chat-widget-button"
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-24 sm:bottom-10 right-4 sm:right-6 z-50 w-14 h-14 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center group"
+        className="fixed bottom-24 sm:bottom-10 right-4 sm:right-6 z-50 w-14 h-14 bg-[#881337] hover:bg-[#6E0F2C] rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center group"
         aria-label="Open chat options"
       >
         {!isOpen ? (
@@ -82,22 +82,22 @@ export default function ChatWidget() {
           </svg>
         )}
         {/* Pulse animation */}
-        <span className="absolute inset-0 rounded-full bg-purple-600 animate-ping opacity-20"></span>
+        <span className="absolute inset-0 rounded-full bg-[#9D174D] animate-ping opacity-20"></span>
       </button>
 
       {/* Chat Options Panel */}
       {isOpen && (
         <div
           id="chat-widget"
-          className="fixed bottom-44 sm:bottom-24 right-4 sm:right-6 z-50 w-72 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden transition-all duration-300"
+          className="fixed bottom-44 sm:bottom-24 right-4 sm:right-6 z-50 w-72 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-[#F1E8EC] dark:border-gray-700 overflow-hidden transition-all duration-300"
           style={{
             animation: 'slideUpFade 0.3s ease-out forwards',
           }}
         >
           {/* Header */}
-          <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-4 text-white">
+          <div className="bg-[#881337] p-4 text-white">
             <h3 className="font-semibold text-lg">How can we help you?</h3>
-            <p className="text-sm text-purple-100 mt-1">Choose a way to contact us</p>
+            <p className="text-sm text-[#FCE7F3] mt-1">Choose a way to contact us</p>
           </div>
 
           {/* Options */}

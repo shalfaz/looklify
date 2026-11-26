@@ -272,7 +272,7 @@ function ShopContent() {
           `,
           icon: 'warning',
           confirmButtonText: 'OK',
-          confirmButtonColor: '#7c3aed',
+          confirmButtonColor: '#881337',
           background: '#f8fafc',
           color: '#1f2937'
         });
@@ -295,7 +295,7 @@ function ShopContent() {
         `,
         icon: 'warning',
         confirmButtonText: 'OK',
-        confirmButtonColor: '#7c3aed',
+        confirmButtonColor: '#881337',
         background: '#f8fafc',
         color: '#1f2937'
       });
@@ -316,7 +316,7 @@ function ShopContent() {
       color: '#1f2937',
       customClass: {
         popup: 'swal2-toast',
-        title: 'text-purple-600 font-semibold',
+        title: 'text-[#881337] font-semibold',
         content: 'text-gray-600'
       }
     });
@@ -333,10 +333,10 @@ function ShopContent() {
 
   if (loading && products.length === 0) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-[#FFFDFD] dark:bg-gray-950 flex items-center justify-center">
         <div className="text-center">
-          <div className="h-12 w-12 border-4 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto" />
-          <p className="mt-4 text-gray-600">Loading products...</p>
+          <div className="h-12 w-12 border-4 border-[#881337] border-t-transparent rounded-full animate-spin mx-auto" />
+          <p className="mt-4 text-[#6B7280]">Loading products...</p>
         </div>
       </div>
     );
@@ -344,7 +344,7 @@ function ShopContent() {
 
   return (
     <div 
-      className="min-h-screen bg-gray-50"
+      className="min-h-screen bg-[#FFFDFD] dark:bg-gray-950"
       onContextMenu={(e) => e.preventDefault()}
       onDragStart={(e) => e.preventDefault()}
       style={{ userSelect: 'none', WebkitUserSelect: 'none' }}
@@ -352,15 +352,15 @@ function ShopContent() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-8">
         {/* Header */}
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-gray-900 mb-1">All Products</h1>
-          <p className="text-sm text-gray-600">Find your perfect beauty products</p>
+          <h1 className="text-2xl font-bold text-[#1F2937] dark:text-gray-100 mb-1">All Products</h1>
+          <p className="text-sm text-[#6B7280] dark:text-gray-400">Find your perfect beauty products</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           {/* Filters Sidebar */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg p-3 sm:p-4 sticky top-8">
-              <h2 className="text-sm sm:text-base font-semibold text-gray-900 mb-3">Filter Options</h2>
+            <div className="bg-white dark:bg-gray-900 rounded-lg border border-[#F1E8EC] dark:border-gray-800 p-3 sm:p-4 sticky top-8">
+              <h2 className="text-sm sm:text-base font-semibold text-[#1F2937] dark:text-gray-100 mb-3">Filter Options</h2>
               
               {/* Search */}
               <div className="mb-3 sm:mb-4">
@@ -369,7 +369,7 @@ function ShopContent() {
                   type="text"
                   value={filters.search}
                   onChange={(e) => handleFilterChange('search', e.target.value)}
-                  className="w-full px-2 py-1 text-xs sm:text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="w-full px-2 py-1 text-xs sm:text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-[#9D174D] focus:border-transparent"
                   placeholder="Search products..."
                 />
               </div>
@@ -384,7 +384,7 @@ function ShopContent() {
                     // Reset subcategory when brand changes
                     handleFilterChange('subcategory', '');
                   }}
-                  className="w-full px-2 py-1 text-xs sm:text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="w-full px-2 py-1 text-xs sm:text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-[#9D174D] focus:border-transparent"
                   disabled={filtersLoading}
                 >
                   <option value="">All Brands</option>
@@ -407,7 +407,7 @@ function ShopContent() {
                     // Reset subcategory when category changes
                     handleFilterChange('subcategory', '');
                   }}
-                  className="w-full px-2 py-1 text-xs sm:text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="w-full px-2 py-1 text-xs sm:text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-[#9D174D] focus:border-transparent"
                   disabled={filtersLoading}
                 >
                   <option value="">All Categories</option>
@@ -426,7 +426,7 @@ function ShopContent() {
                 <select
                   value={filters.subcategory}
                   onChange={(e) => handleFilterChange('subcategory', e.target.value)}
-                  className="w-full px-2 py-1 text-xs sm:text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="w-full px-2 py-1 text-xs sm:text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-[#9D174D] focus:border-transparent"
                   disabled={filtersLoading}
                 >
                   <option value="">All Sub Categories</option>
@@ -449,7 +449,7 @@ function ShopContent() {
                 <select
                   value={filters.skinType}
                   onChange={(e) => handleFilterChange('skinType', e.target.value)}
-                  className="w-full px-2 py-1 text-xs sm:text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="w-full px-2 py-1 text-xs sm:text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-[#9D174D] focus:border-transparent"
                   disabled={filtersLoading}
                 >
                   <option value="">All Types</option>
@@ -468,7 +468,7 @@ function ShopContent() {
                 <select
                   value={filters.skinConcern}
                   onChange={(e) => handleFilterChange('skinConcern', e.target.value)}
-                  className="w-full px-2 py-1 text-xs sm:text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="w-full px-2 py-1 text-xs sm:text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-[#9D174D] focus:border-transparent"
                   disabled={filtersLoading}
                 >
                   <option value="">All Concerns</option>
@@ -512,7 +512,7 @@ function ShopContent() {
                     handleFilterChange('sortBy', sortBy);
                     handleFilterChange('sortOrder', sortOrder);
                   }}
-                  className="px-2 py-1.5 text-xs border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="px-2 py-1.5 text-xs border border-gray-300 rounded-md focus:ring-2 focus:ring-[#9D174D] focus:border-transparent"
                 >
                   <option value="createdAt-desc">Newest First</option>
                   <option value="createdAt-asc">Oldest First</option>
@@ -534,25 +534,25 @@ function ShopContent() {
                 <p className="text-sm text-gray-500 mb-3">{error}</p>
                 <button
                   onClick={fetchProducts}
-                  className="px-3 py-1.5 text-sm bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-md hover:from-purple-700 hover:to-pink-700"
+                  className="px-3 py-1.5 text-sm bg-[#881337] text-white rounded-md hover:bg-[#6E0F2C]"
                 >
                   Try Again
                 </button>
               </div>
             ) : products.length === 0 ? (
               <div className="text-center py-8">
-                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                <div className="w-16 h-16 bg-[#FDF2F8] rounded-full flex items-center justify-center mx-auto mb-3">
                   📦
                 </div>
-                <h3 className="text-base font-medium text-gray-900 mb-1">No products found</h3>
-                <p className="text-sm text-gray-500 mb-3">No products match your current filters</p>
+                <h3 className="text-base font-medium text-[#1F2937] dark:text-gray-100 mb-1">No products found</h3>
+                <p className="text-sm text-[#6B7280] mb-3">No products match your current filters</p>
                 <button
                   onClick={() => setFilters({
                     search: '', category: '', brand: '', subcategory: '',
                     skinType: '', skinConcern: '', minPrice: '', maxPrice: '',
                     sortBy: 'createdAt', sortOrder: 'desc'
                   })}
-                  className="px-3 py-1.5 text-sm bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-md hover:from-purple-700 hover:to-pink-700"
+                  className="px-3 py-1.5 text-sm bg-[#881337] text-white rounded-md hover:bg-[#6E0F2C]"
                 >
                   Clear All Filters
                 </button>
@@ -565,7 +565,7 @@ function ShopContent() {
                   const discountPercentage = calculateDiscountPercentage(product);
 
                   return (
-                    <div key={product._id} className="group bg-white rounded-xl border border-[#7c52c5] overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div key={product._id} className="group bg-white dark:bg-gray-900 rounded-xl border border-[#F1E8EC] dark:border-gray-800 hover:border-[#FBCFE8] dark:hover:border-[#9D174D]/50 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                       {/* Product Image Container with white background */}
                       <div 
                         className="relative w-full h-32 sm:h-40 lg:h-40 overflow-hidden bg-white"
@@ -592,10 +592,10 @@ function ShopContent() {
                           />
                         </Link>
 
-                        {/* Discount Badge - red oval top-right */}
+                        {/* Discount Badge - warm champagne gold top-right */}
                         {discountPercentage > 0 && (
                           <div className="absolute top-2 right-2 z-10">
-                            <span className="px-2.5 py-1.5 text-xs sm:text-sm font-bold bg-red-600 text-white rounded-full shadow-lg">
+                            <span className="px-2.5 py-1.5 text-xs sm:text-sm font-bold bg-[#B08968] text-white rounded-full shadow-sm">
                               {discountPercentage}% OFF
                             </span>
                           </div>
@@ -605,8 +605,8 @@ function ShopContent() {
                       {/* Product Info */}
                       <div className="p-2 sm:p-3 lg:p-3">
                         {/* Product Name */}
-                        <h3 className="font-semibold text-gray-900 mb-1.5 sm:mb-2 line-clamp-2 group-hover:text-purple-600 transition-colors text-xs sm:text-sm lg:text-sm min-h-[32px] sm:min-h-[36px]">
-                          <Link href={`/shop/${product._id}`} className="hover:text-purple-600 transition-colors">
+                        <h3 className="font-semibold text-[#1F2937] dark:text-gray-100 mb-1.5 sm:mb-2 line-clamp-2 group-hover:text-[#881337] dark:group-hover:text-[#FBCFE8] transition-colors text-xs sm:text-sm lg:text-sm min-h-[32px] sm:min-h-[36px]">
+                          <Link href={`/shop/${product._id}`} className="hover:text-[#881337] dark:hover:text-[#FBCFE8] transition-colors">
                             {product.name}
                           </Link>
                         </h3>
@@ -621,11 +621,11 @@ function ShopContent() {
                               const displayPrice = (salePrice && regularPrice) ? salePrice : (salePrice || legacyPrice);
                               return (
                                 <>
-                                  <span className="text-xs sm:text-sm lg:text-sm xl:text-base font-bold text-gray-900">
+                                  <span className="text-xs sm:text-sm lg:text-sm xl:text-base font-bold text-[#1F2937] dark:text-gray-100">
                                     BDT {displayPrice}
                                   </span>
                                   {regularPrice && regularPrice > displayPrice && (
-                                    <span className="text-[10px] sm:text-xs text-gray-500 line-through">
+                                    <span className="text-[10px] sm:text-xs text-[#6B7280] dark:text-gray-400 line-through">
                                       BDT {regularPrice}
                                     </span>
                                   )}
@@ -645,8 +645,8 @@ function ShopContent() {
                             aria-label="wishlist"
                             className={`w-7 h-7 sm:w-8 sm:h-8 lg:w-8 lg:h-8 rounded-full border flex items-center justify-center transition-colors flex-shrink-0 ${
                               isInWishlist(product._id)
-                                ? 'text-red-500 border-red-200 bg-red-50'
-                                : 'text-gray-500 border-gray-200 hover:text-red-500 hover:border-red-300'
+                                ? 'text-[#D94E67] border-[#FBCFE8] bg-[#FDF2F8] dark:bg-[#881337]/30 dark:border-[#9D174D]'
+                                : 'text-[#6B7280] border-[#F1E8EC] dark:border-gray-700 hover:text-[#D94E67] hover:border-[#FBCFE8]'
                             }`}
                           >
                             <svg className={`w-4 h-4 sm:w-5 sm:h-5 lg:w-4 lg:h-4 ${isInWishlist(product._id) ? 'fill-current' : 'stroke-current'}`} fill={isInWishlist(product._id) ? 'currentColor' : 'none'} stroke="currentColor" viewBox="0 0 24 24">
@@ -660,13 +660,13 @@ function ShopContent() {
                           <div className="flex gap-1.5 sm:gap-2 lg:gap-2">
                             <button
                               onClick={() => handleAddToCart(product)}
-                              className="flex-1 py-2 sm:py-2.5 lg:py-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold hover:from-purple-700 hover:to-pink-700 transition-colors text-xs sm:text-sm lg:text-xs"
+                              className="flex-1 py-2 sm:py-2.5 lg:py-2 rounded-full border border-[#9D174D] bg-white dark:bg-transparent text-[#881337] dark:text-[#FBCFE8] dark:border-[#D94E67] font-semibold hover:bg-[#FDF2F8] dark:hover:bg-[#881337]/20 transition-colors text-xs sm:text-sm lg:text-xs"
                             >
                               Add to Cart
                             </button>
                             <button
                               onClick={() => handleBuyNow(product._id)}
-                              className="flex-1 py-2 sm:py-2.5 lg:py-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold hover:from-purple-700 hover:to-pink-700 transition-colors text-xs sm:text-sm lg:text-xs"
+                              className="flex-1 py-2 sm:py-2.5 lg:py-2 rounded-full bg-[#D94E67] text-white font-semibold hover:bg-[#C43D56] transition-colors text-xs sm:text-sm lg:text-xs"
                             >
                               Buy Now
                             </button>
@@ -686,7 +686,7 @@ function ShopContent() {
                   <button
                     onClick={() => setPagination(prev => ({ ...prev, currentPage: prev.currentPage - 1 }))}
                     disabled={pagination.currentPage === 1}
-                    className="px-2 py-1.5 text-xs border border-gray-300 rounded-md disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
+                    className="px-2 py-1.5 text-xs border border-[#F1E8EC] dark:border-gray-700 rounded-md disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#FDF2F8] dark:hover:bg-gray-800"
                   >
                     Previous
                   </button>
@@ -697,8 +697,8 @@ function ShopContent() {
                       onClick={() => setPagination(prev => ({ ...prev, currentPage: i + 1 }))}
                       className={`px-2 py-1.5 text-xs rounded-md ${
                         pagination.currentPage === i + 1
-                          ? 'bg-purple-600 text-white'
-                          : 'border border-gray-300 hover:bg-gray-50'
+                          ? 'bg-[#881337] text-white'
+                          : 'border border-[#F1E8EC] dark:border-gray-700 hover:bg-[#FDF2F8] dark:hover:bg-gray-800'
                       }`}
                     >
                       {i + 1}
@@ -708,7 +708,7 @@ function ShopContent() {
                   <button
                     onClick={() => setPagination(prev => ({ ...prev, currentPage: prev.currentPage + 1 }))}
                     disabled={pagination.currentPage === pagination.totalPages}
-                    className="px-2 py-1.5 text-xs border border-gray-300 rounded-md disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
+                    className="px-2 py-1.5 text-xs border border-[#F1E8EC] dark:border-gray-700 rounded-md disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#FDF2F8] dark:hover:bg-gray-800"
                   >
                     Next
                   </button>
@@ -725,10 +725,10 @@ function ShopContent() {
 export default function ShopPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-[#FFFDFD] dark:bg-gray-950 flex items-center justify-center">
         <div className="text-center">
-          <div className="h-12 w-12 border-4 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto" />
-          <p className="mt-4 text-gray-600">Loading products...</p>
+          <div className="h-12 w-12 border-4 border-[#881337] border-t-transparent rounded-full animate-spin mx-auto" />
+          <p className="mt-4 text-[#6B7280]">Loading products...</p>
         </div>
       </div>
     }>

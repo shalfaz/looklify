@@ -184,10 +184,10 @@ export default function ReviewsPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50 border-b border-purple-100">
+      <div className="bg-[#FDF2F8] border-b border-[#F1E8EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl sm:text-5xl font-bold mb-4 bg-[#881337] bg-clip-text text-transparent">
               Customer Reviews
             </h1>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
@@ -255,7 +255,7 @@ export default function ReviewsPage() {
                       onClick={() => setFilter(filterOption.id)}
                       className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                         filter === filterOption.id
-                          ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-md'
+                          ? 'bg-[#881337] text-white shadow-md'
                           : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                       }`}
                     >
@@ -268,7 +268,7 @@ export default function ReviewsPage() {
                   <select
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value)}
-                    className="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none"
+                    className="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-[#9D174D] focus:border-[#9D174D] outline-none"
                   >
                     <option value="recent">Most Recent</option>
                     <option value="oldest">Oldest First</option>
@@ -300,7 +300,7 @@ export default function ReviewsPage() {
                         {renderStars(review.rating)}
                         <span className="text-sm text-gray-500">{formatDate(review.date)}</span>
                       </div>
-                      <p className="text-sm text-purple-600 font-medium mb-3">
+                      <p className="text-sm text-[#881337] font-medium mb-3">
                         {review.product}
                       </p>
                     </div>
@@ -322,7 +322,7 @@ export default function ReviewsPage() {
                 <p className="text-gray-600 mb-6">Try selecting a different filter.</p>
                 <button
                   onClick={() => setFilter('all')}
-                  className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-medium rounded-lg transition-all shadow-md hover:shadow-lg"
+                  className="px-6 py-3 bg-[#881337] hover:bg-[#6E0F2C] text-white font-medium rounded-lg transition-all shadow-md hover:shadow-lg"
                 >
                   Show All Reviews
                 </button>
@@ -332,19 +332,19 @@ export default function ReviewsPage() {
         </div>
 
         {/* CTA Section */}
-        <div className="mt-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl p-8 lg:p-12 text-white">
+        <div className="mt-16 bg-[#881337] rounded-xl p-8 lg:p-12 text-white">
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-4">
               Share Your Experience
             </h2>
-            <p className="text-lg text-purple-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-[#FCE7F3] mb-8 max-w-2xl mx-auto">
               Have you purchased from Looklify? We'd love to hear about your experience! 
               Your reviews help other customers make informed decisions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/shop"
-                className="px-6 py-3 bg-white text-purple-600 font-medium rounded-lg hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl"
+                className="px-6 py-3 bg-white text-[#881337] font-medium rounded-lg hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl"
               >
                 Shop Now
               </Link>
