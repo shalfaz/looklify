@@ -237,7 +237,7 @@ export default function ProfilePage() {
       `,
       showCancelButton: true,
       confirmButtonText: 'Update Password',
-      confirmButtonColor: '#7c3aed',
+      confirmButtonColor: '#881337',
       cancelButtonColor: '#6b7280',
       preConfirm: async () => {
         const currentPassword = document.getElementById('currentPassword').value;
@@ -284,7 +284,7 @@ export default function ProfilePage() {
           title: 'Success!',
           text: 'Password changed successfully',
           icon: 'success',
-          confirmButtonColor: '#7c3aed'
+          confirmButtonColor: '#881337'
         });
       }
     });
@@ -294,7 +294,7 @@ export default function ProfilePage() {
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
         <div className="text-center">
-          <div className="h-14 w-14 border-4 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto" />
+          <div className="h-14 w-14 border-4 border-[#9D174D] border-t-transparent rounded-full animate-spin mx-auto" />
           <p className="mt-4 text-gray-600 font-medium">Loading profile...</p>
         </div>
       </div>
@@ -319,7 +319,7 @@ export default function ProfilePage() {
               {/* Profile Summary */}
               <div className="text-center mb-6">
                 <div className="relative inline-block mb-4">
-                  <div className="w-24 h-24 rounded-full overflow-hidden bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center text-white text-3xl font-bold shadow-lg">
+                  <div className="w-24 h-24 rounded-full overflow-hidden bg-[#881337] flex items-center justify-center text-white text-3xl font-bold shadow-lg">
                     {userData?.profileImage ? (
                       <Image
                         src={userData.profileImage}
@@ -332,7 +332,7 @@ export default function ProfilePage() {
                       (formData.name || 'U').charAt(0).toUpperCase()
                     )}
                   </div>
-                  <label className="absolute bottom-0 right-0 w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center cursor-pointer hover:bg-purple-700 transition-colors shadow-md">
+                  <label className="absolute bottom-0 right-0 w-8 h-8 bg-[#881337] rounded-full flex items-center justify-center cursor-pointer hover:bg-[#6E0F2C] transition-colors shadow-md">
                     <input
                       type="file"
                       accept="image/*"
@@ -355,7 +355,7 @@ export default function ProfilePage() {
                 </div>
                 <h2 className="text-xl font-bold text-gray-900">{formData.name || 'User'}</h2>
                 <p className="text-sm text-gray-600">{formData.email}</p>
-                <span className="inline-block mt-2 px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">
+                <span className="inline-block mt-2 px-3 py-1 bg-[#FCE7F3] text-[#881337] rounded-full text-xs font-semibold">
                   {userData?.role || 'Customer'}
                 </span>
               </div>
@@ -366,7 +366,7 @@ export default function ProfilePage() {
                   onClick={() => setActiveTab('profile')}
                   className={`w-full text-left px-4 py-3 rounded-xl transition-all ${
                     activeTab === 'profile'
-                      ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg'
+                      ? 'bg-[#881337] text-white shadow-lg'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
@@ -394,7 +394,7 @@ export default function ProfilePage() {
               {/* Profile Information */}
               <div className="bg-white rounded-2xl shadow-lg p-6">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                  <span className="w-2 h-2 bg-[#9D174D] rounded-full mr-3"></span>
                   Profile Information
                 </h2>
 
@@ -408,7 +408,7 @@ export default function ProfilePage() {
                       type="text"
                       value={formData.name}
                       onChange={(e) => handleInputChange('name', e.target.value)}
-                      className={`w-full px-4 py-3 border-2 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all ${
+                      className={`w-full px-4 py-3 border-2 rounded-xl focus:ring-2 focus:ring-[#9D174D] focus:border-transparent transition-all ${
                         errors.name ? 'border-red-300' : 'border-gray-300'
                       }`}
                       placeholder="Enter your full name"
@@ -425,7 +425,7 @@ export default function ProfilePage() {
                       type="email"
                       value={formData.email}
                       onChange={(e) => handleInputChange('email', e.target.value)}
-                      className={`w-full px-4 py-3 border-2 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all ${
+                      className={`w-full px-4 py-3 border-2 rounded-xl focus:ring-2 focus:ring-[#9D174D] focus:border-transparent transition-all ${
                         errors.email ? 'border-red-300' : 'border-gray-300'
                       }`}
                       placeholder="your.email@example.com"
@@ -442,7 +442,7 @@ export default function ProfilePage() {
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => handleInputChange('phone', e.target.value)}
-                      className={`w-full px-4 py-3 border-2 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all ${
+                      className={`w-full px-4 py-3 border-2 rounded-xl focus:ring-2 focus:ring-[#9D174D] focus:border-transparent transition-all ${
                         errors.phone ? 'border-red-300' : 'border-gray-300'
                       }`}
                       placeholder="01XXXXXXXXX or +880XXXXXXXXXX"
@@ -459,7 +459,7 @@ export default function ProfilePage() {
                       type="date"
                       value={formData.dateOfBirth}
                       onChange={(e) => handleInputChange('dateOfBirth', e.target.value)}
-                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#9D174D] focus:border-transparent transition-all"
                     />
                   </div>
                 </div>
@@ -468,7 +468,7 @@ export default function ProfilePage() {
               {/* Address Information */}
               <div className="bg-white rounded-2xl shadow-lg p-6">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                  <span className="w-2 h-2 bg-[#9D174D] rounded-full mr-3"></span>
                   Address Information
                 </h2>
 
@@ -482,7 +482,7 @@ export default function ProfilePage() {
                       type="text"
                       value={formData.street}
                       onChange={(e) => handleInputChange('street', e.target.value)}
-                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#9D174D] focus:border-transparent transition-all"
                       placeholder="House/Apartment number, Street"
                     />
                   </div>
@@ -497,7 +497,7 @@ export default function ProfilePage() {
                         type="text"
                         value={formData.city}
                         onChange={(e) => handleInputChange('city', e.target.value)}
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#9D174D] focus:border-transparent transition-all"
                         placeholder="City name"
                       />
                     </div>
@@ -510,7 +510,7 @@ export default function ProfilePage() {
                         type="text"
                         value={formData.state}
                         onChange={(e) => handleInputChange('state', e.target.value)}
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#9D174D] focus:border-transparent transition-all"
                         placeholder="State/Division"
                       />
                     </div>
@@ -523,7 +523,7 @@ export default function ProfilePage() {
                         type="text"
                         value={formData.zipCode}
                         onChange={(e) => handleInputChange('zipCode', e.target.value)}
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#9D174D] focus:border-transparent transition-all"
                         placeholder="Postal code"
                       />
                     </div>
@@ -538,7 +538,7 @@ export default function ProfilePage() {
                       type="text"
                       value={formData.country}
                       onChange={(e) => handleInputChange('country', e.target.value)}
-                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#9D174D] focus:border-transparent transition-all"
                       placeholder="Country"
                     />
                   </div>
@@ -548,7 +548,7 @@ export default function ProfilePage() {
               {/* Preferences */}
               <div className="bg-white rounded-2xl shadow-lg p-6">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                  <span className="w-2 h-2 bg-[#9D174D] rounded-full mr-3"></span>
                   Preferences
                 </h2>
 
@@ -558,7 +558,7 @@ export default function ProfilePage() {
                       type="checkbox"
                       checked={formData.newsletter}
                       onChange={(e) => handleInputChange('newsletter', e.target.checked)}
-                      className="w-5 h-5 text-purple-600 rounded focus:ring-purple-500"
+                      className="w-5 h-5 text-[#881337] rounded focus:ring-[#9D174D]"
                     />
                     <span className="text-gray-700 font-medium">Subscribe to newsletter</span>
                   </label>
@@ -568,7 +568,7 @@ export default function ProfilePage() {
                       type="checkbox"
                       checked={formData.emailNotifications}
                       onChange={(e) => handleInputChange('emailNotifications', e.target.checked)}
-                      className="w-5 h-5 text-purple-600 rounded focus:ring-purple-500"
+                      className="w-5 h-5 text-[#881337] rounded focus:ring-[#9D174D]"
                     />
                     <span className="text-gray-700 font-medium">Email notifications</span>
                   </label>
@@ -578,7 +578,7 @@ export default function ProfilePage() {
                       type="checkbox"
                       checked={formData.smsNotifications}
                       onChange={(e) => handleInputChange('smsNotifications', e.target.checked)}
-                      className="w-5 h-5 text-purple-600 rounded focus:ring-purple-500"
+                      className="w-5 h-5 text-[#881337] rounded focus:ring-[#9D174D]"
                     />
                     <span className="text-gray-700 font-medium">SMS notifications</span>
                   </label>
@@ -596,7 +596,7 @@ export default function ProfilePage() {
                 <button
                   type="submit"
                   disabled={saving || uploading}
-                  className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl hover:from-purple-700 hover:to-pink-700 font-bold text-lg transition-all transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center gap-2"
+                  className="px-6 py-3 bg-[#881337] text-white rounded-xl hover:bg-[#6E0F2C] font-bold text-lg transition-all transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center gap-2"
                 >
                   {saving && <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />}
                   {saving ? 'Saving...' : 'Save Changes'}

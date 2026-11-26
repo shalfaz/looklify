@@ -248,10 +248,10 @@ export default function CartPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+      <div className="min-h-screen bg-[#FFFDFD] dark:bg-gray-950 flex items-center justify-center">
         <div className="text-center">
-          <div className="h-14 w-14 border-4 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto" />
-          <p className="mt-4 text-gray-600 font-medium">Loading your cart...</p>
+          <div className="h-14 w-14 border-4 border-[#881337] border-t-transparent rounded-full animate-spin mx-auto" />
+          <p className="mt-4 text-[#6B7280] font-medium">Loading your cart...</p>
         </div>
       </div>
     );
@@ -259,17 +259,17 @@ export default function CartPage() {
 
   if (cartItems.length === 0) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12">
+      <div className="min-h-screen bg-[#FFFDFD] dark:bg-gray-950 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-2xl shadow-xl p-12 text-center max-w-2xl mx-auto">
+          <div className="bg-white dark:bg-gray-900 rounded-2xl border border-[#F1E8EC] dark:border-gray-800 shadow-sm p-12 text-center max-w-2xl mx-auto">
             <div className="text-9xl mb-6 animate-bounce">🛒</div>
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Your Cart is Empty</h1>
-            <p className="text-lg text-gray-600 mb-8 max-w-md mx-auto">
+            <h1 className="text-4xl font-bold text-[#1F2937] dark:text-gray-100 mb-4">Your Cart is Empty</h1>
+            <p className="text-lg text-[#6B7280] dark:text-gray-400 mb-8 max-w-md mx-auto">
               Looks like you haven't added anything to your cart yet. Start shopping to fill it up!
             </p>
             <Link
               href="/shop"
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl hover:from-purple-700 hover:to-pink-700 font-semibold text-lg transition-all transform hover:scale-105 shadow-lg"
+              className="inline-flex items-center px-8 py-4 bg-[#881337] text-white rounded-xl hover:bg-[#6E0F2C] font-semibold text-lg transition-all transform hover:scale-105 shadow-md"
             >
               <span>Start Shopping</span>
               <svg className="ml-2 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -283,11 +283,11 @@ export default function CartPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-30 via-pink-30 to-blue-30 py-6">
+    <div className="min-h-screen bg-[#FFFDFD] dark:bg-gray-950 py-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-6">
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent border-b-2 border-purple-500 pb-2 inline-block">
+          <h1 className="text-2xl font-bold text-[#1F2937] dark:text-gray-100 border-b-2 border-[#881337] pb-2 inline-block">
             Cart
           </h1>
         </div>
@@ -295,28 +295,28 @@ export default function CartPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Cart Items */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-lg shadow-md border-2 border-purple-100 overflow-hidden">
+            <div className="bg-white dark:bg-gray-900 rounded-lg shadow-sm border border-[#F1E8EC] dark:border-gray-800 overflow-hidden">
               {/* Header with Select All and Delete All */}
-              <div className="px-4 py-3 bg-gradient-to-r from-purple-50 to-pink-50 border-b-2 border-purple-200 flex items-center justify-between">
+              <div className="px-4 py-3 bg-[#FDF2F8] dark:bg-gray-800 border-b border-[#F3E8EE] dark:border-gray-700 flex items-center justify-between">
                 <label className="flex items-center gap-2 cursor-pointer">
                   <input
                     type="checkbox"
                     checked={selectedItems.size === cartItems.length && cartItems.length > 0}
                     onChange={handleSelectAll}
-                    className="w-4 h-4 text-purple-600 border-purple-400 rounded focus:ring-purple-500"
+                    className="w-4 h-4 text-[#881337] border-[#FBCFE8] rounded focus:ring-[#9D174D]"
                   />
-                  <span className="text-sm font-medium text-purple-700">Unselect All</span>
+                  <span className="text-sm font-medium text-[#881337] dark:text-[#FBCFE8]">Unselect All</span>
                 </label>
                 <button
                   onClick={handleDeleteAll}
-                  className="text-sm text-red-600 hover:text-red-700 font-medium hover:bg-red-50 px-2 py-1 rounded transition-colors"
+                  className="text-sm text-[#BE123C] hover:text-[#881337] font-medium hover:bg-rose-50 px-2 py-1 rounded transition-colors"
                 >
                   Delete all
                 </button>
               </div>
               
               {/* Table Header */}
-              <div className="hidden md:grid md:grid-cols-12 gap-4 px-4 py-3 bg-gradient-to-r from-blue-50 to-purple-50 border-b border-purple-200 text-xs font-semibold text-purple-700 uppercase">
+              <div className="hidden md:grid md:grid-cols-12 gap-4 px-4 py-3 bg-[#F9F5F6] dark:bg-gray-800/70 border-b border-[#F1E8EC] dark:border-gray-700 text-xs font-semibold text-[#881337] dark:text-[#FBCFE8] uppercase">
                 <div className="col-span-1"></div>
                 <div className="col-span-4">Product</div>
                 <div className="col-span-2 text-center">Price</div>
@@ -326,13 +326,13 @@ export default function CartPage() {
               </div>
               
               {/* Cart Items */}
-              <div className="divide-y divide-purple-100">
+              <div className="divide-y divide-[#F1E8EC] dark:divide-gray-800">
                 {cartItems.map((item, index) => (
                   <div 
                     key={item.productId} 
-                    className={`px-4 py-4 transition-all duration-300 hover:bg-gradient-to-r hover:from-purple-50/50 hover:to-pink-50/50 ${
+                    className={`px-4 py-4 transition-all duration-300 hover:bg-[#FDF2F8]/50 dark:hover:bg-gray-800/50 ${
                       removing === item.productId ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
-                    } ${index % 2 === 0 ? 'bg-white' : 'bg-purple-50/30'}`}
+                    } ${index % 2 === 0 ? 'bg-white dark:bg-gray-900' : 'bg-[#FFFDFD] dark:bg-gray-900/60'}`}
                   >
                     <div className="grid grid-cols-12 gap-3 items-center">
                       {/* Checkbox */}
@@ -341,14 +341,14 @@ export default function CartPage() {
                           type="checkbox"
                           checked={selectedItems.has(item.productId)}
                           onChange={() => handleSelectItem(item.productId)}
-                          className="w-4 h-4 text-purple-600 border-purple-400 rounded focus:ring-purple-500"
+                          className="w-4 h-4 text-[#881337] border-[#FBCFE8] rounded focus:ring-[#9D174D]"
                         />
                       </div>
 
                       {/* Product Image & Name */}
                       <div className="col-span-12 md:col-span-4 flex items-center gap-3">
                         <Link href={`/shop/${item.productId}`} className="flex-shrink-0">
-                          <div className="w-16 h-16 bg-gradient-to-br from-purple-100 to-pink-100 rounded-lg overflow-hidden border-2 border-purple-200 shadow-sm hover:shadow-md transition-shadow">
+                          <div className="w-16 h-16 bg-[#F9F5F6] rounded-lg overflow-hidden border border-[#F1E8EC] shadow-sm hover:shadow-md transition-shadow">
                             {item.image ? (
                               <Image
                                 src={item.image}
@@ -358,7 +358,7 @@ export default function CartPage() {
                                 className="w-full h-full object-cover"
                               />
                             ) : (
-                              <div className="w-full h-full flex items-center justify-center text-purple-400 text-2xl">
+                              <div className="w-full h-full flex items-center justify-center text-[#D94E67]/50 text-2xl">
                                 📦
                               </div>
                             )}
@@ -366,7 +366,7 @@ export default function CartPage() {
                         </Link>
                         <Link
                           href={`/shop/${item.productId}`}
-                          className="text-sm font-medium text-gray-900 hover:text-purple-600 transition-colors line-clamp-2"
+                          className="text-sm font-medium text-[#1F2937] dark:text-gray-100 hover:text-[#881337] transition-colors line-clamp-2"
                         >
                           {item.name}
                         </Link>
@@ -374,11 +374,11 @@ export default function CartPage() {
 
                       {/* Price */}
                       <div className="col-span-6 md:col-span-2 text-center md:text-left">
-                        <p className="text-sm font-semibold text-purple-700">
+                        <p className="text-sm font-semibold text-[#1F2937] dark:text-gray-100">
                           ৳{item.price.toLocaleString()}
                         </p>
                         {item.originalPrice && item.originalPrice > item.price && (
-                          <p className="text-xs text-gray-500 line-through">
+                          <p className="text-xs text-[#6B7280] line-through">
                             ৳{item.originalPrice.toLocaleString()}
                           </p>
                         )}
@@ -386,21 +386,21 @@ export default function CartPage() {
 
                       {/* Quantity */}
                       <div className="col-span-6 md:col-span-2 flex justify-center">
-                        <div className="flex items-center border-2 border-purple-500 rounded-lg overflow-hidden shadow-sm">
+                        <div className="flex items-center border border-[#9D174D] rounded-lg overflow-hidden shadow-sm">
                           <button
                             onClick={() => handleQuantityChange(item.productId, item.quantity - 1)}
                             disabled={updating || item.quantity <= 1}
-                            className="px-2 py-1 text-purple-700 hover:bg-purple-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-sm font-semibold"
+                            className="px-2 py-1 text-[#881337] dark:text-[#FBCFE8] hover:bg-[#FDF2F8] dark:hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-sm font-semibold"
                           >
                             −
                           </button>
-                          <span className="px-3 py-1 text-center min-w-[2rem] text-sm font-semibold text-purple-900 border-x-2 border-purple-500 bg-purple-50">
+                          <span className="px-3 py-1 text-center min-w-[2rem] text-sm font-semibold text-[#1F2937] dark:text-gray-100 border-x border-[#9D174D] bg-[#FDF2F8] dark:bg-gray-800">
                             {item.quantity}
                           </span>
                           <button
                             onClick={() => handleQuantityChange(item.productId, item.quantity + 1)}
                             disabled={updating}
-                            className="px-2 py-1 text-purple-700 hover:bg-purple-100 disabled:opacity-50 transition-colors text-sm font-semibold"
+                            className="px-2 py-1 text-[#881337] dark:text-[#FBCFE8] hover:bg-[#FDF2F8] dark:hover:bg-gray-800 disabled:opacity-50 transition-colors text-sm font-semibold"
                           >
                             +
                           </button>
@@ -409,7 +409,7 @@ export default function CartPage() {
 
                       {/* Subtotal */}
                       <div className="col-span-6 md:col-span-2 text-center md:text-left">
-                        <p className="text-sm font-semibold text-purple-700">
+                        <p className="text-sm font-semibold text-[#881337] dark:text-[#FBCFE8]">
                           ৳{(item.price * item.quantity).toLocaleString()}
                         </p>
                       </div>
@@ -419,7 +419,7 @@ export default function CartPage() {
                         <button
                           onClick={() => handleRemoveItem(item.productId)}
                           disabled={updating}
-                          className="text-red-500 hover:text-red-700 hover:bg-red-50 p-1.5 rounded-lg disabled:opacity-50 transition-all"
+                          className="text-[#D94E67] hover:text-[#881337] hover:bg-[#FDF2F8] p-1.5 rounded-lg disabled:opacity-50 transition-all"
                           title="Remove from cart"
                         >
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -436,8 +436,8 @@ export default function CartPage() {
 
           {/* Cart Summary */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg shadow-md border-2 border-purple-200 p-3 sticky top-6">
-              <h2 className="text-base font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2 pb-1.5 border-b-2 border-purple-300 text-center">
+            <div className="bg-white dark:bg-gray-900 rounded-lg shadow-sm border border-[#F1E8EC] dark:border-gray-800 p-3 sticky top-6">
+              <h2 className="text-base font-bold text-[#881337] dark:text-[#FBCFE8] mb-2 pb-1.5 border-b border-[#F3E8EE] dark:border-gray-800 text-center">
                 Cart Summary
               </h2>
               
@@ -508,7 +508,7 @@ export default function CartPage() {
               <button
                 onClick={handleCheckout}
                 disabled={selectedItems.size === 0}
-                className="w-full px-3 py-2 bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 text-white rounded-lg hover:from-purple-700 hover:via-pink-700 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed font-semibold text-sm transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
+                className="w-full px-3 py-2 bg-[#881337] text-white rounded-lg hover:bg-[#6E0F2C] disabled:opacity-50 disabled:cursor-not-allowed font-semibold text-sm transition-all shadow-md hover:shadow-lg"
               >
                 Checkout
               </button>

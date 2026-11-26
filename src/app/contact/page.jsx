@@ -82,10 +82,10 @@ export default function ContactUsPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50 border-b border-purple-100">
+      <div className="bg-[#FDF2F8] border-b border-[#F1E8EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl sm:text-5xl font-bold mb-4 bg-[#881337] bg-clip-text text-transparent">
               Contact Us
             </h1>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
@@ -132,7 +132,7 @@ export default function ContactUsPage() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition-colors"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#9D174D] focus:border-[#9D174D] outline-none transition-colors"
                       placeholder="John Doe"
                     />
                   </div>
@@ -147,7 +147,7 @@ export default function ContactUsPage() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition-colors"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#9D174D] focus:border-[#9D174D] outline-none transition-colors"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -163,7 +163,7 @@ export default function ContactUsPage() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition-colors"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#9D174D] focus:border-[#9D174D] outline-none transition-colors"
                     placeholder="+880 1234567890"
                   />
                 </div>
@@ -179,7 +179,7 @@ export default function ContactUsPage() {
                     required
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition-colors"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#9D174D] focus:border-[#9D174D] outline-none transition-colors"
                     placeholder="How can we help you?"
                   />
                 </div>
@@ -195,7 +195,7 @@ export default function ContactUsPage() {
                     rows={6}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition-colors resize-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#9D174D] focus:border-[#9D174D] outline-none transition-colors resize-none"
                     placeholder="Tell us more about your inquiry..."
                   />
                 </div>
@@ -203,7 +203,7 @@ export default function ContactUsPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-medium rounded-lg transition-all shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full px-6 py-3 bg-[#881337] hover:bg-[#6E0F2C] text-white font-medium rounded-lg transition-all shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
@@ -220,7 +220,7 @@ export default function ContactUsPage() {
                 className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-100 to-pink-100 rounded-lg flex items-center justify-center text-purple-600 flex-shrink-0">
+                  <div className="w-12 h-12 bg-[#FDF2F8] rounded-lg flex items-center justify-center text-[#881337] flex-shrink-0">
                     {info.icon}
                   </div>
                   <div>
@@ -230,7 +230,7 @@ export default function ContactUsPage() {
                     {info.link !== '#' ? (
                       <a
                         href={info.link}
-                        className="text-gray-600 hover:text-purple-600 transition-colors"
+                        className="text-gray-600 hover:text-[#881337] transition-colors"
                       >
                         {info.content}
                       </a>
@@ -243,9 +243,9 @@ export default function ContactUsPage() {
             ))}
 
             {/* Business Hours */}
-            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl border border-purple-200 p-6">
+            <div className="bg-[#FDF2F8] rounded-xl border border-[#FBCFE8] p-6">
               <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-[#881337]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 Business Hours
@@ -266,7 +266,7 @@ export default function ContactUsPage() {
               <div className="flex gap-3">
                 <a
                   href="#"
-                  className="w-10 h-10 bg-gray-100 hover:bg-purple-600 rounded-lg flex items-center justify-center transition-colors group"
+                  className="w-10 h-10 bg-gray-100 hover:bg-[#881337] rounded-lg flex items-center justify-center transition-colors group"
                 >
                   <svg className="w-5 h-5 text-gray-600 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
@@ -274,7 +274,7 @@ export default function ContactUsPage() {
                 </a>
                 <a
                   href="#"
-                  className="w-10 h-10 bg-gray-100 hover:bg-purple-600 rounded-lg flex items-center justify-center transition-colors group"
+                  className="w-10 h-10 bg-gray-100 hover:bg-[#881337] rounded-lg flex items-center justify-center transition-colors group"
                 >
                   <svg className="w-5 h-5 text-gray-600 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
@@ -282,7 +282,7 @@ export default function ContactUsPage() {
                 </a>
                 <a
                   href="#"
-                  className="w-10 h-10 bg-gray-100 hover:bg-purple-600 rounded-lg flex items-center justify-center transition-colors group"
+                  className="w-10 h-10 bg-gray-100 hover:bg-[#881337] rounded-lg flex items-center justify-center transition-colors group"
                 >
                   <svg className="w-5 h-5 text-gray-600 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
@@ -294,7 +294,7 @@ export default function ContactUsPage() {
         </div>
 
         {/* FAQ Section */}
-        <div className="mt-16 bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl border border-purple-200 p-8 lg:p-12">
+        <div className="mt-16 bg-[#FDF2F8] rounded-xl border border-[#FBCFE8] p-8 lg:p-12">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Frequently Asked Questions
@@ -306,7 +306,7 @@ export default function ContactUsPage() {
           <div className="flex justify-center">
             <Link
               href="/faq"
-              className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-medium rounded-lg transition-all shadow-md hover:shadow-lg"
+              className="px-6 py-3 bg-[#881337] hover:bg-[#6E0F2C] text-white font-medium rounded-lg transition-all shadow-md hover:shadow-lg"
             >
               Visit FAQ Page
             </Link>

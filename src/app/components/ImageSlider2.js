@@ -206,7 +206,7 @@ export default function ImageSlider2() {
     return (
       <div className="relative w-full h-full flex items-center justify-center bg-gray-100 dark:bg-gray-800">
         <div className="text-center">
-          <div className="h-12 w-12 border-4 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+          <div className="h-12 w-12 border-4 border-[#881337] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
           <p className="text-gray-600 dark:text-gray-400">Loading slider images...</p>
         </div>
       </div>

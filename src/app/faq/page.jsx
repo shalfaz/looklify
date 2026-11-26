@@ -155,10 +155,10 @@ export default function FAQPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50 border-b border-purple-100">
+      <div className="bg-[#FDF2F8] border-b border-[#F1E8EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl sm:text-5xl font-bold mb-4 bg-[#881337] bg-clip-text text-transparent">
               Frequently Asked Questions
             </h1>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
@@ -180,8 +180,8 @@ export default function FAQPage() {
                 onClick={() => setActiveCategory(category.id)}
                 className={`px-6 py-3 rounded-lg font-medium transition-all ${
                   activeCategory === category.id
-                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-md'
-                    : 'bg-white border border-gray-200 text-gray-700 hover:border-purple-300 hover:text-purple-600'
+                    ? 'bg-[#881337] text-white shadow-md'
+                    : 'bg-white border border-gray-200 text-gray-700 hover:border-[#FBCFE8] hover:text-[#881337]'
                 }`}
               >
                 {category.name}
@@ -196,7 +196,7 @@ export default function FAQPage() {
             <input
               type="text"
               placeholder="Search for questions..."
-              className="w-full px-6 py-4 pl-14 rounded-xl text-gray-900 bg-white border-2 border-purple-200 focus:ring-2 focus:ring-purple-400 focus:border-purple-400 focus:outline-none shadow-sm"
+              className="w-full px-6 py-4 pl-14 rounded-xl text-gray-900 bg-white border-2 border-[#FBCFE8] focus:ring-2 focus:ring-purple-400 focus:border-[#D94E67] focus:outline-none shadow-sm"
               onChange={(e) => {
                 // Simple search functionality - you can enhance this
                 const searchTerm = e.target.value.toLowerCase();
@@ -255,7 +255,7 @@ export default function FAQPage() {
               <p className="text-gray-600 mb-6">Try selecting a different category or contact us for assistance.</p>
               <Link
                 href="/contact"
-                className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-medium rounded-lg transition-all shadow-md hover:shadow-lg"
+                className="px-6 py-3 bg-[#881337] hover:bg-[#6E0F2C] text-white font-medium rounded-lg transition-all shadow-md hover:shadow-lg"
               >
                 Contact Us
               </Link>
@@ -264,19 +264,19 @@ export default function FAQPage() {
         </div>
 
         {/* Still Have Questions Section */}
-        <div className="bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl p-8 lg:p-12 text-white">
+        <div className="bg-[#881337] rounded-xl p-8 lg:p-12 text-white">
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-4">
               Still Have Questions?
             </h2>
-            <p className="text-lg text-purple-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-[#FCE7F3] mb-8 max-w-2xl mx-auto">
               Can't find the answer you're looking for? Our customer service team is here to help! 
               Contact us and we'll get back to you as soon as possible.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="mailto:looklify.official@gmail.com"
-                className="px-6 py-3 bg-white text-purple-600 font-medium rounded-lg hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl"
+                className="px-6 py-3 bg-white text-[#881337] font-medium rounded-lg hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl"
               >
                 Email Us
               </a>
@@ -297,37 +297,37 @@ export default function FAQPage() {
         </div>
 
         {/* Quick Links */}
-        <div className="mt-12 bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl border border-purple-200 p-8">
+        <div className="mt-12 bg-[#FDF2F8] rounded-xl border border-[#FBCFE8] p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
             Related Pages
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <Link
               href="/shipping-delivery"
-              className="bg-white rounded-lg border border-purple-200 p-4 hover:border-purple-400 hover:shadow-md transition-all text-center"
+              className="bg-white rounded-lg border border-[#FBCFE8] p-4 hover:border-[#D94E67] hover:shadow-md transition-all text-center"
             >
-              <div className="text-purple-600 font-semibold mb-1">Shipping & Delivery</div>
+              <div className="text-[#881337] font-semibold mb-1">Shipping & Delivery</div>
               <div className="text-sm text-gray-600">Delivery information</div>
             </Link>
             <Link
               href="/return-refund"
-              className="bg-white rounded-lg border border-purple-200 p-4 hover:border-purple-400 hover:shadow-md transition-all text-center"
+              className="bg-white rounded-lg border border-[#FBCFE8] p-4 hover:border-[#D94E67] hover:shadow-md transition-all text-center"
             >
-              <div className="text-purple-600 font-semibold mb-1">Returns & Refunds</div>
+              <div className="text-[#881337] font-semibold mb-1">Returns & Refunds</div>
               <div className="text-sm text-gray-600">Return policy</div>
             </Link>
             <Link
               href="/customer-services"
-              className="bg-white rounded-lg border border-purple-200 p-4 hover:border-purple-400 hover:shadow-md transition-all text-center"
+              className="bg-white rounded-lg border border-[#FBCFE8] p-4 hover:border-[#D94E67] hover:shadow-md transition-all text-center"
             >
-              <div className="text-purple-600 font-semibold mb-1">Customer Services</div>
+              <div className="text-[#881337] font-semibold mb-1">Customer Services</div>
               <div className="text-sm text-gray-600">Get support</div>
             </Link>
             <Link
               href="/contact"
-              className="bg-white rounded-lg border border-purple-200 p-4 hover:border-purple-400 hover:shadow-md transition-all text-center"
+              className="bg-white rounded-lg border border-[#FBCFE8] p-4 hover:border-[#D94E67] hover:shadow-md transition-all text-center"
             >
-              <div className="text-purple-600 font-semibold mb-1">Contact Us</div>
+              <div className="text-[#881337] font-semibold mb-1">Contact Us</div>
               <div className="text-sm text-gray-600">Get in touch</div>
             </Link>
           </div>

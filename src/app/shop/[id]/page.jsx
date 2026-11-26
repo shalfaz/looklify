@@ -281,7 +281,7 @@ export default function DynamicShopPage() {
               `,
               icon: 'warning',
               confirmButtonText: 'OK',
-              confirmButtonColor: '#7c3aed',
+              confirmButtonColor: '#881337',
               background: '#f8fafc',
               color: '#1f2937'
             });
@@ -303,7 +303,7 @@ export default function DynamicShopPage() {
             `,
             icon: 'warning',
             confirmButtonText: 'OK',
-            confirmButtonColor: '#7c3aed',
+            confirmButtonColor: '#881337',
             background: '#f8fafc',
             color: '#1f2937'
           });
@@ -393,7 +393,7 @@ function ReviewsSection({ productId, session }) {
         showCancelButton: true,
         confirmButtonText: 'Login',
         cancelButtonText: 'Cancel',
-        confirmButtonColor: '#7c3aed'
+        confirmButtonColor: '#881337'
       }).then((result) => {
         if (result.isConfirmed) {
           window.location.href = '/login';
@@ -408,7 +408,7 @@ function ReviewsSection({ productId, session }) {
         text: 'Please select a rating',
         icon: 'warning',
         confirmButtonText: 'OK',
-        confirmButtonColor: '#7c3aed'
+        confirmButtonColor: '#881337'
       });
       return;
     }
@@ -489,7 +489,7 @@ function ReviewsSection({ productId, session }) {
         {session && !showForm && (
           <button
             onClick={() => setShowForm(true)}
-            className="px-4 py-2 text-sm bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all"
+            className="px-4 py-2 text-sm bg-[#881337] text-white rounded-lg hover:bg-[#6E0F2C] transition-all"
           >
             Write a Review
           </button>
@@ -541,7 +541,7 @@ function ReviewsSection({ productId, session }) {
                   value={reviewForm.comment}
                   onChange={(e) => setReviewForm({...reviewForm, comment: e.target.value})}
                   rows="4"
-                  className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-[#9D174D] focus:border-transparent"
                   placeholder="Share your experience with this product..."
                   required
                 />
@@ -551,7 +551,7 @@ function ReviewsSection({ productId, session }) {
               <button
                 type="submit"
                 disabled={submitting}
-                className="w-full px-4 py-2 text-sm bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed font-medium"
+                className="w-full px-4 py-2 text-sm bg-[#881337] text-white rounded-lg hover:bg-[#6E0F2C] transition-all disabled:opacity-50 disabled:cursor-not-allowed font-medium"
               >
                 {submitting ? 'Submitting...' : 'Submit Review'}
               </button>
@@ -563,7 +563,7 @@ function ReviewsSection({ productId, session }) {
       {/* Reviews List */}
       {loading ? (
         <div className="text-center py-8">
-          <div className="h-8 w-8 border-3 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto" />
+          <div className="h-8 w-8 border-3 border-[#881337] border-t-transparent rounded-full animate-spin mx-auto" />
           <p className="mt-3 text-sm text-gray-600">Loading reviews...</p>
         </div>
       ) : reviews.length === 0 ? (
@@ -580,7 +580,7 @@ function ReviewsSection({ productId, session }) {
             <div key={review._id} className="pb-6 border-b border-gray-200 last:border-b-0">
               <div className="flex items-start space-x-3">
                 {/* User Avatar */}
-                <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white font-semibold text-sm flex-shrink-0">
+                <div className="w-10 h-10 bg-[#881337] rounded-full flex items-center justify-center text-white font-semibold text-sm flex-shrink-0">
                   {review.user?.name?.charAt(0) || review.user?.email?.charAt(0) || 'U'}
                 </div>
                 
@@ -683,7 +683,7 @@ function ProductDetailsView({ product, productId, loading, error, quantity, setQ
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center py-20">
         <div className="text-center">
-          <div className="h-10 w-10 border-3 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto" />
+          <div className="h-10 w-10 border-3 border-[#881337] border-t-transparent rounded-full animate-spin mx-auto" />
           <p className="mt-3 text-sm text-gray-600">Loading product...</p>
         </div>
       </div>
@@ -701,7 +701,7 @@ function ProductDetailsView({ product, productId, loading, error, quantity, setQ
           <p className="text-sm text-gray-500 mb-3">{error || 'This product is no longer available'}</p>
           <Link
             href="/shop"
-            className="px-4 py-2 text-sm bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700"
+            className="px-4 py-2 text-sm bg-[#881337] text-white rounded-lg hover:bg-[#6E0F2C]"
           >
             See other products
           </Link>
@@ -771,9 +771,9 @@ function ProductDetailsView({ product, productId, loading, error, quantity, setQ
         )}
         {/* Compact Breadcrumb */}
         <nav className="flex items-center space-x-1.5 text-xs text-gray-500 mb-4">
-          <Link href="/" className="hover:text-purple-600">Home</Link>
+          <Link href="/" className="hover:text-[#881337]">Home</Link>
           <span>/</span>
-          <Link href="/shop" className="hover:text-purple-600">Shop</Link>
+          <Link href="/shop" className="hover:text-[#881337]">Shop</Link>
           <span>/</span>
           <span className="text-gray-900 line-clamp-1">{product.name}</span>
         </nav>
@@ -808,7 +808,7 @@ function ProductDetailsView({ product, productId, loading, error, quantity, setQ
               
               {/* Discount Badge */}
               {calculateDiscountPercentage() > 0 && (
-                <div className="absolute top-2 left-2 bg-red-500 text-white px-2 py-0.5 rounded text-xs font-semibold shadow-md">
+                <div className="absolute top-2 left-2 bg-[#B08968] text-white px-2 py-0.5 rounded text-xs font-semibold shadow-sm">
                   {calculateDiscountPercentage()}% OFF
                 </div>
               )}
@@ -822,7 +822,7 @@ function ProductDetailsView({ product, productId, loading, error, quantity, setQ
                     key={index}
                     onClick={() => setActiveImageIndex(index)}
                     className={`w-14 h-14 rounded overflow-hidden border-2 ${
-                      activeImageIndex === index ? 'border-purple-600' : 'border-gray-200'
+                      activeImageIndex === index ? 'border-[#881337]' : 'border-[#F1E8EC]'
                     }`}
                     onContextMenu={(e) => e.preventDefault()}
                     onDragStart={(e) => e.preventDefault()}
@@ -980,13 +980,13 @@ function ProductDetailsView({ product, productId, loading, error, quantity, setQ
               <div className="space-y-2">
                 <button
                   onClick={handleAddToCart}
-                  className="w-full px-4 py-2.5 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 font-medium text-sm"
+                  className="w-full px-4 py-2.5 border border-[#9D174D] bg-white dark:bg-transparent text-[#881337] dark:text-[#FBCFE8] rounded-lg hover:bg-[#FDF2F8] dark:hover:bg-[#881337]/20 font-medium text-sm transition-colors"
                 >
                   Add to Cart
                 </button>
                 <button
                   onClick={handleBuyNow}
-                  className="w-full px-4 py-2.5 border-2 border-purple-600 text-purple-600 rounded-lg hover:bg-purple-50 font-medium text-sm"
+                  className="w-full px-4 py-2.5 bg-[#D94E67] text-white rounded-lg hover:bg-[#C43D56] font-medium text-sm transition-colors"
                 >
                   Buy Now
                 </button>
@@ -1036,7 +1036,7 @@ function ProductDetailsView({ product, productId, loading, error, quantity, setQ
                           {relatedProduct.name}
                         </h4>
                         <div className="flex items-center space-x-1.5">
-                          <span className="font-bold text-purple-600 text-sm">৳{relatedProduct.salePrice || relatedProduct.price}</span>
+                          <span className="font-bold text-[#881337] text-sm">৳{relatedProduct.salePrice || relatedProduct.price}</span>
                           {(relatedProduct.regularPrice || relatedProduct.originalPrice) && 
                            (relatedProduct.regularPrice || relatedProduct.originalPrice) > (relatedProduct.salePrice || relatedProduct.price) && (
                             <span className="text-xs text-gray-500 line-through">
@@ -1068,8 +1068,8 @@ function ProductDetailsView({ product, productId, loading, error, quantity, setQ
                   onClick={() => setActiveTab(tab.id)}
                   className={`py-3 px-1 border-b-2 font-medium text-xs ${
                     activeTab === tab.id
-                      ? 'border-purple-600 text-purple-600'
-                      : 'border-transparent text-gray-500 hover:text-gray-700'
+                      ? 'border-[#881337] text-[#881337]'
+                      : 'border-transparent text-[#6B7280] hover:text-[#1F2937]'
                   }`}
                 >
                   {tab.label}
@@ -1201,7 +1201,7 @@ function CategoryView({ category, products, loading, error, addToCart, filters, 
           `,
           icon: 'warning',
           confirmButtonText: 'OK',
-          confirmButtonColor: '#7c3aed',
+          confirmButtonColor: '#881337',
           background: '#f8fafc',
           color: '#1f2937'
         });
@@ -1223,7 +1223,7 @@ function CategoryView({ category, products, loading, error, addToCart, filters, 
         `,
         icon: 'warning',
         confirmButtonText: 'OK',
-        confirmButtonColor: '#7c3aed',
+        confirmButtonColor: '#881337',
         background: '#f8fafc',
         color: '#1f2937'
       });
@@ -1254,7 +1254,7 @@ function CategoryView({ category, products, loading, error, addToCart, filters, 
       text: 'This feature will redirect you to checkout',
       icon: 'info',
       showCancelButton: true,
-      confirmButtonColor: '#7c3aed',
+      confirmButtonColor: '#881337',
       cancelButtonColor: '#6b7280',
       confirmButtonText: 'Proceed to Checkout',
       cancelButtonText: 'Cancel',
@@ -1274,7 +1274,7 @@ function CategoryView({ category, products, loading, error, addToCart, filters, 
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="h-12 w-12 border-4 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto" />
+          <div className="h-12 w-12 border-4 border-[#881337] border-t-transparent rounded-full animate-spin mx-auto" />
           <p className="mt-4 text-gray-600">Loading products...</p>
         </div>
       </div>
@@ -1290,7 +1290,7 @@ function CategoryView({ category, products, loading, error, addToCart, filters, 
           </div>
           <h3 className="text-base font-medium text-gray-900 mb-1">Category not found</h3>
           <p className="text-sm text-gray-500 mb-3">{error || 'This category does not exist'}</p>
-          <Link href="/shop" className="px-3 py-1.5 text-sm bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-md hover:from-purple-700 hover:to-pink-700">
+          <Link href="/shop" className="px-3 py-1.5 text-sm bg-[#881337] text-white rounded-md hover:bg-[#6E0F2C]">
             Browse All Products
           </Link>
         </div>
@@ -1325,7 +1325,7 @@ function CategoryView({ category, products, loading, error, addToCart, filters, 
                   type="text"
                   value={filters.search}
                   onChange={(e) => handleFilterChange('search', e.target.value)}
-                  className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-[#9D174D] focus:border-transparent"
                   placeholder="Search products..."
                 />
               </div>
@@ -1339,7 +1339,7 @@ function CategoryView({ category, products, loading, error, addToCart, filters, 
                     handleFilterChange('brand', e.target.value);
                     handleFilterChange('subcategory', '');
                   }}
-                  className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-[#9D174D] focus:border-transparent"
                 >
                   <option value="">All Brands</option>
                   {filterOptions.brands && filterOptions.brands.length > 0 ? (
@@ -1359,7 +1359,7 @@ function CategoryView({ category, products, loading, error, addToCart, filters, 
                     handleFilterChange('category', e.target.value);
                     handleFilterChange('subcategory', '');
                   }}
-                  className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-[#9D174D] focus:border-transparent"
                 >
                   <option value="">All Categories</option>
                   {filterOptions.categories.map(category => (
@@ -1374,7 +1374,7 @@ function CategoryView({ category, products, loading, error, addToCart, filters, 
                 <select
                   value={filters.subcategory}
                   onChange={(e) => handleFilterChange('subcategory', e.target.value)}
-                  className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-[#9D174D] focus:border-transparent"
                 >
                   <option value="">All Sub Categories</option>
                   {Object.entries(getFilteredSubcategories()).map(([parentName, subs]) => (
@@ -1393,7 +1393,7 @@ function CategoryView({ category, products, loading, error, addToCart, filters, 
                 <select
                   value={filters.skinType}
                   onChange={(e) => handleFilterChange('skinType', e.target.value)}
-                  className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-[#9D174D] focus:border-transparent"
                 >
                   <option value="">All Types</option>
                   {filterOptions.skinTypes.map(type => (
@@ -1408,7 +1408,7 @@ function CategoryView({ category, products, loading, error, addToCart, filters, 
                 <select
                   value={filters.skinConcern}
                   onChange={(e) => handleFilterChange('skinConcern', e.target.value)}
-                  className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-[#9D174D] focus:border-transparent"
                 >
                   <option value="">All Concerns</option>
                   {filterOptions.skinConcerns.map(concern => (
@@ -1438,7 +1438,7 @@ function CategoryView({ category, products, loading, error, addToCart, filters, 
                 <label className="text-xs text-gray-700">Sort by:</label>
                 <select
                   defaultValue="createdAt-desc"
-                  className="px-2 py-1.5 text-xs border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="px-2 py-1.5 text-xs border border-gray-300 rounded-md focus:ring-2 focus:ring-[#9D174D] focus:border-transparent"
                 >
                   <option value="createdAt-desc">Newest First</option>
                   <option value="createdAt-asc">Oldest First</option>
@@ -1458,7 +1458,7 @@ function CategoryView({ category, products, loading, error, addToCart, filters, 
                 <p className="text-sm text-gray-500 mb-3">No products match your current filters</p>
                 <button
                   onClick={resetFilters}
-                  className="px-3 py-1.5 text-sm bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-md hover:from-purple-700 hover:to-pink-700"
+                  className="px-3 py-1.5 text-sm bg-[#881337] text-white rounded-md hover:bg-[#6E0F2C]"
                 >
                   Clear All Filters
                 </button>
@@ -1494,7 +1494,7 @@ function CategoryView({ category, products, loading, error, addToCart, filters, 
                   })();
 
                   return (
-                    <div key={product._id} className="bg-white rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+                    <div key={product._id} className="bg-white dark:bg-gray-900 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 border border-[#F1E8EC] dark:border-gray-800 hover:border-[#FBCFE8] group">
                       <div className="relative">
                         <Link href={`/shop/${product._id}`}>
                           <Image
@@ -1516,10 +1516,10 @@ function CategoryView({ category, products, loading, error, addToCart, filters, 
                           />
                         </Link>
                         
-                        {/* Discount Badge - small pill top-right */}
+                        {/* Discount Badge - warm champagne gold top-right */}
                         {discountPercentage > 0 && (
                           <div className="absolute top-2 right-2">
-                            <span className="px-2 py-1 text-[11px] font-semibold bg-red-600 text-white rounded-full shadow">
+                            <span className="px-2 py-1 text-[11px] font-semibold bg-[#B08968] text-white rounded-full shadow-sm">
                               {discountPercentage}% OFF
                             </span>
                           </div>
@@ -1527,8 +1527,8 @@ function CategoryView({ category, products, loading, error, addToCart, filters, 
                       </div>
 
                       <div className="p-3 sm:p-4">
-                        <h3 className="font-medium text-gray-900 mb-2 text-sm sm:text-base line-clamp-2 leading-tight min-h-[36px]">
-                          <Link href={`/shop/${product._id}`} className="hover:text-purple-600 transition-colors">
+                        <h3 className="font-medium text-[#1F2937] dark:text-gray-100 mb-2 text-sm sm:text-base line-clamp-2 leading-tight min-h-[36px]">
+                          <Link href={`/shop/${product._id}`} className="hover:text-[#881337] transition-colors">
                             {product.name}
                           </Link>
                         </h3>
@@ -1543,9 +1543,9 @@ function CategoryView({ category, products, loading, error, addToCart, filters, 
                               
                               return (
                                 <>
-                                  <span className="text-base sm:text-lg font-bold text-gray-900">৳{displayPrice}</span>
+                                  <span className="text-base sm:text-lg font-bold text-[#1F2937] dark:text-gray-100">৳{displayPrice}</span>
                                   {regularPrice && regularPrice > displayPrice && (
-                                    <span className="text-xs sm:text-sm text-gray-500 line-through">৳{regularPrice}</span>
+                                    <span className="text-xs sm:text-sm text-[#6B7280] line-through">৳{regularPrice}</span>
                                   )}
                                 </>
                               );
@@ -1563,8 +1563,8 @@ function CategoryView({ category, products, loading, error, addToCart, filters, 
                             aria-label="wishlist"
                             className={`w-9 h-9 rounded-full border flex items-center justify-center transition-colors ${
                               isInWishlist(product._id)
-                                ? 'text-red-500 border-red-200 bg-red-50'
-                                : 'text-gray-500 border-gray-200 hover:text-red-500 hover:border-red-300'
+                                ? 'text-[#D94E67] border-[#FBCFE8] bg-[#FDF2F8]'
+                                : 'text-[#6B7280] border-[#F1E8EC] hover:text-[#D94E67] hover:border-[#FBCFE8]'
                             }`}
                           >
                             <svg className={`w-5 h-5 ${isInWishlist(product._id) ? 'fill-current' : 'stroke-current'}`} fill={isInWishlist(product._id) ? 'currentColor' : 'none'} stroke="currentColor" viewBox="0 0 24 24">
@@ -1578,13 +1578,13 @@ function CategoryView({ category, products, loading, error, addToCart, filters, 
                           <div className="flex gap-3 text-sm sm:text-base">
                             <button
                               onClick={() => handleAddToCartProduct(product)}
-                              className="flex-1 py-2.5 sm:py-3 rounded-full border-2 border-purple-600 text-purple-600 bg-white font-semibold hover:bg-purple-50 transition-colors"
+                              className="flex-1 py-2.5 sm:py-3 rounded-full border border-[#9D174D] text-[#881337] dark:text-[#FBCFE8] bg-white dark:bg-transparent font-semibold hover:bg-[#FDF2F8] transition-colors"
                             >
                               Add to Cart
                             </button>
                             <button
                               onClick={() => handleBuyNow(product._id)}
-                              className="flex-1 py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold hover:from-purple-700 hover:to-pink-700 transition-colors"
+                              className="flex-1 py-2.5 sm:py-3 rounded-full bg-[#D94E67] text-white font-semibold hover:bg-[#C43D56] transition-colors"
                             >
                               Buy Now
                             </button>

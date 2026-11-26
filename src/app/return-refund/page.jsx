@@ -56,11 +56,11 @@ export default function ReturnRefundPage() {
           <ol className="list-decimal list-inside space-y-3 text-gray-600 ml-4">
             <li>
               <strong className="text-gray-900">Contact Us:</strong> Email us at{' '}
-              <a href="mailto:looklify.official@gmail.com" className="text-purple-600 hover:text-purple-700">
+              <a href="mailto:looklify.official@gmail.com" className="text-[#881337] hover:text-[#881337]">
                 looklify.official@gmail.com
               </a>{' '}
               or call us at{' '}
-              <a href="tel:01866414126" className="text-purple-600 hover:text-purple-700">
+              <a href="tel:01866414126" className="text-[#881337] hover:text-[#881337]">
                 01866414126
               </a>{' '}
               with your order number and reason for return
@@ -95,7 +95,7 @@ export default function ReturnRefundPage() {
             <li>Original shipping charges will be deducted from the refund amount</li>
             <li>For defective or damaged items, we'll cover return shipping costs</li>
           </ul>
-          <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 mt-4">
+          <div className="bg-[#FDF2F8] border border-[#FBCFE8] rounded-lg p-4 mt-4">
             <p className="text-sm text-gray-700">
               <strong>Note:</strong> Refund processing times may vary depending on your bank or payment provider. 
               Please allow additional time for the refund to appear in your account.
@@ -177,10 +177,10 @@ export default function ReturnRefundPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50 border-b border-purple-100">
+      <div className="bg-[#FDF2F8] border-b border-[#F1E8EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl sm:text-5xl font-bold mb-4 bg-[#881337] bg-clip-text text-transparent">
               Return & Refund Policy
             </h1>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
@@ -194,10 +194,10 @@ export default function ReturnRefundPage() {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Quick Overview */}
-        <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl border border-purple-200 p-8 mb-12">
+        <div className="bg-[#FDF2F8] rounded-xl border border-[#FBCFE8] p-8 mb-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="text-center">
-              <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-[#881337] rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -206,7 +206,7 @@ export default function ReturnRefundPage() {
               <p className="text-sm text-gray-600">Return eligible items within 7 days of delivery</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-[#D94E67] rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -215,7 +215,7 @@ export default function ReturnRefundPage() {
               <p className="text-sm text-gray-600">Simple return process with customer support</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-[#881337] rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -238,7 +238,7 @@ export default function ReturnRefundPage() {
                 className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
               >
                 <h2 className="text-xl font-bold text-gray-900 flex items-center gap-3">
-                  <span className="w-8 h-8 bg-gradient-to-br from-purple-100 to-pink-100 rounded-lg flex items-center justify-center text-purple-600 font-semibold text-sm">
+                  <span className="w-8 h-8 bg-[#FDF2F8] rounded-lg flex items-center justify-center text-[#881337] font-semibold text-sm">
                     {index + 1}
                   </span>
                   {policy.title}
@@ -303,19 +303,19 @@ export default function ReturnRefundPage() {
         </div>
 
         {/* Contact Section */}
-        <div className="bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl p-8 lg:p-12 text-white">
+        <div className="bg-[#881337] rounded-xl p-8 lg:p-12 text-white">
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-4">
               Need Help with Your Return?
             </h2>
-            <p className="text-lg text-purple-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-[#FCE7F3] mb-8 max-w-2xl mx-auto">
               Our customer service team is here to help you with any questions about returns or refunds. 
               Contact us and we'll assist you promptly.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="mailto:looklify.official@gmail.com"
-                className="px-6 py-3 bg-white text-purple-600 font-medium rounded-lg hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl"
+                className="px-6 py-3 bg-white text-[#881337] font-medium rounded-lg hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl"
               >
                 Email Us
               </a>

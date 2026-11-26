@@ -181,10 +181,10 @@ function BlogContent() {
       style={{ userSelect: 'none', WebkitUserSelect: 'none' }}
     >
       {/* Header Section */}
-      <div className="bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50 border-b border-purple-100">
+      <div className="bg-[#FDF2F8] border-b border-[#F1E8EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
           <div className="text-center">
-            <h1 className="text-4xl pb-2 sm:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl pb-2 sm:text-5xl font-bold mb-4 bg-[#881337] bg-clip-text text-transparent">
               Looklify Blog
             </h1>
             <p className="text-lg sm:text-xl text-gray-600 mb-8">
@@ -199,7 +199,7 @@ function BlogContent() {
                   value={filters.search}
                   onChange={(e) => setFilters(prev => ({ ...prev, search: e.target.value }))}
                   placeholder="Search articles..."
-                  className="w-full px-6 py-4 pl-14 rounded-xl text-gray-900 bg-white border-2 border-purple-200 focus:ring-2 focus:ring-purple-400 focus:border-purple-400 focus:outline-none shadow-sm"
+                  className="w-full px-6 py-4 pl-14 rounded-xl text-gray-900 bg-white border-2 border-[#FBCFE8] focus:ring-2 focus:ring-purple-400 focus:border-[#D94E67] focus:outline-none shadow-sm"
                 />
                 <div className="absolute left-5 top-1/2 transform -translate-y-1/2">
                   <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -208,7 +208,7 @@ function BlogContent() {
                 </div>
                 <button
                   type="submit"
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 px-6 py-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-lg text-white font-medium transition-all shadow-md hover:shadow-lg"
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 px-6 py-2 bg-[#881337] hover:bg-[#6E0F2C] rounded-lg text-white font-medium transition-all shadow-md hover:shadow-lg"
                 >
                   Search
                 </button>
@@ -242,7 +242,7 @@ function BlogContent() {
                 setFilters({ search: '', category: '', tag: '', page: 1 });
                 fetchBlogs();
               }}
-              className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+              className="px-6 py-3 bg-[#881337] text-white rounded-lg hover:bg-[#6E0F2C] transition-colors"
             >
               Clear Filters
             </button>
@@ -253,7 +253,7 @@ function BlogContent() {
               <Link
                 key={blog._id}
                 href={`/blog/${blog.slug}`}
-                className="group bg-white rounded-xl border border-gray-200 hover:border-purple-300 hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col"
+                className="group bg-white rounded-xl border border-gray-200 hover:border-[#FBCFE8] hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col"
               >
                 {/* Featured Image */}
                 <div 
@@ -281,8 +281,8 @@ function BlogContent() {
                       }}
                     />
                   ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
-                      <svg className="w-16 h-16 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-full h-full bg-[#FDF2F8] flex items-center justify-center">
+                      <svg className="w-16 h-16 text-[#FBCFE8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
                       </svg>
                     </div>
@@ -312,7 +312,7 @@ function BlogContent() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3 line-clamp-2 group-hover:text-purple-600 transition-colors">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3 line-clamp-2 group-hover:text-[#881337] transition-colors">
                     {blog.title}
                   </h3>
 
@@ -327,7 +327,7 @@ function BlogContent() {
                   {blog.tags && blog.tags.length > 0 && (
                     <div className="flex flex-wrap gap-2 mb-4">
                       {blog.tags.slice(0, 3).map((tag, idx) => (
-                        <span key={idx} className="text-xs px-2 py-1 bg-purple-100 text-purple-700 rounded-full">
+                        <span key={idx} className="text-xs px-2 py-1 bg-[#FCE7F3] text-[#881337] rounded-full">
                           #{tag}
                         </span>
                       ))}
@@ -335,7 +335,7 @@ function BlogContent() {
                   )}
 
                   {/* Read More */}
-                  <div className="flex items-center gap-2 text-purple-600 font-medium text-sm">
+                  <div className="flex items-center gap-2 text-[#881337] font-medium text-sm">
                     <span>Read More</span>
                     <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

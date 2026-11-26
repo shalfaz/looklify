@@ -370,7 +370,7 @@ export default function CheckoutPage() {
         text: error.message || 'Failed to process EPS payment',
         icon: 'error',
         confirmButtonText: 'OK',
-        confirmButtonColor: '#7c3aed'
+        confirmButtonColor: '#881337'
       });
     }
   };
@@ -433,12 +433,12 @@ export default function CheckoutPage() {
           html: `
             <div class="text-center">
               <p class="mb-3">Thank you for your order. We will process it soon.</p>
-              <p class="text-lg font-bold text-purple-600 mt-4">Order ID: ${result.data.orderId}</p>
+              <p class="text-lg font-bold text-[#881337] mt-4">Order ID: ${result.data.orderId}</p>
             </div>
           `,
           icon: 'success',
           confirmButtonText: 'View Orders',
-          confirmButtonColor: '#7c3aed',
+          confirmButtonColor: '#881337',
           allowOutsideClick: false
         }).then((result) => {
           if (result.isConfirmed) {
@@ -476,7 +476,7 @@ export default function CheckoutPage() {
               showCancelButton: true,
               confirmButtonText: 'Go to Cart',
               cancelButtonText: 'Stay Here',
-              confirmButtonColor: '#7c3aed',
+              confirmButtonColor: '#881337',
               cancelButtonColor: '#6b7280'
             }).then((result) => {
               if (result.isConfirmed) {
@@ -517,7 +517,7 @@ export default function CheckoutPage() {
             showCancelButton: true,
             confirmButtonText: 'Go to Cart',
             cancelButtonText: 'Stay Here',
-            confirmButtonColor: '#7c3aed',
+            confirmButtonColor: '#881337',
             cancelButtonColor: '#6b7280'
           }).then((result) => {
             if (result.isConfirmed) {
@@ -533,7 +533,7 @@ export default function CheckoutPage() {
         text: errorMessage,
         icon: 'error',
         confirmButtonText: 'OK',
-        confirmButtonColor: '#7c3aed'
+        confirmButtonColor: '#881337'
       });
     } finally {
       setSubmitting(false);
@@ -544,7 +544,7 @@ export default function CheckoutPage() {
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
         <div className="text-center">
-          <div className="h-14 w-14 border-4 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto" />
+          <div className="h-14 w-14 border-4 border-[#9D174D] border-t-transparent rounded-full animate-spin mx-auto" />
           <p className="mt-4 text-gray-600 font-medium">Loading checkout...</p>
         </div>
       </div>
@@ -556,18 +556,18 @@ export default function CheckoutPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-30 via-pink-30 to-blue-30 py-6">
+    <div className="min-h-screen bg-[#FFFDFD] py-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-6">
-          <Link href="/cart" className="inline-flex items-center text-purple-600 hover:text-purple-700 mb-4">
+          <Link href="/cart" className="inline-flex items-center text-[#881337] hover:text-[#881337] mb-4">
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
             Back to Cart
           </Link>
           <div>
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent border-b-2 border-purple-500 pb-2 mb-2">Checkout</h1>
+            <h1 className="text-4xl font-bold bg-[#881337] bg-clip-text text-transparent border-b-2 border-[#9D174D] pb-2 mb-2">Checkout</h1>
             <p className="text-lg text-gray-600">Complete your order in a few simple steps</p>
           </div>
         </div>
@@ -581,7 +581,7 @@ export default function CheckoutPage() {
                   <div
                     className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-base transition-all ${
                       currentStep >= step
-                        ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg'
+                        ? 'bg-[#881337] text-white shadow-lg'
                         : 'bg-gray-200 text-gray-500'
                     }`}
                   >
@@ -595,7 +595,7 @@ export default function CheckoutPage() {
                   </div>
                   <span
                     className={`mt-1.5 text-xs font-medium ${
-                      currentStep >= step ? 'text-purple-600' : 'text-gray-500'
+                      currentStep >= step ? 'text-[#881337]' : 'text-gray-500'
                     }`}
                   >
                     {step === 1 ? 'Shipping' : step === 2 ? 'Payment' : 'Review'}
@@ -604,7 +604,7 @@ export default function CheckoutPage() {
                 {step < 3 && (
                   <div
                     className={`flex-1 h-1 mx-3 transition-all ${
-                      currentStep > step ? 'bg-gradient-to-r from-purple-600 to-pink-600' : 'bg-gray-200'
+                      currentStep > step ? 'bg-[#881337]' : 'bg-gray-200'
                     }`}
                   />
                 )}
@@ -618,9 +618,9 @@ export default function CheckoutPage() {
           <div className="lg:col-span-2 space-y-4">
             {/* Step 1: Delivery Details */}
             {currentStep === 1 && (
-              <div className="bg-gradient-to-br from-white via-purple-50/30 to-pink-50/30 rounded-lg shadow-lg border-2 border-purple-200 p-6">
-                <h2 className="text-xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text text-transparent mb-6 flex items-center">
-                  <span className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mr-3"></span>
+              <div className="bg-gradient-to-br from-white via-purple-50/30 to-pink-50/30 rounded-lg shadow-lg border-2 border-[#FBCFE8] p-6">
+                <h2 className="text-xl font-bold bg-[#881337] bg-clip-text text-transparent mb-6 flex items-center">
+                  <span className="w-2 h-2 bg-[#881337] rounded-full mr-3"></span>
                   Delivery Details
                 </h2>
 
@@ -634,8 +634,8 @@ export default function CheckoutPage() {
                       type="text"
                       value={formData.fullName}
                       onChange={(e) => handleInputChange('fullName', e.target.value)}
-                      className={`w-full px-4 py-2.5 text-sm border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-500 transition-all bg-white ${
-                        formErrors.fullName ? 'border-red-400 bg-red-50' : 'border-purple-200 hover:border-purple-300'
+                      className={`w-full px-4 py-2.5 text-sm border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-[#9D174D] transition-all bg-white ${
+                        formErrors.fullName ? 'border-red-400 bg-red-50' : 'border-[#FBCFE8] hover:border-[#FBCFE8]'
                       }`}
                       placeholder="Enter your name"
                     />
@@ -653,8 +653,8 @@ export default function CheckoutPage() {
                       type="email"
                       value={formData.email}
                       onChange={(e) => handleInputChange('email', e.target.value)}
-                      className={`w-full px-4 py-2.5 text-sm border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-500 transition-all bg-white ${
-                        formErrors.email ? 'border-red-400 bg-red-50' : 'border-purple-200 hover:border-purple-300'
+                      className={`w-full px-4 py-2.5 text-sm border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-[#9D174D] transition-all bg-white ${
+                        formErrors.email ? 'border-red-400 bg-red-50' : 'border-[#FBCFE8] hover:border-[#FBCFE8]'
                       }`}
                       placeholder="Enter your email"
                     />
@@ -672,8 +672,8 @@ export default function CheckoutPage() {
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => handleInputChange('phone', e.target.value)}
-                      className={`w-full px-4 py-2.5 text-sm border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-500 transition-all bg-white ${
-                        formErrors.phone ? 'border-red-400 bg-red-50' : 'border-purple-200 hover:border-purple-300'
+                      className={`w-full px-4 py-2.5 text-sm border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-[#9D174D] transition-all bg-white ${
+                        formErrors.phone ? 'border-red-400 bg-red-50' : 'border-[#FBCFE8] hover:border-[#FBCFE8]'
                       }`}
                       placeholder="01XXXXXXXXX or +880XXXXXXXXXX"
                     />
@@ -691,8 +691,8 @@ export default function CheckoutPage() {
                       value={formData.address}
                       onChange={(e) => handleInputChange('address', e.target.value)}
                       rows="4"
-                      className={`w-full px-4 py-2.5 text-sm border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-500 transition-all resize-none bg-white ${
-                        formErrors.address ? 'border-red-400 bg-red-50' : 'border-purple-200 hover:border-purple-300'
+                      className={`w-full px-4 py-2.5 text-sm border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-[#9D174D] transition-all resize-none bg-white ${
+                        formErrors.address ? 'border-red-400 bg-red-50' : 'border-[#FBCFE8] hover:border-[#FBCFE8]'
                       }`}
                       placeholder="Enter your delivery address"
                     />
@@ -709,8 +709,8 @@ export default function CheckoutPage() {
                     <div className="space-y-3">
                       <label className={`flex items-center space-x-3 p-3 border-2 rounded-lg cursor-pointer transition-all ${
                         shippingLocation === 'insideDhaka' 
-                          ? 'border-purple-600 bg-gradient-to-r from-purple-50 to-pink-50 shadow-md' 
-                          : 'border-purple-200 hover:border-purple-400 hover:bg-purple-50/50'
+                          ? 'border-[#881337] bg-[#FDF2F8] shadow-md' 
+                          : 'border-[#FBCFE8] hover:border-[#D94E67] hover:bg-[#FDF2F8]/50'
                       }`}>
                         <input
                           type="radio"
@@ -718,7 +718,7 @@ export default function CheckoutPage() {
                           value="insideDhaka"
                           checked={shippingLocation === 'insideDhaka'}
                           onChange={() => setShippingLocation('insideDhaka')}
-                          className="w-5 h-5 text-purple-600 focus:ring-purple-500 cursor-pointer"
+                          className="w-5 h-5 text-[#881337] focus:ring-[#9D174D] cursor-pointer"
                         />
                         <span className="text-sm text-gray-800 font-semibold">
                           ঢাকা সিটির ভিতরে- {getShippingCharges().insideDhaka} টাকা
@@ -726,8 +726,8 @@ export default function CheckoutPage() {
                       </label>
                       <label className={`flex items-center space-x-3 p-3 border-2 rounded-lg cursor-pointer transition-all ${
                         shippingLocation === 'outsideDhaka' 
-                          ? 'border-purple-600 bg-gradient-to-r from-purple-50 to-pink-50 shadow-md' 
-                          : 'border-purple-200 hover:border-purple-400 hover:bg-purple-50/50'
+                          ? 'border-[#881337] bg-[#FDF2F8] shadow-md' 
+                          : 'border-[#FBCFE8] hover:border-[#D94E67] hover:bg-[#FDF2F8]/50'
                       }`}>
                         <input
                           type="radio"
@@ -735,7 +735,7 @@ export default function CheckoutPage() {
                           value="outsideDhaka"
                           checked={shippingLocation === 'outsideDhaka'}
                           onChange={() => setShippingLocation('outsideDhaka')}
-                          className="w-5 h-5 text-purple-600 focus:ring-purple-500 cursor-pointer"
+                          className="w-5 h-5 text-[#881337] focus:ring-[#9D174D] cursor-pointer"
                         />
                         <span className="text-sm text-gray-800 font-semibold">
                           ঢাকা সিটির বাইরে- {getShippingCharges().outsideDhaka} টাকা
@@ -749,9 +749,9 @@ export default function CheckoutPage() {
 
             {/* Step 2: Payment Method */}
             {currentStep === 2 && (
-              <div className="bg-white rounded-lg shadow-md border-2 border-purple-100 p-4">
-                <h2 className="text-base font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4 pb-1.5 border-b-2 border-purple-300 flex items-center">
-                  <span className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></span>
+              <div className="bg-white rounded-lg shadow-md border-2 border-[#F1E8EC] p-4">
+                <h2 className="text-base font-bold bg-[#881337] bg-clip-text text-transparent mb-4 pb-1.5 border-b-2 border-[#FBCFE8] flex items-center">
+                  <span className="w-1.5 h-1.5 bg-[#9D174D] rounded-full mr-2"></span>
                   Payment Method
                 </h2>
 
@@ -762,17 +762,17 @@ export default function CheckoutPage() {
                     onClick={() => setPaymentMethod('cod')}
                     className={`w-full p-4 border-2 rounded-lg text-left transition-all ${
                       paymentMethod === 'cod'
-                        ? 'border-purple-600 bg-purple-50 shadow-md'
-                        : 'border-purple-200 hover:border-purple-400'
+                        ? 'border-[#881337] bg-[#FDF2F8] shadow-md'
+                        : 'border-[#FBCFE8] hover:border-[#D94E67]'
                     }`}
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
                         <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
-                          paymentMethod === 'cod' ? 'border-purple-600' : 'border-gray-300'
+                          paymentMethod === 'cod' ? 'border-[#881337]' : 'border-gray-300'
                         }`}>
                           {paymentMethod === 'cod' && (
-                            <div className="w-3 h-3 bg-purple-600 rounded-full"></div>
+                            <div className="w-3 h-3 bg-[#881337] rounded-full"></div>
                           )}
                         </div>
                         <div>
@@ -854,7 +854,7 @@ export default function CheckoutPage() {
                 <button
                   type="button"
                   onClick={() => setCurrentStep(currentStep - 1)}
-                  className="px-4 py-2 border-2 border-purple-200 text-gray-700 rounded-lg hover:bg-purple-50 hover:border-purple-500 transition-all font-semibold text-sm"
+                  className="px-4 py-2 border-2 border-[#FBCFE8] text-gray-700 rounded-lg hover:bg-[#FDF2F8] hover:border-[#9D174D] transition-all font-semibold text-sm"
                 >
                   ← Previous
                 </button>
@@ -866,7 +866,7 @@ export default function CheckoutPage() {
                 type="button"
                 onClick={handleNextStep}
                 disabled={submitting || epsPaymentLoading}
-                className="px-6 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 font-semibold text-sm transition-all transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                className="px-6 py-2 bg-[#881337] text-white rounded-lg hover:bg-[#6E0F2C] font-semibold text-sm transition-all transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
               >
                 {(submitting || epsPaymentLoading) ? (
                   <>
@@ -884,16 +884,16 @@ export default function CheckoutPage() {
 
           {/* Order Summary Sidebar */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg shadow-md border-2 border-purple-200 p-3 sticky top-6">
-              <h2 className="text-base font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-3 pb-1.5 border-b-2 border-purple-300 text-center">
+            <div className="bg-white rounded-lg shadow-md border-2 border-[#FBCFE8] p-3 sticky top-6">
+              <h2 className="text-base font-bold bg-[#881337] bg-clip-text text-transparent mb-3 pb-1.5 border-b-2 border-[#FBCFE8] text-center">
                 Order Summary
               </h2>
 
               {/* Cart Items */}
               <div className="space-y-2 mb-3 max-h-48 overflow-y-auto">
                 {cartItems.map((item) => (
-                  <div key={item.productId} className="flex items-center space-x-2 pb-2 border-b border-purple-100 last:border-b-0">
-                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-100 to-pink-100 rounded-lg overflow-hidden border border-purple-200">
+                  <div key={item.productId} className="flex items-center space-x-2 pb-2 border-b border-[#F1E8EC] last:border-b-0">
+                    <div className="flex-shrink-0 w-12 h-12 bg-[#FDF2F8] rounded-lg overflow-hidden border border-[#FBCFE8]">
                       {item.image ? (
                         <Image
                           src={item.image}
@@ -911,7 +911,7 @@ export default function CheckoutPage() {
                     <div className="flex-1 min-w-0">
                       <p className="font-semibold text-gray-900 text-xs line-clamp-1">{item.name}</p>
                       <p className="text-[10px] text-gray-600">Qty: {item.quantity}</p>
-                      <p className="text-xs font-bold text-purple-600 mt-0.5">
+                      <p className="text-xs font-bold text-[#881337] mt-0.5">
                         ৳{(item.price * item.quantity).toLocaleString()}
                       </p>
                     </div>
@@ -928,8 +928,8 @@ export default function CheckoutPage() {
                       value={promoCode}
                       onChange={(e) => setPromoCode(e.target.value.toUpperCase())}
                       placeholder="Promo code"
-                      className={`w-full px-2 py-1.5 text-xs border-2 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all ${
-                        promoCodeError ? 'border-red-300 bg-red-50' : 'border-purple-300 bg-purple-50/50'
+                      className={`w-full px-2 py-1.5 text-xs border-2 rounded-lg focus:ring-2 focus:ring-[#9D174D] focus:border-transparent transition-all ${
+                        promoCodeError ? 'border-red-300 bg-red-50' : 'border-[#FBCFE8] bg-[#FDF2F8]/50'
                       }`}
                       onKeyPress={(e) => e.key === 'Enter' && handleApplyPromoCode()}
                     />
@@ -937,7 +937,7 @@ export default function CheckoutPage() {
                       type="button"
                       onClick={handleApplyPromoCode}
                       disabled={promoCodeLoading || !promoCode.trim()}
-                      className="w-full px-3 py-1.5 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all text-xs font-medium shadow-md hover:shadow-lg"
+                      className="w-full px-3 py-1.5 bg-[#881337] text-white rounded-lg hover:bg-[#6E0F2C] disabled:opacity-50 disabled:cursor-not-allowed transition-all text-xs font-medium shadow-md hover:shadow-lg"
                     >
                       {promoCodeLoading ? (
                         <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin mx-auto" />
@@ -973,9 +973,9 @@ export default function CheckoutPage() {
               </div>
 
               {/* Price Breakdown */}
-              <div className="space-y-2 mb-3 pt-3 border-t-2 border-purple-200">
-                <div className="flex justify-between text-xs bg-pink-50 px-2 py-1.5 rounded-lg">
-                  <span className="text-pink-700 font-medium">Subtotal</span>
+              <div className="space-y-2 mb-3 pt-3 border-t-2 border-[#FBCFE8]">
+                <div className="flex justify-between text-xs bg-[#FDF2F8] px-2 py-1.5 rounded-lg">
+                  <span className="text-[#881337] font-medium">Subtotal</span>
                   <span className="font-semibold text-pink-900">৳{calculateSubtotal().toLocaleString()}</span>
                 </div>
                 
@@ -1004,26 +1004,26 @@ export default function CheckoutPage() {
                   </div>
                 )}
                 
-                <div className="pt-2 border-t-2 border-purple-400 bg-gradient-to-r from-purple-50 to-pink-50 px-2 py-1.5 rounded-lg">
+                <div className="pt-2 border-t-2 border-[#D94E67] bg-[#FDF2F8] px-2 py-1.5 rounded-lg">
                   <div className="flex justify-between text-sm font-bold">
                     <span className="text-gray-900">Total</span>
-                    <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent text-base">৳{calculateTotal().toLocaleString()}</span>
+                    <span className="bg-[#881337] bg-clip-text text-transparent text-base">৳{calculateTotal().toLocaleString()}</span>
                   </div>
                 </div>
               </div>
 
               {/* Trust Badges */}
-              <div className="pt-3 border-t border-purple-200">
+              <div className="pt-3 border-t border-[#FBCFE8]">
                 <div className="grid grid-cols-3 gap-2 text-center">
-                  <div className="p-2 bg-purple-50 rounded-lg">
+                  <div className="p-2 bg-[#FDF2F8] rounded-lg">
                     <div className="text-lg mb-0.5">🚚</div>
                     <p className="text-[10px] text-gray-600 font-medium">Free Delivery</p>
                   </div>
-                  <div className="p-2 bg-purple-50 rounded-lg">
+                  <div className="p-2 bg-[#FDF2F8] rounded-lg">
                     <div className="text-lg mb-0.5">↩️</div>
                     <p className="text-[10px] text-gray-600 font-medium">Easy Returns</p>
                   </div>
-                  <div className="p-2 bg-purple-50 rounded-lg">
+                  <div className="p-2 bg-[#FDF2F8] rounded-lg">
                     <div className="text-lg mb-0.5">🛡️</div>
                     <p className="text-[10px] text-gray-600 font-medium">Secure</p>
                   </div>

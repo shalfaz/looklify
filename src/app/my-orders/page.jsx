@@ -65,8 +65,8 @@ export default function MyOrdersPage() {
     const statusConfig = {
       pending: { color: 'bg-yellow-100 text-yellow-800 border-yellow-200', icon: '⏳', label: 'Pending' },
       confirmed: { color: 'bg-blue-100 text-blue-800 border-blue-200', icon: '✅', label: 'Confirmed' },
-      processing: { color: 'bg-purple-100 text-purple-800 border-purple-200', icon: '⚙️', label: 'Processing' },
-      shipped: { color: 'bg-indigo-100 text-indigo-800 border-indigo-200', icon: '🚚', label: 'Shipped' },
+      processing: { color: 'bg-[#FCE7F3] text-[#881337] border-[#FBCFE8]', icon: '⚙️', label: 'Processing' },
+      shipped: { color: 'bg-[#FCE7F3] text-indigo-800 border-[#FBCFE8]', icon: '🚚', label: 'Shipped' },
       delivered: { color: 'bg-green-100 text-green-800 border-green-200', icon: '📦', label: 'Delivered' },
       cancelled: { color: 'bg-red-100 text-red-800 border-red-200', icon: '❌', label: 'Cancelled' },
       returned: { color: 'bg-gray-100 text-gray-800 border-gray-200', icon: '↩️', label: 'Returned' }
@@ -114,7 +114,7 @@ export default function MyOrdersPage() {
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
         <div className="text-center">
-          <div className="h-14 w-14 border-4 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto" />
+          <div className="h-14 w-14 border-4 border-[#9D174D] border-t-transparent rounded-full animate-spin mx-auto" />
           <p className="mt-4 text-gray-600 font-medium">Loading orders...</p>
         </div>
       </div>
@@ -126,7 +126,7 @@ export default function MyOrdersPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-6 sm:mb-8">
-          <Link href="/profile" className="inline-flex items-center text-purple-600 hover:text-purple-700 mb-4">
+          <Link href="/profile" className="inline-flex items-center text-[#881337] hover:text-[#881337] mb-4">
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
@@ -146,7 +146,7 @@ export default function MyOrdersPage() {
                 onClick={() => setFilter(statusOption)}
                 className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-colors whitespace-nowrap ${
                   filter === statusOption
-                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg'
+                    ? 'bg-[#881337] text-white shadow-lg'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
@@ -166,7 +166,7 @@ export default function MyOrdersPage() {
             </p>
             <Link
               href="/shop"
-              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl hover:from-purple-700 hover:to-pink-700 font-semibold transition-all transform hover:scale-105 shadow-lg"
+              className="inline-flex items-center px-6 py-3 bg-[#881337] text-white rounded-xl hover:bg-[#6E0F2C] font-semibold transition-all transform hover:scale-105 shadow-lg"
             >
               Start Shopping
             </Link>
@@ -187,7 +187,7 @@ export default function MyOrdersPage() {
                     </p>
                   </div>
                   <div className="text-left sm:text-right">
-                    <p className="text-xl sm:text-2xl font-bold text-purple-600">৳{order.pricing?.total?.toFixed(2)}</p>
+                    <p className="text-xl sm:text-2xl font-bold text-[#881337]">৳{order.pricing?.total?.toFixed(2)}</p>
                     {getPaymentStatusBadge(order.payment?.status)}
                   </div>
                 </div>
@@ -237,7 +237,7 @@ export default function MyOrdersPage() {
                   </div>
                   <button
                     onClick={() => setSelectedOrder(order)}
-                    className="px-3 py-2 text-sm bg-purple-100 text-purple-700 rounded-lg hover:bg-purple-200 transition-colors font-medium"
+                    className="px-3 py-2 text-sm bg-[#FCE7F3] text-[#881337] rounded-lg hover:bg-purple-200 transition-colors font-medium"
                   >
                     View Details
                   </button>
@@ -284,11 +284,11 @@ export default function MyOrdersPage() {
         {selectedOrder && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-end sm:items-center justify-center z-50 p-0 sm:p-4">
             <div className="bg-white rounded-t-2xl sm:rounded-2xl shadow-xl w-full sm:max-w-4xl max-h-[90vh] overflow-y-auto">
-              <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-4 sm:p-6 text-white rounded-t-2xl">
+              <div className="bg-[#881337] p-4 sm:p-6 text-white rounded-t-2xl">
                 <div className="flex items-center justify-between">
                   <div>
                     <h2 className="text-xl sm:text-2xl font-bold">Order Details</h2>
-                    <p className="text-purple-100 mt-1 font-mono font-semibold text-xs sm:text-sm">{selectedOrder.orderId}</p>
+                    <p className="text-[#FCE7F3] mt-1 font-mono font-semibold text-xs sm:text-sm">{selectedOrder.orderId}</p>
                   </div>
                   <button
                     onClick={() => setSelectedOrder(null)}
@@ -408,7 +408,7 @@ export default function MyOrdersPage() {
                     )}
                     <div className="border-t border-gray-300 pt-2 flex justify-between font-bold text-base sm:text-lg">
                       <span>Total:</span>
-                      <span className="text-purple-600">৳{selectedOrder.pricing?.total?.toFixed(2)}</span>
+                      <span className="text-[#881337]">৳{selectedOrder.pricing?.total?.toFixed(2)}</span>
                     </div>
                     {selectedOrder.promoCodeString && (
                       <div className="mt-2 text-xs sm:text-sm text-gray-600">

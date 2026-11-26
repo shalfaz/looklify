@@ -124,7 +124,7 @@ export default function AuthForm({
               autoComplete="given-name"
               value={formData.firstName}
               onChange={handleChange}
-              className={`block w-full px-3 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors ${
+              className={`block w-full px-3 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#9D174D] focus:border-transparent transition-colors ${
                 errors.firstName ? 'border-red-300' : 'border-gray-300'
               }`}
               placeholder="John"
@@ -144,7 +144,7 @@ export default function AuthForm({
               autoComplete="family-name"
               value={formData.lastName}
               onChange={handleChange}
-              className={`block w-full px-3 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors ${
+              className={`block w-full px-3 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#9D174D] focus:border-transparent transition-colors ${
                 errors.lastName ? 'border-red-300' : 'border-gray-300'
               }`}
               placeholder="Doe"
@@ -174,7 +174,7 @@ export default function AuthForm({
             autoComplete="email"
             value={formData.email}
             onChange={handleChange}
-            className={`block w-full pl-10 pr-3 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors ${
+            className={`block w-full pl-10 pr-3 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#9D174D] focus:border-transparent transition-colors ${
               errors.email ? 'border-red-300' : 'border-gray-300'
             }`}
             placeholder="Enter your email"
@@ -204,7 +204,7 @@ export default function AuthForm({
               autoComplete={type === 'signup' ? 'new-password' : 'current-password'}
               value={formData.password}
               onChange={handleChange}
-              className={`block w-full pl-10 pr-10 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors ${
+              className={`block w-full pl-10 pr-10 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#9D174D] focus:border-transparent transition-colors ${
                 errors.password ? 'border-red-300' : 'border-gray-300'
               }`}
               placeholder="Enter your password"
@@ -281,7 +281,7 @@ export default function AuthForm({
               autoComplete="new-password"
               value={formData.confirmPassword}
               onChange={handleChange}
-              className={`block w-full pl-10 pr-10 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors ${
+              className={`block w-full pl-10 pr-10 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#9D174D] focus:border-transparent transition-colors ${
                 errors.confirmPassword ? 'border-red-300' : 'border-gray-300'
               }`}
               placeholder="Confirm your password"
@@ -319,13 +319,13 @@ export default function AuthForm({
               type="checkbox"
               checked={formData.rememberMe}
               onChange={handleChange}
-              className="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded"
+              className="h-4 w-4 text-[#881337] focus:ring-[#9D174D] border-gray-300 rounded"
             />
             <label htmlFor="rememberMe" className="ml-2 block text-sm text-gray-700">
               Remember me
             </label>
           </div>
-          <Link href="/forgot-password" className="text-sm text-purple-600 hover:text-purple-500 font-medium">
+          <Link href="/forgot-password" className="text-sm text-[#881337] hover:text-[#9D174D] font-medium">
             Forgot password?
           </Link>
         </div>
@@ -341,15 +341,15 @@ export default function AuthForm({
               type="checkbox"
               checked={formData.agreeToTerms}
               onChange={handleChange}
-              className="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded mt-1"
+              className="h-4 w-4 text-[#881337] focus:ring-[#9D174D] border-gray-300 rounded mt-1"
             />
             <label htmlFor="agreeToTerms" className="ml-2 block text-sm text-gray-700">
               I agree to the{' '}
-              <Link href="/terms" className="text-purple-600 hover:text-purple-500">
+              <Link href="/terms" className="text-[#881337] hover:text-[#9D174D]">
                 Terms of Service
               </Link>
               {' '}and{' '}
-              <Link href="/privacy" className="text-purple-600 hover:text-purple-500">
+              <Link href="/privacy" className="text-[#881337] hover:text-[#9D174D]">
                 Privacy Policy
               </Link>
             </label>
@@ -365,7 +365,7 @@ export default function AuthForm({
               type="checkbox"
               checked={formData.subscribeNewsletter}
               onChange={handleChange}
-              className="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded mt-1"
+              className="h-4 w-4 text-[#881337] focus:ring-[#9D174D] border-gray-300 rounded mt-1"
             />
             <label htmlFor="subscribeNewsletter" className="ml-2 block text-sm text-gray-700">
               Subscribe to our newsletter for beauty tips and exclusive offers
@@ -385,7 +385,7 @@ export default function AuthForm({
       <button
         type="submit"
         disabled={isLoading}
-        className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
+        className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-[#881337] hover:bg-[#6E0F2C] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#9D174D] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
       >
         {isLoading ? (
           <div className="flex items-center">
