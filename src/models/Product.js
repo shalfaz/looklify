@@ -336,7 +336,10 @@ ProductSchema.index({ price: 1 });
 ProductSchema.index({ offerPrice: 1 });
 ProductSchema.index({ rating: 1 });
 ProductSchema.index({ createdAt: -1 });
+ProductSchema.index({ status: 1, createdAt: -1 });
 ProductSchema.index({ isFeatured: 1, status: 1 });
+ProductSchema.index({ status: 1, isFeatured: 1, featuredSortOrder: 1, createdAt: -1 });
+ProductSchema.index({ status: 1, isOfferProduct: 1, createdAt: -1 });
 ProductSchema.index({ isBestSeller: 1, status: 1 });
 
 // Pre-save middleware to calculate discount percentage

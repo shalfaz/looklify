@@ -163,14 +163,30 @@ export async function GET(request) {
 
     // Build sort object
     const sort = {};
-    sort[sortBy] = sortOrder === 'asc' ? 1 : -1;
+    if (featured === 'true' && !searchParams.get('sortBy')) {
+      sort.featuredSortOrder = 1;
+      sort.createdAt = -1;
+    } else {
+      sort[sortBy] = sortOrder === 'asc' ? 1 : -1;
+    }
 
     // Calculate pagination
     const skip = (page - 1) * limit;
 
-    // Execute query with pagination
-    const [products, totalCount] = await Promise.all([
+    // Exclude heavy description/HTML/SEO fields from list queries to keep payload lightweight
+    const listProjection =
+      '_id name sku productCode price regularPrice salePrice originalPrice offerPrice offerPercentage discountPercentage images brand category subcategory stock lowStockThreshold status isFeatured featuredSortOrder isOfferProduct isOnSale freeDelivery taxPercentage shippingCharges inventory rating soldCount createdAt';
+
+    // Skip expensive full-collection stats aggregation on homepage featured/offer queries
+    const shouldFetchStats =
+      featured !== 'true' &&
+      isOfferProduct !== 'true' &&
+      searchParams.get('includeStats') !== 'false';
+
+    // Execute query, count, and optional stats in parallel
+    const [products, totalCount, stats] = await Promise.all([
       Product.find(filter)
+        .select(listProjection)
         .sort(sort)
         .skip(skip)
         .limit(limit)
@@ -178,7 +194,35 @@ export async function GET(request) {
         .populate('category', 'name slug')
         .populate('subcategory', 'name slug')
         .lean(),
-      Product.countDocuments(filter)
+      Product.countDocuments(filter),
+      shouldFetchStats
+        ? Product.aggregate([
+            { $match: filter },
+            {
+              $group: {
+                _id: null,
+                totalProducts: { $sum: 1 },
+                activeProducts: {
+                  $sum: { $cond: [{ $eq: ['$status', 'active'] }, 1, 0] }
+                },
+                outOfStock: {
+                  $sum: { $cond: [{ $eq: ['$stock', 0] }, 1, 0] }
+                },
+                lowStock: {
+                  $sum: {
+                    $cond: [
+                      { $and: [{ $gt: ['$stock', 0] }, { $lte: ['$stock', '$lowStockThreshold'] }] },
+                      1,
+                      0
+                    ]
+                  }
+                },
+                averagePrice: { $avg: '$price' },
+                totalValue: { $sum: { $multiply: ['$price', '$stock'] } }
+              }
+            }
+          ])
+        : Promise.resolve([])
     ]);
 
     // Calculate pagination info
@@ -186,56 +230,35 @@ export async function GET(request) {
     const hasNextPage = page < totalPages;
     const hasPrevPage = page > 1;
 
-    // Get aggregated stats
-    const stats = await Product.aggregate([
-      { $match: filter },
+    return NextResponse.json(
       {
-        $group: {
-          _id: null,
-          totalProducts: { $sum: 1 },
-          activeProducts: {
-            $sum: { $cond: [{ $eq: ['$status', 'active'] }, 1, 0] }
+        success: true,
+        data: {
+          products,
+          pagination: {
+            currentPage: page,
+            totalPages,
+            totalCount,
+            hasNextPage,
+            hasPrevPage,
+            limit
           },
-          outOfStock: {
-            $sum: { $cond: [{ $eq: ['$stock', 0] }, 1, 0] }
-          },
-          lowStock: {
-            $sum: {
-              $cond: [
-                { $and: [{ $gt: ['$stock', 0] }, { $lte: ['$stock', '$lowStockThreshold'] }] },
-                1,
-                0
-              ]
-            }
-          },
-          averagePrice: { $avg: '$price' },
-          totalValue: { $sum: { $multiply: ['$price', '$stock'] } }
+          stats: stats[0] || {
+            totalProducts: totalCount,
+            activeProducts: totalCount,
+            outOfStock: 0,
+            lowStock: 0,
+            averagePrice: 0,
+            totalValue: 0
+          }
+        }
+      },
+      {
+        headers: {
+          'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=300'
         }
       }
-    ]);
-
-    return NextResponse.json({
-      success: true,
-      data: {
-        products,
-        pagination: {
-          currentPage: page,
-          totalPages,
-          totalCount,
-          hasNextPage,
-          hasPrevPage,
-          limit
-        },
-        stats: stats[0] || {
-          totalProducts: 0,
-          activeProducts: 0,
-          outOfStock: 0,
-          lowStock: 0,
-          averagePrice: 0,
-          totalValue: 0
-        }
-      }
-    });
+    );
 
   } catch (error) {
     console.error('Error fetching products:', error);

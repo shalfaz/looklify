@@ -62,18 +62,25 @@ export async function GET(request) {
 
     const totalPages = Math.ceil(totalCount / limit);
 
-    return NextResponse.json({
-      success: true,
-      data: {
-        blogs,
-        pagination: {
-          currentPage: page,
-          totalPages,
-          totalCount,
-          limit
+    return NextResponse.json(
+      {
+        success: true,
+        data: {
+          blogs,
+          pagination: {
+            currentPage: page,
+            totalPages,
+            totalCount,
+            limit
+          }
+        }
+      },
+      {
+        headers: {
+          'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600'
         }
       }
-    });
+    );
   } catch (error) {
     console.error('Error fetching public blogs:', error);
     return NextResponse.json({ 

@@ -45,16 +45,30 @@ export async function GET(request) {
       sortOptions[sortBy] = -1;
     }
 
-    const sliderImages = await SliderImage.find(query)
-      .sort(sortOptions)
-      .populate('createdBy', 'name email')
-      .populate('updatedBy', 'name email')
-      .lean();
+    let sliderQuery = SliderImage.find(query).sort(sortOptions);
+    if (status === 'active') {
+      sliderQuery = sliderQuery.select('image title description buttonText buttonLink status sortOrder placement');
+    } else {
+      sliderQuery = sliderQuery
+        .populate('createdBy', 'name email')
+        .populate('updatedBy', 'name email');
+    }
 
-    return NextResponse.json({
-      success: true,
-      data: sliderImages
-    });
+    const sliderImages = await sliderQuery.lean();
+
+    return NextResponse.json(
+      {
+        success: true,
+        data: sliderImages
+      },
+      status === 'active'
+        ? {
+            headers: {
+              'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600'
+            }
+          }
+        : undefined
+    );
   } catch (error) {
     console.error('Error fetching slider images:', error);
     return NextResponse.json(

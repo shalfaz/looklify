@@ -4,13 +4,14 @@ import { useState, useEffect, useRef } from 'react';
 import Link from "next/link";
 import Image from "next/image";
 
-export default function FeaturedBrands() {
-  const [featuredBrands, setFeaturedBrands] = useState([]);
-  const [loading, setLoading] = useState(true);
+export default function FeaturedBrands({ initialBrands = null }) {
+  const [featuredBrands, setFeaturedBrands] = useState(initialBrands || []);
+  const [loading, setLoading] = useState(initialBrands === null);
   const scrollContainerRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
+    if (initialBrands !== null) return;
     const fetchFeaturedBrands = async () => {
       try {
         setLoading(true);

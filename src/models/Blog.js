@@ -102,6 +102,7 @@ const BlogSchema = new mongoose.Schema({
 // Indexes for better performance
 BlogSchema.index({ title: 'text', content: 'text', excerpt: 'text' });
 BlogSchema.index({ status: 1, publishDate: -1 });
+BlogSchema.index({ status: 1, isFeatured: 1, sortOrder: 1, publishDate: -1 });
 BlogSchema.index({ author: 1 });
 BlogSchema.index({ tags: 1 });
 BlogSchema.index({ isFeatured: 1, sortOrder: 1 });

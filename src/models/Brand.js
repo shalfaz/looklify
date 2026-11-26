@@ -63,6 +63,7 @@ const BrandSchema = new mongoose.Schema({
 
 BrandSchema.index({ name: 'text', description: 'text' });
 BrandSchema.index({ status: 1, sortOrder: 1 });
+BrandSchema.index({ status: 1, isFeatured: 1, sortOrder: 1 });
 
 // Ensure slug is lowercase and URL-friendly
 BrandSchema.pre('validate', function(next) {

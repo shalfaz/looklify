@@ -75,9 +75,9 @@ function ProductImage({ src, alt, className, onError }) {
   );
 }
 
-export default function FeaturedProducts() {
-  const [featuredProducts, setFeaturedProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+export default function FeaturedProducts({ initialProducts = null }) {
+  const [featuredProducts, setFeaturedProducts] = useState(initialProducts || []);
+  const [loading, setLoading] = useState(initialProducts === null);
   const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
   const { addToCart } = useCart();
   const router = useRouter();
@@ -137,10 +137,11 @@ export default function FeaturedProducts() {
   }, []);
 
   useEffect(() => {
+    if (initialProducts !== null) return;
     const fetchFeaturedProducts = async () => {
       try {
         setLoading(true);
-        const response = await fetch('/api/products?featured=true&limit=1000');
+        const response = await fetch('/api/products?featured=true&limit=20');
         
         if (response.ok) {
           const data = await response.json();
