@@ -236,90 +236,122 @@ export default function ImageSlider2() {
   const dragOffset = getDragOffset();
 
   return (
-    <section className="w-full">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
-        <div 
-          ref={sliderRef}
-          className="relative w-full overflow-hidden select-none touch-pan-y rounded-xl"
-          style={{ 
-            cursor: isDragging ? 'grabbing' : 'grab',
-            aspectRatio: '21/9',
-            minHeight: '180px',
-            maxHeight: '400px',
-            userSelect: 'none',
-            WebkitUserSelect: 'none'
-          }}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-          onTouchCancel={handleTouchEnd}
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={() => {
-            if (isDragging) {
-              setIsDragging(false);
-              setCurrentX(0);
-            }
-          }}
-          onContextMenu={(e) => e.preventDefault()}
-          onDragStart={(e) => e.preventDefault()}
-        >
-          {/* Main Image Container */}
-          <div 
-            className="absolute inset-0"
-            style={{
-              transform: dragOffset !== 0 ? `translateX(${dragOffset}px)` : 'none',
-              transition: isDragging ? 'none' : 'transform 0.3s ease-out'
-            }}
-          >
-        {sliderImages.map((slider, index) => {
-          // Calculate opacity based on current slide and drag
-          let opacity = 0;
-          if (index === currentSlide) {
-            opacity = 1 - Math.abs(dragOffset) / 200;
-          } else if (index === currentSlide + 1 && dragOffset < 0) {
-            // Next slide showing on right
-            opacity = Math.abs(dragOffset) / 200;
-          } else if (index === currentSlide - 1 && dragOffset > 0) {
-            // Previous slide showing on left
-            opacity = Math.abs(dragOffset) / 200;
+    <section className="w-full overflow-hidden m-0 p-0">
+      <div
+        ref={sliderRef}
+        className="relative w-full overflow-hidden select-none touch-pan-y m-0"
+        style={{
+          cursor: isDragging ? 'grabbing' : 'grab',
+          userSelect: 'none',
+          WebkitUserSelect: 'none',
+          width: '100%',
+          maxWidth: '100%',
+          boxSizing: 'border-box',
+          margin: 0,
+          padding: 0,
+          position: 'relative',
+          zIndex: 0
+        }}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        onTouchCancel={handleTouchEnd}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={() => {
+          if (isDragging) {
+            setIsDragging(false);
+            setCurrentX(0);
           }
+        }}
+        onContextMenu={(e) => e.preventDefault()}
+        onDragStart={(e) => e.preventDefault()}
+      >
+        {/* Spacer Image to maintain exact natural aspect ratio without top/bottom whitespace */}
+        {sliderImages.length > 0 && (
+          <img
+            src={sliderImages[0].image.url}
+            alt=""
+            className="w-full h-auto invisible pointer-events-none select-none block"
+            aria-hidden="true"
+            style={{
+              display: 'block',
+              width: '100%',
+              height: 'auto',
+              opacity: 0,
+              pointerEvents: 'none'
+            }}
+          />
+        )}
 
-          return (
-            <div
-              key={slider._id || index}
-              className="absolute inset-0 transition-opacity duration-300 overflow-hidden bg-white"
-              style={{
-                opacity: isDragging ? opacity : (index === currentSlide ? 1 : 0),
-                zIndex: index === currentSlide ? 10 : 5
-              }}
-              onContextMenu={(e) => e.preventDefault()}
-              onDragStart={(e) => e.preventDefault()}
-            >
-            <Image
-              src={slider.image.url}
-              alt={slider.image.alt || slider.title || 'Slider Image'}
-              fill
-              className="object-contain object-center w-full h-full select-none"
-              priority={index === 0}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
-              draggable={false}
-              onContextMenu={(e) => e.preventDefault()}
-              onDragStart={(e) => e.preventDefault()}
-              style={{ 
-                objectFit: 'contain',
-                userSelect: 'none',
-                WebkitUserDrag: 'none',
-                WebkitUserSelect: 'none',
-                pointerEvents: 'none',
-                touchAction: 'none'
-              }}
-            />
-            </div>
-          );
-        })}
-          </div>
+        {/* Main Image Container */}
+        <div
+          className="absolute inset-0 w-full h-full"
+          style={{
+            transform: dragOffset !== 0 ? `translateX(${dragOffset}px)` : 'none',
+            transition: isDragging ? 'none' : 'transform 0.3s ease-out',
+            width: '100%',
+            height: '100%',
+            overflow: 'hidden',
+            boxSizing: 'border-box'
+          }}
+        >
+          {sliderImages.map((slider, index) => {
+            // Calculate opacity based on current slide and drag
+            let opacity = 0;
+            if (index === currentSlide) {
+              opacity = 1 - Math.abs(dragOffset) / 200;
+            } else if (index === currentSlide + 1 && dragOffset < 0) {
+              // Next slide showing on right
+              opacity = Math.abs(dragOffset) / 200;
+            } else if (index === currentSlide - 1 && dragOffset > 0) {
+              // Previous slide showing on left
+              opacity = Math.abs(dragOffset) / 200;
+            }
+
+            return (
+              <div
+                key={slider._id || index}
+                className="absolute inset-0 transition-opacity duration-300 overflow-hidden w-full h-full"
+                style={{
+                  opacity: isDragging ? opacity : (index === currentSlide ? 1 : 0),
+                  zIndex: index === currentSlide ? 10 : 5,
+                  width: '100%',
+                  height: '100%',
+                  left: 0,
+                  top: 0,
+                  right: 0,
+                  bottom: 0,
+                  boxSizing: 'border-box'
+                }}
+                onContextMenu={(e) => e.preventDefault()}
+                onDragStart={(e) => e.preventDefault()}
+              >
+                <Image
+                  src={slider.image.url}
+                  alt={slider.image.alt || slider.title || 'Slider Image'}
+                  fill
+                  className="object-cover object-center w-full h-full select-none"
+                  priority={index === 0}
+                  sizes="100vw"
+                  draggable={false}
+                  onContextMenu={(e) => e.preventDefault()}
+                  onDragStart={(e) => e.preventDefault()}
+                  style={{
+                    objectFit: 'cover',
+                    objectPosition: 'center',
+                    userSelect: 'none',
+                    WebkitUserDrag: 'none',
+                    WebkitUserSelect: 'none',
+                    pointerEvents: 'none',
+                    touchAction: 'none'
+                  }}
+                />
+              </div>
+            );
+          })}
+        </div>
 
         {/* Navigation Arrows - Hidden on mobile for better touch experience */}
         {sliderImages.length > 1 && (
@@ -354,8 +386,8 @@ export default function ImageSlider2() {
                 key={index}
                 onClick={() => goToSlide(index)}
                 className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
-                  index === currentSlide 
-                    ? 'bg-white scale-125 shadow-lg' 
+                  index === currentSlide
+                    ? 'bg-white scale-125 shadow-lg'
                     : 'bg-white/50 hover:bg-white/75'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
@@ -371,7 +403,6 @@ export default function ImageSlider2() {
             </div>
           </div>
         )}
-        </div>
       </div>
     </section>
   );

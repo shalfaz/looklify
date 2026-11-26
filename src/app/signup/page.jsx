@@ -171,7 +171,7 @@ export default function SignupPage() {
           <div className="text-center mb-8">
             <Link href="/" className="flex items-center justify-center">
               <Image 
-                src="/logo/looklify.png" 
+                src="/logo/looklify-logo.png" 
                 alt="Looklify Logo" 
                 width={150} 
                 height={50}
