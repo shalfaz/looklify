@@ -63,8 +63,9 @@ export const metadata = {
   },
   themeColor: "#FFFDFD",
   icons: {
-    icon: '/favicon/face-mask.png',
-    apple: '/favicon/face-mask.png',
+    icon: '/favicon/favicon-logo.png',
+    shortcut: '/favicon/favicon-logo.png',
+    apple: '/favicon/favicon-logo.png',
   },
 };
 
@@ -76,10 +77,11 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="light" style={{ colorScheme: 'light' }}>
       <head>
-        <link rel="icon" href="/favicon/Looklify favicon.jpg" type="image/jpeg" />
-        <link rel="apple-touch-icon" href="/favicon/face-mask.png" />
+        <meta name="color-scheme" content="light" />
+        <link rel="icon" href="/favicon/favicon-logo.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon/favicon-logo.png" />
         <link rel="canonical" href="https://looklify.com" />
         <meta name="theme-color" content="#FFFDFD" />
         <script
@@ -90,7 +92,7 @@ export default function RootLayout({ children }) {
               "@type": "Organization",
               "name": "Looklify",
               "url": "https://looklify.com",
-              "logo": "https://looklify.com/favicon/face-mask.png",
+              "logo": "https://looklify.com/logo/looklify-logo.png",
               "sameAs": [
                 "https://www.facebook.com/",
                 "https://www.instagram.com/"

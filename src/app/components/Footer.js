@@ -10,11 +10,11 @@ export default function Footer() {
           <div className="space-y-2">
             <Link href="/" className="flex items-center">
               <Image 
-                src="/logo/looklify.png" 
+                src="/logo/looklify-logo.png" 
                 alt="Looklify Logo" 
                 width={150} 
                 height={50}
-                className="h-10 sm:h-12 w-auto hover:scale-105 transition-transform duration-300"
+                className="h-10 sm:h-12 w-auto object-contain bg-white/95 rounded-lg px-2 py-1 hover:scale-105 transition-transform duration-300"
               />
             </Link>
             <div className="space-y-0.5 text-xs sm:text-sm text-[#F3E8EE]">

@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
+/* Force class-based dark mode in Tailwind v4 (ignore OS prefers-color-scheme: dark by default) */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
+  color-scheme: light;
   --background: #FFFDFD;
   --foreground: #1F2937;
   --brand-primary: #881337;
@@ -15,6 +19,7 @@
 }
 
 .dark {
+  color-scheme: dark;
   --background: #111827;
   --foreground: #f9fafb;
 }

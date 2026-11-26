@@ -268,7 +268,7 @@ export default function PopularProductsOnOffer() {
           
           <div className="flex gap-2 sm:gap-4 lg:gap-6 overflow-hidden">
             {[...Array(5)].map((_, index) => (
-              <div key={index} className="flex-shrink-0 w-[62%] sm:w-[calc((100%-16px)/2)] md:w-[calc((100%-32px)/3)] lg:w-[calc((100%-96px)/5)] bg-white dark:bg-gray-800 rounded-xl border border-[#F1E8EC] dark:border-gray-700 overflow-hidden animate-pulse">
+              <div key={index} className="flex-shrink-0 w-[calc(50%-4px)] sm:w-[calc((100%-16px)/2)] md:w-[calc((100%-32px)/3)] lg:w-[calc((100%-96px)/5)] bg-white dark:bg-gray-800 rounded-xl border border-[#F1E8EC] dark:border-gray-700 overflow-hidden animate-pulse">
                 <div className="w-full h-48 bg-[#F9F5F6] dark:bg-gray-700"></div>
                 <div className="p-4">
                   <div className="h-4 bg-[#F3E8EE] dark:bg-gray-700 rounded w-3/4 mb-2"></div>
@@ -358,7 +358,7 @@ export default function PopularProductsOnOffer() {
             return (
               <div
                 key={product._id}
-                className="flex-shrink-0 snap-start w-[62%] sm:w-[calc((100%-16px)/2)] md:w-[calc((100%-32px)/3)] lg:w-[calc((100%-96px)/5)] group bg-white dark:bg-gray-800 rounded-xl border border-[#F1E8EC] dark:border-gray-700 hover:border-[#FBCFE8] dark:hover:border-[#9D174D]/50 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                className="flex-shrink-0 snap-start w-[calc(50%-4px)] sm:w-[calc((100%-16px)/2)] md:w-[calc((100%-32px)/3)] lg:w-[calc((100%-96px)/5)] group bg-white dark:bg-gray-800 rounded-xl border border-[#F1E8EC] dark:border-gray-700 hover:border-[#FBCFE8] dark:hover:border-[#9D174D]/50 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
               >
                 {/* Product Image Container with white background */}
                 <div 

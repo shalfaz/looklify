@@ -232,11 +232,11 @@ export default function Header() {
           <div className="flex items-center flex-shrink-0">
             <Link href="/" className="flex items-center group">
               <Image 
-                src="/logo/looklify.png" 
+                src="/logo/looklify-logo.png" 
                 alt="Looklify Logo" 
                 width={160} 
                 height={55}
-                className="h-9 sm:h-11 lg:h-14 xl:h-16 w-auto hover:scale-105 transition-transform duration-300"
+                className="h-9 sm:h-11 lg:h-14 xl:h-16 w-auto object-contain hover:scale-105 transition-transform duration-300"
                 priority
               />
             </Link>
