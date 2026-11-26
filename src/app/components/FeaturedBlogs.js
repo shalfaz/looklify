@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react';
 import Link from "next/link";
 import Image from "next/image";
 
-export default function FeaturedBlogs() {
-  const [featuredBlogs, setFeaturedBlogs] = useState([]);
-  const [loading, setLoading] = useState(true);
+export default function FeaturedBlogs({ initialBlogs = null }) {
+  const [featuredBlogs, setFeaturedBlogs] = useState(initialBlogs || []);
+  const [loading, setLoading] = useState(initialBlogs === null);
 
   // Prevent image download protection
   useEffect(() => {
@@ -63,6 +63,7 @@ export default function FeaturedBlogs() {
   }, []);
 
   useEffect(() => {
+    if (initialBlogs !== null) return;
     const fetchFeaturedBlogs = async () => {
       try {
         setLoading(true);

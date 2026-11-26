@@ -4,7 +4,7 @@ import { AuthProvider } from "./contexts/AuthContext";
 import { CartProvider } from "./contexts/CartContext";
 import { WishlistProvider } from "./contexts/WishlistContext";
 import LayoutWrapper from "./components/LayoutWrapper";
-import ChatWidget from "./components/ChatWidget";
+import DeferredChatWidget from "./components/DeferredChatWidget";
 import { Toaster } from "react-hot-toast";
 
 export const metadata = {
@@ -152,7 +152,7 @@ export default function RootLayout({ children }) {
                       },
                     }}
                   />
-                  <ChatWidget />
+                  <DeferredChatWidget />
                 </div>
               </WishlistProvider>
             </CartProvider>

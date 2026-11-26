@@ -75,9 +75,9 @@ function ProductImage({ src, alt, className, onError }) {
   );
 }
 
-export default function PopularProductsOnOffer() {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+export default function PopularProductsOnOffer({ initialProducts = null }) {
+  const [products, setProducts] = useState(initialProducts || []);
+  const [loading, setLoading] = useState(initialProducts === null);
   const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
   const { addToCart } = useCart();
   const router = useRouter();
@@ -193,11 +193,12 @@ export default function PopularProductsOnOffer() {
   }, []);
 
   useEffect(() => {
+    if (initialProducts !== null) return;
     const fetchProductsOnOffer = async () => {
       try {
         setLoading(true);
         // Fetch all products with isOfferProduct=true, no limit restriction
-        const response = await fetch('/api/products?limit=100&status=active&isOfferProduct=true');
+        const response = await fetch('/api/products?limit=20&status=active&isOfferProduct=true');
         
         if (response.ok) {
           const data = await response.json();

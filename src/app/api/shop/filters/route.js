@@ -11,60 +11,71 @@ export async function GET(request) {
     const { searchParams } = new URL(request.url);
     const brandId = searchParams.get('brand');
 
-    // Fetch all active brands
-    const brands = await Brand.find({ status: 'active' })
-      .select('_id name slug logo isFeatured')
-      .sort({ sortOrder: 1, name: 1 })
-      .lean();
+    // Fetch brands and all active categories (main + subcategories) in parallel
+    const [brands, allCategories] = await Promise.all([
+      Brand.find({ status: 'active' })
+        .select('_id name slug logo isFeatured')
+        .sort({ sortOrder: 1, name: 1 })
+        .lean(),
+      Category.find({ status: 'active' })
+        .select('_id name slug icon image isFeatured parent brand sortOrder')
+        .sort({ sortOrder: 1, name: 1 })
+        .lean()
+    ]);
 
     // Derive featured brands from brands array
     const featuredBrands = brands.filter(brand => brand.isFeatured);
 
-    // Fetch all active categories (main categories only)
-    const categories = await Category.find({ 
-      status: 'active',
-      parent: null // Only main categories
-    })
-      .select('_id name slug icon image isFeatured')
-      .sort({ sortOrder: 1, name: 1 })
-      .lean();
+    // Separate main categories and build lookup maps in memory (avoids extra populate round-trips)
+    const categories = [];
+    const categoryMap = new Map();
+    for (const cat of allCategories) {
+      if (!cat.parent) {
+        const mainCat = {
+          _id: cat._id,
+          name: cat.name,
+          slug: cat.slug,
+          icon: cat.icon,
+          image: cat.image,
+          isFeatured: cat.isFeatured
+        };
+        categories.push(mainCat);
+        categoryMap.set(cat._id.toString(), {
+          _id: cat._id,
+          name: cat.name,
+          slug: cat.slug
+        });
+      }
+    }
+
+    const brandMap = new Map(
+      brands.map(b => [b._id.toString(), { _id: b._id, name: b.name, slug: b.slug }])
+    );
 
     // Derive featured categories from categories array
     const featuredCategories = categories.filter(cat => cat.isFeatured);
 
-    // Fetch subcategories based on selected brand or all brands
-    let subcategories = [];
-    if (brandId) {
-      // If specific brand selected, get subcategories for that brand only
-      subcategories = await Category.find({ 
-        status: 'active',
-        parent: { $ne: null },
-        brand: brandId
-      })
-        .select('_id name slug parent')
-        .populate('parent', '_id name slug')
-        .sort({ sortOrder: 1, name: 1 })
-        .lean();
-    } else {
-      // If no brand selected, get all subcategories
-      subcategories = await Category.find({ 
-        status: 'active',
-        parent: { $ne: null }
-      })
-        .select('_id name slug parent brand')
-        .populate('parent', '_id name slug')
-        .populate('brand', 'name slug')
-        .sort({ sortOrder: 1, name: 1 })
-        .lean();
-    }
+    // Resolve subcategories and group by parent category name
+    const subcategoriesByParent = allCategories.reduce((acc, cat) => {
+      if (!cat.parent) return acc;
+      if (brandId && cat.brand?.toString() !== brandId) return acc;
 
-    // Group subcategories by parent category
-    const subcategoriesByParent = subcategories.reduce((acc, sub) => {
-      const parentName = sub.parent?.name || 'Other';
+      const parentObj = categoryMap.get(cat.parent.toString()) || null;
+      const parentName = parentObj?.name || 'Other';
+      const subObj = brandId
+        ? { _id: cat._id, name: cat.name, slug: cat.slug, parent: parentObj }
+        : {
+            _id: cat._id,
+            name: cat.name,
+            slug: cat.slug,
+            parent: parentObj,
+            brand: cat.brand ? brandMap.get(cat.brand.toString()) || null : null
+          };
+
       if (!acc[parentName]) {
         acc[parentName] = [];
       }
-      acc[parentName].push(sub);
+      acc[parentName].push(subObj);
       return acc;
     }, {});
 
@@ -72,18 +83,25 @@ export async function GET(request) {
     const skinTypes = ['Normal', 'Dry', 'Oily', 'Combination', 'Sensitive', 'All Types'];
     const skinConcerns = ['Acne', 'Aging', 'Dark Spots', 'Dryness', 'Oiliness', 'Sensitivity', 'Uneven Skin Tone', 'Wrinkles'];
 
-    return NextResponse.json({
-      success: true,
-      data: {
-        brands,
-        featuredBrands,
-        categories,
-        featuredCategories,
-        subcategories: subcategoriesByParent,
-        skinTypes,
-        skinConcerns
+    return NextResponse.json(
+      {
+        success: true,
+        data: {
+          brands,
+          featuredBrands,
+          categories,
+          featuredCategories,
+          subcategories: subcategoriesByParent,
+          skinTypes,
+          skinConcerns
+        }
+      },
+      {
+        headers: {
+          'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600'
+        }
       }
-    });
+    );
   } catch (error) {
     console.error('Error fetching shop filters:', error);
     return NextResponse.json({ 

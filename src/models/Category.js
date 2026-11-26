@@ -67,6 +67,8 @@ const CategorySchema = new mongoose.Schema({
 
 CategorySchema.index({ name: 'text', description: 'text' });
 CategorySchema.index({ brand: 1, parent: 1, sortOrder: 1 });
+CategorySchema.index({ status: 1, parent: 1, sortOrder: 1, name: 1 });
+CategorySchema.index({ status: 1, isFeatured: 1 });
 
 // Ensure slug is lowercase and no spaces
 CategorySchema.pre('validate', function(next) {

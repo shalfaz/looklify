@@ -3,20 +3,21 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
-export default function ImageSlider2() {
+export default function ImageSlider2({ initialImages = null }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [currentX, setCurrentX] = useState(0);
-  const [sliderImages, setSliderImages] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [sliderImages, setSliderImages] = useState(initialImages || []);
+  const [loading, setLoading] = useState(initialImages === null);
   const sliderRef = useRef(null);
   const touchStartTime = useRef(0);
 
-  // Fetch slider images from API
+  // Fetch slider images from API only when initial server data wasn't provided
   useEffect(() => {
+    if (initialImages !== null) return;
     fetchSliderImages();
-  }, []);
+  }, [initialImages]);
 
   const fetchSliderImages = async () => {
     try {

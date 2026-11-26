@@ -4,13 +4,14 @@ import { useState, useEffect, useRef } from 'react';
 import Link from "next/link";
 import Image from "next/image";
 
-export default function FeaturedCategories() {
-  const [featuredCategories, setFeaturedCategories] = useState([]);
-  const [loading, setLoading] = useState(true);
+export default function FeaturedCategories({ initialCategories = null }) {
+  const [featuredCategories, setFeaturedCategories] = useState(initialCategories || []);
+  const [loading, setLoading] = useState(initialCategories === null);
   const scrollContainerRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
+    if (initialCategories !== null) return;
     const fetchFeaturedCategories = async () => {
       try {
         setLoading(true);

@@ -1,36 +1,42 @@
+import dynamic from "next/dynamic";
 import ImageSlider from "./components/ImageSlider";
-import FeaturesSection from "./components/FeaturesSection";
 import FeaturedCategories from "./components/FeaturedCategories";
-import FeaturedBrands from "./components/FeaturedBrands";
 import FeaturedProducts from "./components/FeaturedProducts";
-import FeaturedBlogs from "./components/FeaturedBlogs";
-import StatsSection from "./components/StatsSection";
 import PopularProductsOnOffer from "./components/PopularProductsOnOffer";
 import ImageSlider2 from "./components/ImageSlider2";
+import { getHomePageData } from "@/lib/homeData";
 
-export default function Home() {
+const FeaturedBlogs = dynamic(() => import("./components/FeaturedBlogs"));
+const FeaturedBrands = dynamic(() => import("./components/FeaturedBrands"));
+const FeaturesSection = dynamic(() => import("./components/FeaturesSection"));
+
+export const revalidate = 60;
+
+export default async function Home() {
+  const data = await getHomePageData();
+
   return (
     <div className="min-h-screen w-full max-w-full overflow-x-hidden m-0 p-0">
       {/* Hero Section - Primary Image Slider */}
-      <ImageSlider />
+      <ImageSlider initialImages={data?.primarySliders ?? null} />
 
       {/* Featured Categories */}
-      <FeaturedCategories />
+      <FeaturedCategories initialCategories={data?.featuredCategories ?? null} />
 
       {/* Featured Products */}
-      <FeaturedProducts />
+      <FeaturedProducts initialProducts={data?.featuredProducts ?? null} />
 
       {/* Secondary Slider */}
-      <ImageSlider2 />
+      <ImageSlider2 initialImages={data?.secondarySliders ?? null} />
 
       {/* Popular Products on Offer */}
-      <PopularProductsOnOffer />
+      <PopularProductsOnOffer initialProducts={data?.offerProducts ?? null} />
 
       {/* Featured Blogs */}
-      <FeaturedBlogs />
+      <FeaturedBlogs initialBlogs={data?.featuredBlogs ?? null} />
 
       {/* Featured Brands */}
-      <FeaturedBrands />
+      <FeaturedBrands initialBrands={data?.featuredBrands ?? null} />
 
       {/* Features Section */}
       <FeaturesSection />
